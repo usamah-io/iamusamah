@@ -28,7 +28,7 @@ export default function HeroImageCard() {
       gsap.fromTo(
         cardRef.current,
         {
-          y: "-110%",
+          y: "-122%",
           scale: 0.25,
           rotation: -15,
         },
