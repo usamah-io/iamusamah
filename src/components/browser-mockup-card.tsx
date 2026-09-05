@@ -113,14 +113,10 @@ export default function BrowserMockupCard({
   if (layout === "horizontal") {
     return (
       <div
-        className={`group relative flex flex-col md:flex-row bg-white dark:bg-zinc-950/80 border ${
-          isHighlighted
-            ? "border-emerald-500/60 dark:border-[#00FF87]/60 shadow-lg shadow-emerald-500/10 dark:shadow-[0_0_30px_rgba(0,255,135,0.12)]"
-            : "border-gray-200 dark:border-zinc-800 hover:border-gray-300 dark:hover:border-zinc-700"
-        } rounded-2xl overflow-hidden p-4 md:p-6 gap-6 items-center md:items-stretch w-full transition-all duration-300 shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-[#00FF87]/10 active:scale-[0.99] transform ${className}`}
+        className={`group relative flex flex-col md:flex-row bg-background text-foreground border-4 border-foreground rounded-2xl overflow-hidden p-4 md:p-6 gap-6 items-center md:items-stretch w-full transition-all duration-300 shadow-[8px_8px_0px_var(--fg)] hover:shadow-[10px_10px_0px_var(--fg)] hover:-translate-y-1 ${className}`}
       >
         {/* SISI KIRI (VIDEO PLAYER POTRET 9:16) */}
-        <div className="w-full md:w-[260px] lg:w-[280px] shrink-0 aspect-[9/16] rounded-xl overflow-hidden bg-black relative flex items-center justify-center group/media border border-gray-200 dark:border-zinc-800/80 shadow-md">
+        <div className="w-full md:w-[260px] lg:w-[280px] shrink-0 aspect-[9/16] rounded-xl overflow-hidden bg-black relative flex items-center justify-center group/media border-2 border-foreground shadow-[4px_4px_0px_var(--fg)]">
           {mediaType === "image" ? (
             <img
               src={resolvedMediaSrc}
@@ -143,11 +139,11 @@ export default function BrowserMockupCard({
 
           {/* Status Badge Overlay in top-left of video */}
           {floatingBadge && (
-            <div className="absolute top-3 left-3 z-10 bg-black/60 backdrop-blur-md text-emerald-400 text-xs font-medium px-2.5 py-1 rounded-full border border-emerald-500/30 flex items-center gap-1.5 pointer-events-none">
+            <div className="absolute top-3 left-3 z-10 bg-[var(--accent1)] text-black font-mono font-black text-xs uppercase px-3 py-1 rounded-full border-2 border-black flex items-center gap-1.5 shadow-[2px_2px_0px_#000000] pointer-events-none">
               {floatingBadge.icon ? (
                 floatingBadge.icon
               ) : (
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
               )}
               <span>{floatingBadge.text}</span>
             </div>
@@ -158,17 +154,17 @@ export default function BrowserMockupCard({
         <div className="flex-1 flex flex-col justify-between w-full py-1 space-y-4">
           <div className="space-y-3 flex flex-col items-start">
             {/* 1. Category Badge Only (Above Title) */}
-            <span className="text-[10px] sm:text-xs font-mono font-extrabold tracking-wider text-emerald-600 dark:text-[#00FF87] uppercase bg-emerald-500/10 dark:bg-[#00FF87]/10 border border-emerald-500/25 dark:border-[#00FF87]/25 px-2.5 py-1 rounded inline-block w-fit">
+            <span className="text-xs font-mono font-black tracking-wider text-black uppercase bg-[var(--accent1)] border-2 border-black px-3 py-1 rounded-full shadow-[2px_2px_0px_#000000] inline-block w-fit">
               {categoryLabel}
             </span>
 
             {/* 2. Judul Utama Video */}
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-[#00FF87] transition-colors leading-snug">
+            <h3 className="text-xl md:text-2xl font-black uppercase text-foreground tracking-tight leading-snug">
               {title}
             </h3>
 
             {/* 3. Deskripsi Video */}
-            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-sm md:text-base text-foreground/80 font-sans leading-relaxed">
               {description}
             </p>
 
@@ -177,7 +173,7 @@ export default function BrowserMockupCard({
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-mono font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-zinc-800 px-2.5 py-1 rounded-md"
+                    className="text-xs font-mono font-bold text-foreground/90 bg-foreground/10 border border-foreground/30 px-2.5 py-1 rounded-full uppercase"
                   >
                     {tag}
                   </span>
@@ -186,13 +182,13 @@ export default function BrowserMockupCard({
             )}
           </div>
 
-          <div className="pt-4 border-t border-gray-200 dark:border-zinc-800/90 flex flex-wrap items-center justify-end gap-3 mt-4 md:mt-0">
+          <div className="pt-4 border-t-2 border-foreground/20 flex flex-wrap items-center justify-end gap-3 mt-4 md:mt-0">
             {extraAction && (
               <div className="w-full sm:w-auto">
                 {extraAction.href ? (
                   <a
                     href={extraAction.href}
-                    className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-black text-zinc-950 bg-emerald-500 hover:bg-emerald-400 dark:bg-[#00FF87] dark:hover:bg-[#00e67a] transition-all py-2.5 px-4 rounded-xl shadow-md border border-emerald-400/40 dark:border-[#00FF87]/50"
+                    className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-mono font-black uppercase text-black bg-emerald-500 hover:bg-emerald-400 py-2.5 px-4 rounded-full shadow-[3px_3px_0px_#000000] border-2 border-black active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
                   >
                     {extraAction.icon}
                     <span>{extraAction.label}</span>
@@ -200,7 +196,7 @@ export default function BrowserMockupCard({
                 ) : (
                   <button
                     onClick={extraAction.onClick}
-                    className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-black text-zinc-950 bg-emerald-500 hover:bg-emerald-400 dark:bg-[#00FF87] dark:hover:bg-[#00e67a] transition-all py-2.5 px-4 rounded-xl shadow-md border border-emerald-400/40 dark:border-[#00FF87]/50 cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-mono font-black uppercase text-black bg-emerald-500 hover:bg-emerald-400 py-2.5 px-4 rounded-full shadow-[3px_3px_0px_#000000] border-2 border-black active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
                   >
                     {extraAction.icon}
                     <span>{extraAction.label}</span>
@@ -215,7 +211,7 @@ export default function BrowserMockupCard({
                 target={secondaryAction.href?.startsWith("http") ? "_blank" : undefined}
                 rel={secondaryAction.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                 onClick={secondaryAction.onClick}
-                className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-bold text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2.5 px-4 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-gray-200 dark:border-zinc-800 cursor-pointer min-h-[42px] text-center"
+                className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-mono font-black uppercase text-foreground hover:bg-foreground hover:text-background py-2.5 px-4 rounded-full bg-background border-2 border-foreground shadow-[3px_3px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer text-center"
               >
                 {secondaryAction.icon ? (
                   secondaryAction.icon
@@ -233,7 +229,7 @@ export default function BrowserMockupCard({
               target={primaryAction.href?.startsWith("http") ? "_blank" : undefined}
               rel={primaryAction.href?.startsWith("http") ? "noopener noreferrer" : undefined}
               onClick={primaryAction.onClick}
-              className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-black text-zinc-950 bg-emerald-500 hover:bg-emerald-400 dark:bg-[#00FF87] dark:hover:bg-[#00e67a] active:scale-[0.98] transition-all py-2.5 px-5 rounded-xl shadow-md shadow-emerald-500/10 dark:shadow-[#00FF87]/20 cursor-pointer min-h-[42px] text-center"
+              className="inline-flex items-center justify-center gap-2 text-xs md:text-sm font-mono font-black uppercase text-black bg-[var(--accent1)] hover:bg-[var(--accent1)]/90 py-2.5 px-5 rounded-full shadow-[3px_3px_0px_#000000] border-2 border-black active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer text-center"
             >
               <span>{primaryAction.label}</span>
               {primaryAction.icon ? (
@@ -262,23 +258,19 @@ export default function BrowserMockupCard({
   // ==========================================
   return (
     <div
-      className={`group relative bg-white dark:bg-[#111111] border ${
-        isHighlighted
-          ? "border-emerald-500/60 dark:border-[#00FF87]/60 shadow-lg shadow-emerald-500/10 dark:shadow-[0_0_30px_rgba(0,255,135,0.12)]"
-          : "border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-zinc-700"
-      } rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between col-span-1 shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-[#00FF87]/10 active:scale-[0.98] transform hover:-translate-y-1 sm:hover:-translate-y-1.5 ${className}`}
+      className={`group relative bg-background text-foreground border-4 border-foreground rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between col-span-1 shadow-[8px_8px_0px_var(--fg)] hover:shadow-[10px_10px_0px_var(--fg)] hover:-translate-y-1 ${className}`}
     >
       {/* 1. Header Mockup Browser */}
-      <div className="bg-gray-100 dark:bg-zinc-900/80 border-b border-gray-200 dark:border-zinc-800/90 px-2.5 py-1.5 sm:px-4 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-3 z-10 shrink-0 select-none">
+      <div className="bg-foreground/5 border-b-2 border-foreground/20 px-2.5 py-1.5 sm:px-4 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-3 z-10 shrink-0 select-none">
         <div className="flex items-center gap-1 sm:gap-1.5">
-          <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#FF5F56] inline-block shadow-sm" title="Close" />
-          <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E] inline-block shadow-sm" title="Minimize" />
-          <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#27C93F] inline-block shadow-sm" title="Expand" />
+          <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF5F56] border border-black/30 inline-block shadow-sm" title="Close" />
+          <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E] border border-black/30 inline-block shadow-sm" title="Minimize" />
+          <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27C93F] border border-black/30 inline-block shadow-sm" title="Expand" />
         </div>
 
-        <div className="flex-1 max-w-[110px] sm:max-w-[280px] mx-auto bg-white dark:bg-[#0a0a0c] px-2 py-0.5 sm:px-3 sm:py-1 rounded-md border border-gray-200 dark:border-zinc-800/80 text-center flex items-center justify-center gap-1 sm:gap-1.5">
+        <div className="flex-1 max-w-[140px] sm:max-w-[280px] mx-auto bg-background px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border-2 border-foreground/30 text-center flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_var(--fg)]">
           <svg
-            className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gray-400 dark:text-gray-500 shrink-0"
+            className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-foreground/60 shrink-0"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -288,18 +280,18 @@ export default function BrowserMockupCard({
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
-          <span className="text-[9px] sm:text-[11px] font-mono text-gray-500 dark:text-gray-400 truncate">
+          <span className="text-[9px] sm:text-[11px] font-mono font-bold text-foreground/80 truncate">
             https://{domain}
           </span>
         </div>
 
         <div className="w-6 sm:w-10 flex justify-end">
-          <span className="w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-zinc-600" />
+          <span className="w-2 h-2 rounded-full bg-foreground/40" />
         </div>
       </div>
 
       {/* 2. Media Container Standard */}
-      <div className={`relative w-full ${aspectRatio || "aspect-video"} overflow-hidden bg-zinc-950 dark:bg-black/95 group/media flex items-center justify-center`}>
+      <div className={`relative w-full ${aspectRatio || "aspect-video"} overflow-hidden bg-zinc-950 dark:bg-black/95 group/media flex items-center justify-center border-b-2 border-foreground/20`}>
         {mediaType === "image" ? (
           <img
             src={resolvedMediaSrc}
@@ -322,20 +314,14 @@ export default function BrowserMockupCard({
         )}
 
         {floatingBadge && (
-          <div className="absolute bottom-2 left-2 z-10 pointer-events-none">
+          <div className="absolute bottom-3 left-3 z-10 pointer-events-none">
             <span
-              className={`text-[8px] sm:text-[10px] font-mono font-bold px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-full flex items-center gap-1 shadow-lg backdrop-blur-md border ${
-                floatingBadge.variant === "neon"
-                  ? "bg-emerald-500/15 dark:bg-[#00FF87]/15 text-emerald-600 dark:text-[#00FF87] border-emerald-500/40 dark:border-[#00FF87]/40"
-                  : floatingBadge.variant === "amber"
-                  ? "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/40"
-                  : "bg-zinc-950/85 text-zinc-200 border-zinc-700/80"
-              }`}
+              className="text-[10px] sm:text-xs font-mono font-black uppercase px-3 py-1 rounded-full flex items-center gap-1.5 shadow-[2px_2px_0px_#000000] border-2 border-black bg-[var(--accent1)] text-black"
             >
               {floatingBadge.icon ? (
                 floatingBadge.icon
               ) : (
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-[#00FF87] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
               )}
               <span className="truncate">{floatingBadge.text}</span>
             </span>
@@ -343,8 +329,8 @@ export default function BrowserMockupCard({
         )}
 
         {secondaryBadge && (
-          <div className="absolute top-2 right-2 z-10 pointer-events-none">
-            <span className="text-[8px] sm:text-[10px] font-mono font-black text-zinc-950 bg-emerald-500 dark:bg-[#00FF87] border border-emerald-400 dark:border-[#00FF87] px-1.5 py-0.5 sm:px-2 sm:py-0.5 rounded-full shadow-md">
+          <div className="absolute top-3 right-3 z-10 pointer-events-none">
+            <span className="text-[10px] sm:text-xs font-mono font-black uppercase text-black bg-emerald-400 border-2 border-black px-3 py-1 rounded-full shadow-[2px_2px_0px_#000000]">
               {secondaryBadge.text}
             </span>
           </div>
@@ -352,28 +338,28 @@ export default function BrowserMockupCard({
       </div>
 
       {/* 3. Isi Kartu Vertikal */}
-      <div className="p-3 sm:p-4 md:p-6 flex-1 flex flex-col justify-between space-y-2 sm:space-y-4 bg-white dark:bg-[#111111]">
-        <div>
-          <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
-            <span className="text-[9px] sm:text-[11px] font-mono font-extrabold tracking-wider text-emerald-600 dark:text-[#00FF87] uppercase bg-emerald-500/10 dark:bg-[#00FF87]/10 border border-emerald-500/25 dark:border-[#00FF87]/25 px-1.5 py-0.5 sm:px-2.5 sm:py-0.5 rounded">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between space-y-4 bg-background text-foreground">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] sm:text-xs font-mono font-black tracking-wider text-black bg-[var(--accent1)] border-2 border-black px-2.5 py-0.5 rounded-full uppercase shadow-[2px_2px_0px_#000000]">
               {categoryLabel}
             </span>
           </div>
 
-          <h3 className="text-xs sm:text-base md:text-lg font-bold sm:font-extrabold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-[#00FF87] transition-colors leading-snug line-clamp-2">
+          <h3 className="text-base sm:text-xl font-black uppercase tracking-tight text-foreground leading-snug line-clamp-2">
             {title}
           </h3>
 
-          <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-1 line-clamp-2">
+          <p className="text-xs sm:text-sm text-foreground/80 font-sans leading-relaxed line-clamp-2">
             {description}
           </p>
 
           {tags && tags.length > 0 && (
-            <div className="flex flex-wrap gap-1 sm:gap-1.5 mt-2 sm:mt-4">
+            <div className="flex flex-wrap gap-1.5 pt-2">
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[9px] sm:text-[10px] font-mono font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-zinc-800 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md"
+                  className="text-[10px] font-mono font-bold text-foreground/90 bg-foreground/10 border border-foreground/30 px-2.5 py-0.5 rounded-full uppercase"
                 >
                   {tag}
                 </span>
@@ -383,13 +369,13 @@ export default function BrowserMockupCard({
         </div>
 
         {/* 4. Tombol Aksi Vertikal */}
-        <div className="pt-2 sm:pt-4 border-t border-gray-200 dark:border-zinc-800/90 flex flex-wrap items-center gap-1.5 sm:gap-2 mt-2 sm:mt-4">
+        <div className="pt-4 border-t-2 border-foreground/20 flex flex-wrap items-center gap-2">
           {extraAction && (
             <div className="w-full mb-1">
               {extraAction.href ? (
                 <a
                   href={extraAction.href}
-                  className="w-full text-center inline-flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-black text-zinc-950 bg-emerald-500 hover:bg-emerald-400 dark:bg-[#00FF87] dark:hover:bg-[#00e67a] transition-all py-1.5 px-2 sm:py-2.5 sm:px-3 rounded-lg sm:rounded-xl shadow-md shadow-emerald-500/10 dark:shadow-[#00FF87]/20 border border-emerald-400/40 dark:border-[#00FF87]/50 transform hover:scale-[1.01]"
+                  className="w-full text-center inline-flex items-center justify-center gap-2 text-xs font-mono font-black uppercase text-black bg-emerald-500 hover:bg-emerald-400 py-2.5 px-4 rounded-full shadow-[3px_3px_0px_#000000] border-2 border-black active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
                 >
                   {extraAction.icon}
                   <span>{extraAction.label}</span>
@@ -397,7 +383,7 @@ export default function BrowserMockupCard({
               ) : (
                 <button
                   onClick={extraAction.onClick}
-                  className="w-full text-center inline-flex items-center justify-center gap-1.5 text-[10px] sm:text-xs font-black text-zinc-950 bg-emerald-500 hover:bg-emerald-400 dark:bg-[#00FF87] dark:hover:bg-[#00e67a] transition-all py-1.5 px-2 sm:py-2.5 sm:px-3 rounded-lg sm:rounded-xl shadow-md shadow-emerald-500/10 dark:shadow-[#00FF87]/20 border border-emerald-400/40 dark:border-[#00FF87]/50 transform hover:scale-[1.01] cursor-pointer"
+                  className="w-full text-center inline-flex items-center justify-center gap-2 text-xs font-mono font-black uppercase text-black bg-emerald-500 hover:bg-emerald-400 py-2.5 px-4 rounded-full shadow-[3px_3px_0px_#000000] border-2 border-black active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
                 >
                   {extraAction.icon}
                   <span>{extraAction.label}</span>
@@ -412,14 +398,14 @@ export default function BrowserMockupCard({
               target={secondaryAction.href?.startsWith("http") ? "_blank" : undefined}
               rel={secondaryAction.href?.startsWith("http") ? "noopener noreferrer" : undefined}
               onClick={secondaryAction.onClick}
-              className="inline-flex flex-1 items-center justify-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2.5 px-3.5 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 border border-gray-200 dark:border-zinc-800 cursor-pointer min-h-[38px] text-center"
+              className="inline-flex flex-1 items-center justify-center gap-2 text-xs font-mono font-black uppercase text-foreground hover:bg-foreground hover:text-background py-2.5 px-4 rounded-full bg-background border-2 border-foreground shadow-[3px_3px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer text-center"
             >
               {secondaryAction.icon ? (
                 secondaryAction.icon
               ) : secondaryAction.href?.includes("github.com") ? (
-                <GithubIcon className="w-3.5 h-3.5 shrink-0" />
+                <GithubIcon className="w-4 h-4 shrink-0" />
               ) : (
-                <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                <ExternalLink className="w-4 h-4 shrink-0" />
               )}
               <span>{secondaryAction.label}</span>
             </a>
@@ -430,14 +416,14 @@ export default function BrowserMockupCard({
             target={primaryAction.href?.startsWith("http") ? "_blank" : undefined}
             rel={primaryAction.href?.startsWith("http") ? "noopener noreferrer" : undefined}
             onClick={primaryAction.onClick}
-            className="w-full sm:flex-1 inline-flex items-center justify-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs font-black text-zinc-950 bg-emerald-500 hover:bg-emerald-400 dark:bg-[#00FF87] dark:hover:bg-[#00e67a] active:scale-[0.98] transition-all py-1.5 px-2 sm:py-2.5 sm:px-3.5 rounded-lg sm:rounded-xl shadow-md shadow-emerald-500/10 dark:shadow-[#00FF87]/20 cursor-pointer min-h-[30px] sm:min-h-[38px] text-center"
+            className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 text-xs font-mono font-black uppercase text-black bg-[var(--accent1)] hover:bg-[var(--accent1)]/90 py-2.5 px-4 rounded-full shadow-[3px_3px_0px_#000000] border-2 border-black active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer text-center"
           >
             <span>{primaryAction.label}</span>
             {primaryAction.icon ? (
               primaryAction.icon
             ) : (
               <svg
-                className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0"
+                className="w-4 h-4 shrink-0"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

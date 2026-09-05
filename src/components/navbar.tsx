@@ -73,10 +73,16 @@ export default function Navbar() {
 
   if (!mounted) {
     return (
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-full max-w-5xl px-4">
-        <div className="flex items-center justify-between bg-zinc-900/90 dark:bg-black/90 text-white border border-white/20 rounded-full px-6 py-3 shadow-2xl">
-          <span className="font-mono text-lg font-black tracking-widest text-emerald-400">M * U</span>
-          <span className="font-mono text-xs font-bold uppercase">Menu</span>
+      <header className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-[100] w-full max-w-5xl px-4 sm:px-6 pointer-events-none">
+        <div className="flex items-center justify-between w-full pointer-events-auto">
+          <div className="font-mono text-sm sm:text-base font-black tracking-widest text-emerald-500 bg-background/90 dark:bg-zinc-900/90 backdrop-blur-md border border-foreground/30 rounded-full px-4 py-2 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_rgba(255,255,255,0.25)] flex items-center">
+            <span>M * U</span>
+          </div>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="font-mono text-xs font-black uppercase px-4 py-2 rounded-full bg-emerald-500 text-black border border-black shadow-[3px_3px_0px_#000000]">
+              Menu
+            </div>
+          </div>
         </div>
       </header>
     );
@@ -84,8 +90,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-full max-w-5xl px-4">
-        <div className="flex items-center justify-between bg-zinc-950/85 dark:bg-black/85 backdrop-blur-xl border border-white/20 text-white rounded-full px-6 py-3 shadow-2xl transition-all duration-300">
+      <header className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-[100] w-full max-w-5xl px-4 sm:px-6 pointer-events-none">
+        <div className="flex items-center justify-between w-full">
           
           {/* Logo Brand M * U */}
           <Link
@@ -94,29 +100,28 @@ export default function Navbar() {
               e.preventDefault();
               handleNavClick("/");
             }}
-            className="font-mono text-lg font-black tracking-widest text-emerald-400 hover:text-emerald-300 transition flex items-center gap-2"
+            className="font-mono text-sm sm:text-base font-black tracking-widest text-emerald-500 hover:text-emerald-400 transition flex items-center bg-background/90 dark:bg-zinc-900/90 backdrop-blur-md border border-foreground/30 rounded-full px-4 py-2 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_rgba(255,255,255,0.25)] hover:translate-x-[-1px] hover:translate-y-[-1px] active:translate-x-[1px] active:translate-y-[1px] pointer-events-auto"
           >
             <span>M * U</span>
-            <span className="text-[10px] opacity-60 font-sans tracking-normal bg-white/10 px-2 py-0.5 rounded">DEV.PORTFOLIO</span>
           </Link>
 
           {/* Right Action Controls */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 pointer-events-auto">
             {/* Language Switcher ID | EN */}
-            <div className="flex items-center text-[11px] font-mono font-extrabold bg-white/10 rounded-full px-3 py-1 gap-1 border border-white/20">
+            <div className="flex items-center text-[11px] font-mono font-extrabold bg-background/90 dark:bg-zinc-900/90 backdrop-blur-md text-foreground rounded-full px-2.5 sm:px-3 py-1.5 gap-1 border border-foreground/30 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_rgba(255,255,255,0.25)]">
               <button
                 onClick={() => setLanguage("id")}
                 className={`transition-colors cursor-pointer px-1 py-0.5 rounded ${
-                  language === "id" ? "text-emerald-400 font-black" : "text-white/60 hover:text-white"
+                  language === "id" ? "text-emerald-500 font-black" : "opacity-60 hover:opacity-100"
                 }`}
               >
                 ID
               </button>
-              <span className="text-white/30">|</span>
+              <span className="opacity-30">|</span>
               <button
                 onClick={() => setLanguage("en")}
                 className={`transition-colors cursor-pointer px-1 py-0.5 rounded ${
-                  language === "en" ? "text-emerald-400 font-black" : "text-white/60 hover:text-white"
+                  language === "en" ? "text-emerald-500 font-black" : "opacity-60 hover:opacity-100"
                 }`}
               >
                 EN
@@ -126,16 +131,16 @@ export default function Navbar() {
             {/* Theme Toggle (Light / Dark) */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition cursor-pointer border border-white/20"
+              className="p-2.5 rounded-full bg-background/90 dark:bg-zinc-900/90 backdrop-blur-md text-foreground border border-foreground/30 hover:border-emerald-500/40 transition cursor-pointer shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_rgba(255,255,255,0.25)] flex items-center justify-center"
               aria-label="Toggle Theme"
             >
-              {theme === "dark" ? <Sun className="w-4 h-4 text-emerald-400" /> : <Moon className="w-4 h-4 text-amber-300" />}
+              {theme === "dark" ? <Sun className="w-4 h-4 text-emerald-400" /> : <Moon className="w-4 h-4 text-amber-500" />}
             </button>
 
             {/* Menu Toggle Button */}
             <button
               onClick={toggleMenu}
-              className="font-mono text-xs font-black uppercase px-5 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black transition-transform duration-300 active:scale-95 shadow-[2px_2px_0px_#ffffff] cursor-pointer"
+              className="font-mono text-xs font-black uppercase px-3.5 sm:px-5 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black border border-black transition-transform duration-300 active:scale-95 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_rgba(255,255,255,0.25)] cursor-pointer"
             >
               {isOpen ? "Close" : "Menu"}
             </button>
@@ -177,34 +182,18 @@ export default function Navbar() {
             </div>
             <div className="overflow-hidden">
               <button
-                onClick={() => handleNavClick("/#experience")}
+                onClick={() => handleNavClick("/skills")}
                 className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
               >
-                ➜ 02. {t.nav.volunteer || "Volunteer"}
+                ➜ 02. {t.nav.articles || "Skill & Tech Stack"}
               </button>
             </div>
             <div className="overflow-hidden">
               <button
-                onClick={() => handleNavClick("/about")}
+                onClick={() => handleNavClick("/volunteer")}
                 className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
               >
-                ➜ 03. {t.nav.about || "Tentang Saya"}
-              </button>
-            </div>
-            <div className="overflow-hidden">
-              <button
-                onClick={() => handleNavClick("/experience")}
-                className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
-              >
-                ➜ 04. {t.nav.education_experience || "Pendidikan & Pengalaman"}
-              </button>
-            </div>
-            <div className="overflow-hidden">
-              <button
-                onClick={() => handleNavClick("/tools")}
-                className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
-              >
-                ➜ 05. {t.nav.tools || "Alat & AI"}
+                ➜ 03. {t.nav.volunteer || "Volunteer"}
               </button>
             </div>
             <div className="overflow-hidden">
@@ -212,15 +201,31 @@ export default function Navbar() {
                 onClick={() => handleNavClick("/hackathon-recap")}
                 className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
               >
-                ➜ 06. {t.nav.achievement || "Hackathon & Rekap Nilai"}
+                ➜ 04. {t.nav.achievement || "Hackathon & Rekap Nilai"}
               </button>
             </div>
             <div className="overflow-hidden">
               <button
-                onClick={() => handleNavClick("/articles")}
+                onClick={() => handleNavClick("/about")}
                 className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
               >
-                ➜ 07. {t.nav.articles || "Artikel"}
+                ➜ 05. {t.nav.about || "Tentang Saya"}
+              </button>
+            </div>
+            <div className="overflow-hidden">
+              <button
+                onClick={() => handleNavClick("/tools")}
+                className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
+              >
+                ➜ 06. {t.nav.tools || "Alat & AI"}
+              </button>
+            </div>
+            <div className="overflow-hidden">
+              <button
+                onClick={() => handleNavClick("/experience")}
+                className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
+              >
+                ➜ 07. {t.nav.education_experience || "Pendidikan & Pengalaman"}
               </button>
             </div>
             <div className="overflow-hidden">
@@ -235,12 +240,15 @@ export default function Navbar() {
 
           {/* Footer Staggered Items */}
           <div className="border-t border-white/20 pt-6 flex flex-wrap justify-between items-center gap-4 font-mono text-xs text-white/60">
-            <div className="nav-footer-el flex flex-wrap gap-4">
+            <div className="nav-footer-el flex flex-wrap items-center gap-4">
               <span className="text-emerald-400 font-bold">FIND ME:</span>
               <a href={content.socials.github} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">GitHub</a>
               <a href={content.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Instagram</a>
               <a href={content.socials.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">TikTok</a>
               <a href={content.socials.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">WhatsApp</a>
+              <a href="/cv-muhammadusamah.pdf" download="CV-Muhammad-Usamah.pdf" target="_blank" rel="noopener noreferrer" className="px-3.5 py-1.5 rounded-full bg-emerald-500 text-black font-mono font-black text-xs uppercase hover:bg-emerald-400 transition cursor-pointer">
+                Download CV (PDF)
+              </a>
             </div>
             <div className="nav-footer-el">
               (C) MUHAMMAD USAMAH // 2026

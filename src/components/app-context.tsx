@@ -16,10 +16,10 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("id");
+  const [language, setLanguageState] = useState<Language>("id");
   const [theme, setThemeState] = useState<Theme>("light");
 
-  // Initialize theme on mount
+  // Initialize theme and language on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as Theme | null;
     const initialTheme = savedTheme || "light";
@@ -32,7 +32,17 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
     }
+
+    const savedLang = localStorage.getItem("language") as Language | null;
+    if (savedLang && (savedLang === "id" || savedLang === "en")) {
+      setLanguageState(savedLang);
+    }
   }, []);
+
+  const setLanguage = (newLang: Language) => {
+    setLanguageState(newLang);
+    localStorage.setItem("language", newLang);
+  };
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);

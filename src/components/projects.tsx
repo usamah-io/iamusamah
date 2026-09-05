@@ -70,14 +70,14 @@ export default function Projects() {
       badge: "Operator Sound & Streaming",
       tech: "Live Media Tech & Mixing",
       image: "/assets/volunteer-hari-anak-nasional.jpg",
-      link: "/#experience",
+      link: "/volunteer",
     },
     {
       title: "Relawan Pemulihan Longsor Cisarua",
       badge: "Aksi Kemanusiaan",
       tech: "10 Video Dokumentasi & Logistik",
       image: "/assets/volunteerr.jpg",
-      link: "/#experience",
+      link: "/volunteer",
     },
     {
       title: "Arsitektur Sistem SKS-Master",

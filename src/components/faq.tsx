@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "@/lib/gsap";
 import { useApp } from "./app-context";
 import content from "@/data/content.json";
-import Typewriter from "./typewriter";
 
 export default function FAQ() {
   const { language } = useApp();
@@ -44,11 +43,11 @@ export default function FAQ() {
           opacity: 1,
           y: 0,
           duration: 0.6,
-          stagger: 0.15,
+          stagger: 0.12,
           ease: "power2.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }
@@ -61,21 +60,13 @@ export default function FAQ() {
   return (
     <section
       ref={containerRef}
-      className="py-24 px-4 w-full max-w-3xl mx-auto relative transition-colors duration-300"
+      className="py-12 px-4 w-full max-w-3xl mx-auto relative"
     >
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight min-h-[1.2em] flex items-center justify-center">
-          <Typewriter
-            words={["Pertanyaan Yang Sering Diajukan (FAQ)"]}
-            loop={true}
-            typingSpeed={70}
-            deletingSpeed={40}
-            pauseDuration={2500}
-            className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-400 dark:from-[#00FF87] dark:via-teal-400 dark:to-emerald-300 font-extrabold"
-            cursorClassName="text-emerald-500 dark:text-[#00FF87] text-3xl md:text-4xl font-light"
-          />
+      <div className="text-center mb-12 space-y-2">
+        <h2 className="text-3xl sm:text-5xl font-black uppercase text-foreground tracking-tight">
+          Pertanyaan Yang Sering Diajukan (FAQ)
         </h2>
-        <p className="text-zinc-600 dark:text-zinc-400 mt-2 text-sm sm:text-base">
+        <p className="text-foreground/80 text-sm sm:text-base font-medium leading-relaxed">
           {t.subtitle}
         </p>
       </div>
@@ -87,25 +78,25 @@ export default function FAQ() {
           return (
             <div
               key={faq.id}
-              className="faq-item bg-white dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-850/60 rounded-2xl overflow-hidden transition-all duration-300 hover:border-emerald-500/20"
+              className="faq-item bg-background border-4 border-foreground rounded-[1.5rem] overflow-hidden shadow-[6px_6px_0px_var(--fg)] transition-all"
             >
               {/* Accordion Trigger Header */}
               <button
                 onClick={() => toggleFAQ(faq.id)}
-                className="w-full text-left p-6 flex items-center justify-between gap-4 font-bold text-zinc-800 hover:text-emerald-600 dark:text-white dark:hover:text-emerald-400 transition-colors"
+                className="w-full text-left p-6 flex items-center justify-between gap-4 font-black uppercase text-foreground transition-colors cursor-pointer"
                 aria-expanded={isOpen}
               >
-                <span className="text-sm sm:text-base">{faq.question}</span>
+                <span className="text-base sm:text-lg tracking-tight">{faq.question}</span>
                 <span
-                  className={`w-6 h-6 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-500 dark:text-zinc-400 group-hover:text-white transition-transform duration-350 ${
-                    isOpen ? "rotate-180 text-emerald-600 dark:text-emerald-400 bg-emerald-100/50 dark:bg-emerald-950/40" : ""
+                  className={`w-8 h-8 flex items-center justify-center rounded-full border-2 border-black bg-emerald-500 text-black font-bold shrink-0 shadow-[2px_2px_0px_#000000] transition-transform duration-300 ${
+                    isOpen ? "rotate-180 bg-[var(--accent1)]" : ""
                   }`}
                 >
                   <svg
-                    className="w-3.5 h-3.5"
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2.5"
+                    strokeWidth="3"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -121,7 +112,7 @@ export default function FAQ() {
                 className="height-0 overflow-hidden px-6"
                 style={{ height: 0, opacity: 0 }}
               >
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 pb-6 leading-relaxed transition-colors duration-300">
+                <p className="text-sm sm:text-base text-foreground/80 font-medium pb-6 leading-relaxed border-t-2 border-foreground/10 pt-4">
                   {faq.answer}
                 </p>
               </div>

@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { useApp } from "./app-context";
 import content from "@/data/content.json";
-import Typewriter from "./typewriter";
 
 export default function Articles() {
   const { language } = useApp();
@@ -18,17 +17,17 @@ export default function Articles() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cardsRef.current,
-        { opacity: 0, y: 40, scale: 0.97 },
+        { opacity: 0, y: 30, scale: 0.98 },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 0.7,
-          stagger: 0.15,
+          duration: 0.6,
+          stagger: 0.12,
           ease: "power2.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }
@@ -50,28 +49,20 @@ export default function Articles() {
   return (
     <section
       ref={containerRef}
-      className="py-24 px-4 w-full max-w-5xl mx-auto relative transition-colors duration-300"
+      className="py-12 px-4 w-full max-w-5xl mx-auto relative"
     >
       {/* Header */}
-      <div className="text-center md:text-left mb-12">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight min-h-[1.2em] flex items-center justify-center md:justify-start">
-          <Typewriter
-            words={["Artikel, Catatan & Dokumentasi Teknis"]}
-            loop={true}
-            typingSpeed={70}
-            deletingSpeed={40}
-            pauseDuration={2500}
-            className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-400 dark:from-[#00FF87] dark:via-teal-400 dark:to-emerald-300 font-extrabold"
-            cursorClassName="text-emerald-500 dark:text-[#00FF87] text-3xl md:text-4xl font-light"
-          />
+      <div className="text-center md:text-left mb-12 space-y-2">
+        <h2 className="text-3xl sm:text-5xl font-black uppercase text-foreground tracking-tight">
+          Artikel, Catatan &amp; Dokumentasi Teknis
         </h2>
-        <p className="text-zinc-650 dark:text-zinc-400 mt-2 text-sm sm:text-base">
+        <p className="text-foreground/80 text-sm sm:text-base font-medium leading-relaxed">
           {t.subtitle}
         </p>
       </div>
 
-      {/* Responsive Grid Layout: 2 Columns on Mobile, 3 Columns on Desktop */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3.5 md:gap-6">
+      {/* Responsive Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         {displayedItems.map((item, idx) => {
           const isVideo = (item.platform || "").toLowerCase().includes("tiktok") || (item.platform || "").toLowerCase().includes("instagram");
 
@@ -79,35 +70,35 @@ export default function Articles() {
             <div
               key={item.id || item.title || idx}
               ref={addToRefs}
-              className="group relative bg-white dark:bg-zinc-900/50 dark:backdrop-blur-md border border-zinc-200 dark:border-zinc-800/80 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.06)] shadow-sm hover:shadow-md flex flex-col justify-between transform hover:scale-[1.01]"
+              className="group relative bg-background border-4 border-foreground rounded-[1.5rem] p-6 shadow-[6px_6px_0px_var(--fg)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] flex flex-col justify-between"
             >
               <div>
                 {/* Meta info / Badges */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 mb-3">
-                  <span className="text-[9px] sm:text-[10px] font-bold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase bg-emerald-500/10 border border-emerald-500/20 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-colors duration-300 truncate self-start">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <span className="font-mono text-[10px] font-black uppercase tracking-wider text-black bg-[var(--accent1)] border-2 border-foreground px-3 py-1 rounded-full shadow-[2px_2px_0px_var(--fg)]">
                     {item.tag}
                   </span>
-                  <span className="text-[8px] sm:text-[10px] text-zinc-550 dark:text-zinc-400 font-mono bg-zinc-100 dark:bg-zinc-800/80 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-colors duration-300 self-start sm:self-auto">
+                  <span className="font-mono text-[10px] font-bold uppercase text-foreground bg-foreground/10 border border-foreground/20 px-2.5 py-1 rounded-full">
                     {item.platform}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xs sm:text-base font-bold text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-3 sm:mb-6 leading-snug line-clamp-3 sm:line-clamp-none">
+                <h3 className="text-base font-black uppercase text-foreground group-hover:text-[var(--accent1)] transition-colors mb-6 leading-snug line-clamp-3">
                   {item.title}
                 </h3>
               </div>
 
               {/* Responsive Action Button */}
-              <div className="border-t border-zinc-200 dark:border-zinc-800/55 pt-3 sm:pt-4 mt-2">
+              <div className="border-t-2 border-foreground/20 pt-4 mt-2">
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1 sm:gap-2 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-800 dark:text-white text-[10px] sm:text-xs font-bold py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl transition-all duration-300 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-black border-2 border-black font-mono text-xs font-black uppercase py-2.5 px-4 rounded-full shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
                 >
                   <span className="truncate">{isVideo ? t.watch_video : t.read_more}</span>
-                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
+                  <svg className="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
                 </a>
               </div>
             </div>

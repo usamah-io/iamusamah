@@ -175,7 +175,8 @@ export default function Footer() {
             <p className="footer-col-title">{isIndonesian ? "Jelajahi" : "Explore"}</p>
             <Link href="/" onClick={go("/")}>{isIndonesian ? "Beranda" : "Home"}</Link>
             <Link href="/#projects" onClick={go("/#projects")}>{isIndonesian ? "Proyek" : "Projects"}</Link>
-            <Link href="/#experience" onClick={go("/#experience")}>{isIndonesian ? "Pengalaman" : "Volunteer"}</Link>
+            <Link href="/skills" onClick={go("/skills")}>{isIndonesian ? "Skill & Tech Stack" : "Skill & Tech Stack"}</Link>
+            <Link href="/volunteer" onClick={go("/volunteer")}>{isIndonesian ? "Volunteer" : "Volunteer"}</Link>
             <Link href="/hackathon-recap" onClick={go("/hackathon-recap")}>{isIndonesian ? "Rekap Hackathon" : "Hackathon Recap"}</Link>
             <Link href="/about" onClick={go("/about")}>{isIndonesian ? "Tentang" : "About"}</Link>
           </div>
@@ -189,10 +190,9 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <p className="footer-col-title">{isIndonesian ? "Lainnya" : "Extras"}</p>
-            <Link href="/articles" onClick={go("/articles")}>{isIndonesian ? "Artikel" : "Articles"}</Link>
             <Link href="/tools" onClick={go("/tools")}>{isIndonesian ? "Alat & AI" : "Tools & AI"}</Link>
-            <Link href="/faq" onClick={go("/faq")}>FAQ</Link>
             <Link href="/experience" onClick={go("/experience")}>{isIndonesian ? "Edukasi" : "Education"}</Link>
+            <Link href="/faq" onClick={go("/faq")}>FAQ</Link>
           </div>
         </div>
 

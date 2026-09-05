@@ -38,6 +38,11 @@
   --color-emerald-300: var(--accent1);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -290,7 +295,7 @@ html.lenis body {
 .cursor-trail {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
   z-index: 1;
 }
@@ -302,6 +307,7 @@ html.lenis body {
 
 .contact-page-trail {
   z-index: 0;
+  overflow: visible;
 }
 
 .contact-field {

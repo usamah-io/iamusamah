@@ -12,22 +12,19 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    // Instantiate Lenis
+    // Instantiate Lenis with optimal responsive scroll physics
     const lenis = new Lenis({
-      duration: 1.55,
+      duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
       smoothTouch: false,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.4,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     } as any);
 
     lenisRef.current = lenis;
-
-    // Refresh ScrollTrigger to recalculate bounds after initialization
-    ScrollTrigger.refresh();
 
     // Connect Lenis to ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
@@ -39,8 +36,14 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     gsap.ticker.add(updateTicker);
     gsap.ticker.lagSmoothing(0);
 
+    // Recalculate ScrollTrigger positions after DOM layout stabilizes
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 250);
+
     // Clean up
     return () => {
+      clearTimeout(refreshTimer);
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
     };

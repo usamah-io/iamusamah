@@ -151,7 +151,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="contact-page relative min-h-screen w-full pt-28 pb-12 overflow-x-hidden">
+    <main className="contact-page relative min-h-screen w-full pt-28 pb-12 overflow-x-clip">
       {/* Trailing images background strictly at z-0 */}
       <CursorImageTrail images={SHOWCASE_IMAGES} className="contact-page-trail relative z-0" excludeRef={formCardRef} />
 
