@@ -4,10 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 const showcaseItems = [
-  { title: "SKS-Master (Gemini Hackathon 2026)", badge: "Top 4 Finalist", image: "/assets/sks-master-certificate.png" },
-  { title: "Stry - AI Quiz Generator", badge: "AI Platform", image: "/assets/volunteer-hari-anak-nasional.jpg" },
-  { title: "Budiman Cendikia Website", badge: "School Platform", image: "/assets/volunteerr.jpg" },
+  { title: "SKS-Master (Gemini Hackathon 2026)", badge: "Top 4 Finalist", image: "/assets/projects/sks-master.png" },
+  { title: "Stry - AI Quiz Generator", badge: "AI Platform", image: "/assets/projects/studee.png" },
+  { title: "Budiman Cendikia Website", badge: "School Platform", image: "/assets/projects/budiman-cendikia.png" },
+  { title: "Indonesia Creative Competition 2026", badge: "Creative Code Teens", image: "/assets/icc-2026-certificate.jpg" },
   { title: "Hari Anak Nasional Tasikmalaya", badge: "Audio & Media Tech", image: "/assets/volunteer-hari-anak-nasional.jpg" },
+  { title: "Sertifikat Resmi Gemini Hackathon", badge: "Official Certificate", image: "/assets/sks-master-certificate.png" },
 ];
 
 export default function HeroImageCard() {

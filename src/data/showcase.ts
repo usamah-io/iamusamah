@@ -1,4 +1,9 @@
 export const SHOWCASE_IMAGES = [
+  "/assets/projects/sks-master.png",
+  "/assets/projects/studee.png",
+  "/assets/projects/budiman-cendikia.png",
+  "/assets/icc-2026-certificate.jpg",
+  "/assets/sertif-forum-anak.jpg",
   "/assets/sks-master-certificate.png",
   "/assets/volunteer-hari-anak-nasional.jpg",
   "/assets/volunteerr.jpg",
