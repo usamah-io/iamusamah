@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
         <div className="hero-footer-scroll-down w-full sm:w-auto text-center font-bold">
           <a
-            href="/cv-muhammadusamah.pdf"
+            href="/cv-muhammad-usamah.pdf"
             download="CV-Muhammad-Usamah.pdf"
             target="_blank"
             rel="noopener noreferrer"

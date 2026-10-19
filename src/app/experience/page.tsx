@@ -94,19 +94,31 @@ export default function ExperiencePage() {
               }`}
             >
               <Layers className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? "Semua (5)" : "All (5)"}</span>
+              <span>{isIndonesian ? `Semua (${rawTimeline.length})` : `All (${rawTimeline.length})`}</span>
             </button>
 
             <button
-              onClick={() => setActiveFilter("education")}
+              onClick={() => setActiveFilter("competition")}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
-                activeFilter === "education"
+                activeFilter === "competition"
                   ? "bg-[var(--accent1)] text-black"
                   : "bg-background text-foreground hover:bg-foreground/10"
               }`}
             >
-              <GraduationCap className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? "Pendidikan" : "Education"}</span>
+              <Award className="w-3.5 h-3.5" />
+              <span>{isIndonesian ? "Kompetisi Coding" : "Competition"}</span>
+            </button>
+
+            <button
+              onClick={() => setActiveFilter("hackathon")}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
+                activeFilter === "hackathon"
+                  ? "bg-[var(--accent1)] text-black"
+                  : "bg-background text-foreground hover:bg-foreground/10"
+              }`}
+            >
+              <Award className="w-3.5 h-3.5" />
+              <span>{isIndonesian ? "Hackathon" : "Hackathon"}</span>
             </button>
 
             <button
@@ -122,15 +134,15 @@ export default function ExperiencePage() {
             </button>
 
             <button
-              onClick={() => setActiveFilter("hackathon")}
+              onClick={() => setActiveFilter("education")}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
-                activeFilter === "hackathon"
+                activeFilter === "education"
                   ? "bg-[var(--accent1)] text-black"
                   : "bg-background text-foreground hover:bg-foreground/10"
               }`}
             >
-              <Award className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? "Kompetisi & Hackathon" : "Hackathon"}</span>
+              <GraduationCap className="w-3.5 h-3.5" />
+              <span>{isIndonesian ? "Pendidikan" : "Education"}</span>
             </button>
           </div>
         </div>

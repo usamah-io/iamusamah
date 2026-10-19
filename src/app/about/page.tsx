@@ -24,7 +24,7 @@ export default function AboutPage() {
 
           <div className="flex items-center gap-3">
             <a
-              href="/cv-muhammadusamah.pdf"
+              href="/cv-muhammad-usamah.pdf"
               download="CV-Muhammad-Usamah.pdf"
               target="_blank"
               rel="noopener noreferrer"

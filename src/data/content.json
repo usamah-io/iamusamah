@@ -81,6 +81,44 @@
       "subtitle_timeline": "Jejak langkah akademis dan pengalaman kepemimpinan proyek digital.",
       "timeline": [
         {
+          "id": "exp-icc-2026",
+          "category": "competition",
+          "title": "Indonesia Creative Competition 2026",
+          "role": "Peserta — Creative Code Teens",
+          "location": "Museum Listrik dan Energi Baru, TMII, Jakarta",
+          "period": "27 September 2026",
+          "badge": "Kompetisi Coding",
+          "description": "Berpartisipasi dalam Indonesia Creative Competition Batch 2 pada kategori Creative Code Teens, sebuah kompetisi yang mengangkat kreativitas dan inovasi di bidang teknologi.",
+          "tags": ["Competition", "Creative Code Teens", "TMII Jakarta", "PLN & MLEB", "Sekelas"],
+          "image": "/assets/icc-2026-certificate.jpg"
+        },
+        {
+          "id": "exp-han-tasik",
+          "category": "volunteer",
+          "title": "Peringatan Hari Anak Nasional 2026 & Forum Anak Daerah",
+          "role": "Volunteer Divisi Dokumentasi & Operator Audio/Stream",
+          "location": "Pendopo Baru Kab. Tasikmalaya",
+          "period": "30 Agustus 2026",
+          "badge": "Volunteer Dokumentasi",
+          "description": "Bertugas aktif sebagai Volunteer Divisi Dokumentasi sekaligus operator sound system, audio mixing, dan live stream dalam menyukseskan Peringatan Hari Anak Nasional 2026 Tingkat Kab. Tasikmalaya yang diselenggarakan oleh Dinsos PPKB P3A bersama Forum Anak Daerah.",
+          "tags": ["Volunteer", "Dokumentasi", "Hari Anak Nasional", "Forum Anak Daerah", "Tasikmalaya"],
+          "image": "/assets/sertif-forum-anak.jpg"
+        },
+        {
+          "id": "exp-gemini",
+          "category": "hackathon",
+          "title": "Gemini Innovation Hackathon 2026",
+          "role": "Lead Developer - SKS-Master (Platform Ujian AI)",
+          "location": "Tasikmalaya (Remote / Hybrid)",
+          "period": "28 Juli 2026",
+          "badge": "Hackathon Lead",
+          "description": "Memimpin tim dalam merancang & membangun platform ujian berbasis AI Google Gemini pada Gemini Innovation Hackathon at Gemini Unity Festival 2026. Meraih Top 4 Finalis dari 186 peserta dengan Nilai Akhir Resmi 86,4.",
+          "tags": ["Lead Developer", "Gemini API", "Next.js", "Top 4 Finalist"],
+          "image": "/assets/sks-master-certificate.png",
+          "recap_link": "/hackathon-recap",
+          "recap_label": "Rekap Nilai & Galeri ↗"
+        },
+        {
           "id": "exp-jaz",
           "category": "education",
           "title": "Jaz Academy - Muslim Academy For Youth",
@@ -95,40 +133,14 @@
           "web_label": "Kunjungi Situs"
         },
         {
-          "id": "exp-gemini",
-          "category": "hackathon",
-          "title": "Gemini Hackathon 2026",
-          "role": "Lead Developer - SKS-Master (Platform Ujian AI)",
-          "location": "Remote / Hackathon",
-          "period": "2026",
-          "badge": "Hackathon Lead",
-          "description": "Memimpin tim dalam merancang & membangun platform ujian berbasis AI Google Gemini. Meraih Top 4 Finalis dari 186 peserta dengan Nilai Akhir Resmi 86,4.",
-          "tags": ["Lead Developer", "Gemini API", "Next.js", "Top 4 Finalist"],
-          "image": "/assets/sks-master-certificate.png",
-          "recap_link": "/hackathon-recap",
-          "recap_label": "Rekap Nilai & Galeri ↗"
-        },
-        {
-          "id": "exp-han-tasik",
-          "category": "volunteer",
-          "title": "Operator Utama Hari Anak Nasional Se-Kabupaten/Kota Tasikmalaya",
-          "role": "Sound System, Audio Mixing, & Live Streaming Operator",
-          "location": "Tasikmalaya, Jawa Barat",
-          "period": "30 Agustus",
-          "badge": "Operator Utama",
-          "description": "Bertugas sebagai Operator Utama Sound System, Audio Mixing, dan Live Stream Media Tech pada perayaan Hari Anak Nasional se-Kabupaten/Kota Tasikmalaya.",
-          "tags": ["Operator Sound System", "Audio Mixing", "Live Streaming", "Event Tech"],
-          "image": "/assets/volunteer-hari-anak-nasional.jpg"
-        },
-        {
           "id": "exp-cisarua",
           "category": "volunteer",
           "title": "Aksi Pemulihan & Logistik Bencana Longsor Cisarua",
           "role": "Tim Relawan Tanggap Darurat & Posko Pemulihan",
-          "location": "Cisarua, Bogor, Jawa Barat",
+          "location": "Cisarua, Bandung Barat, Jawa Barat",
           "period": "2024 - 2025",
           "badge": "Relawan Kemanusiaan",
-          "description": "Terjun langsung dalam aksi kemanusiaan longsor Cisarua: memimpin briefing koordinasi tim, penyaluran logistik sembako pintu ke pintu warga, pengelolaan dapur umum posko, dan dokumentasi penutupan aksi relawan.",
+          "description": "Terjun langsung dalam aksi kemanusiaan longsor Cisarua, Bandung Barat: briefing koordinasi tim relawan, pendataan dan penyaluran sembako ke rumah warga, pengelolaan dapur umum posko, dan dokumentasi penutupan aksi relawan.",
           "tags": ["Tanggap Darurat", "Distribusi Sembako", "Posko Logistik", "Dapur Umum"],
           "image": "/assets/volunteerr.jpg"
         },
@@ -303,6 +315,18 @@
           "tags": ["Penutupan", "Evaluasi", "Volunteer", "Cisarua"],
           "videoSrc": "https://lh3.googleusercontent.com/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz",
           "detailUrl": "https://drive.google.com/file/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz/view"
+        },
+        {
+          "id": "vol-sertif-han",
+          "type": "image",
+          "title": "Sertifikat Volunteer Dokumentasi - Hari Anak Nasional 2026",
+          "category": "VOLUNTEER & FORUM ANAK",
+          "badge": "Volunteer Dokumentasi",
+          "domain": "volunteer.dev/sertif-hari-anak-tasik",
+          "description": "Sertifikat penghargaan resmi Kepala Dinas Sosial PPKB P3A Kab. Tasikmalaya kepada Muhammad Usamah Abdurrahman atas kontribusi aktif sebagai Volunteer Divisi Dokumentasi Hari Anak Nasional 2026 bersama Forum Anak Daerah.",
+          "tags": ["Sertifikat", "Hari Anak Nasional", "Forum Anak Daerah", "Dinsos PPKB P3A", "Tasikmalaya"],
+          "imageSrc": "/assets/sertif-forum-anak.jpg",
+          "detailUrl": "/assets/sertif-forum-anak.jpg"
         },
         {
           "id": "vol-han-tasik",
@@ -602,6 +626,44 @@
       "subtitle_timeline": "Academic journey and digital project leadership experience.",
       "timeline": [
         {
+          "id": "exp-icc-2026",
+          "category": "competition",
+          "title": "Indonesia Creative Competition 2026",
+          "role": "Participant — Creative Code Teens",
+          "location": "Museum of Electricity and New Energy, TMII, Jakarta",
+          "period": "September 27, 2026",
+          "badge": "Coding Competition",
+          "description": "Participated in Indonesia Creative Competition Batch 2 under Creative Code Teens category, a competition highlighting creativity and innovation in technology.",
+          "tags": ["Competition", "Creative Code Teens", "TMII Jakarta", "PLN & MLEB", "Sekelas"],
+          "image": "/assets/icc-2026-certificate.jpg"
+        },
+        {
+          "id": "exp-han-tasik",
+          "category": "volunteer",
+          "title": "National Children's Day 2026 & Regional Children's Forum",
+          "role": "Documentation Division Volunteer & Audio/Stream Operator",
+          "location": "Pendopo Baru, Tasikmalaya Regency",
+          "period": "August 30, 2026",
+          "badge": "Documentation Volunteer",
+          "description": "Actively served as Documentation Division Volunteer and sound system, audio mixing, and live stream operator for the 2026 National Children's Day in Tasikmalaya Regency organized by Dinsos PPKB P3A and Regional Children's Forum.",
+          "tags": ["Volunteer", "Documentation", "National Children's Day", "Children's Forum", "Tasikmalaya"],
+          "image": "/assets/sertif-forum-anak.jpg"
+        },
+        {
+          "id": "exp-gemini",
+          "category": "hackathon",
+          "title": "Gemini Innovation Hackathon 2026",
+          "role": "Lead Developer - SKS-Master (AI Exam Platform)",
+          "location": "Tasikmalaya (Remote / Hybrid)",
+          "period": "July 28, 2026",
+          "badge": "Hackathon Lead",
+          "description": "Led the team designing & building the AI exam platform using Google Gemini API at Gemini Innovation Hackathon at Gemini Unity Festival 2026. Placed Top 4 Finalist out of 186 entries with an official final score of 86.4.",
+          "tags": ["Lead Developer", "Gemini API", "Next.js", "Top 4 Finalist"],
+          "image": "/assets/sks-master-certificate.png",
+          "recap_link": "/hackathon-recap",
+          "recap_label": "Scorecard & Gallery ↗"
+        },
+        {
           "id": "exp-jaz",
           "category": "education",
           "title": "Jaz Academy - Muslim Academy For Youth",
@@ -616,40 +678,14 @@
           "web_label": "Visit Site"
         },
         {
-          "id": "exp-gemini",
-          "category": "hackathon",
-          "title": "Gemini Hackathon 2026",
-          "role": "Lead Developer - SKS-Master (AI Exam Platform)",
-          "location": "Remote / Hackathon",
-          "period": "2026",
-          "badge": "Hackathon Lead",
-          "description": "Led the team designing & building the AI exam platform using Google Gemini API. Placed Top 4 Finalist out of 186 entries with an official final score of 86.4.",
-          "tags": ["Lead Developer", "Gemini API", "Next.js", "Top 4 Finalist"],
-          "image": "/assets/sks-master-certificate.png",
-          "recap_link": "/hackathon-recap",
-          "recap_label": "Scorecard & Gallery ↗"
-        },
-        {
-          "id": "exp-han-tasik",
-          "category": "volunteer",
-          "title": "Lead Operator - National Children's Day Tasikmalaya",
-          "role": "Sound System, Audio Mixing, & Live Streaming Operator",
-          "location": "Tasikmalaya, West Java",
-          "period": "August 30",
-          "badge": "Lead Operator",
-          "description": "Served as Lead Sound System, Audio Mixing, & Live Streaming Media Tech Operator for National Children's Day across Tasikmalaya.",
-          "tags": ["Sound System Operator", "Audio Mixing", "Live Streaming", "Event Tech"],
-          "image": "/assets/volunteer-hari-anak-nasional.jpg"
-        },
-        {
           "id": "exp-cisarua",
           "category": "volunteer",
           "title": "Cisarua Landslide Relief & Logistics Action",
           "role": "Emergency Response & Relief Post Volunteer",
-          "location": "Cisarua, Bogor, West Java",
+          "location": "Cisarua, West Bandung, West Java",
           "period": "2024 - 2025",
           "badge": "Humanitarian Volunteer",
-          "description": "Active in humanitarian relief for Cisarua landslide disaster: leading volunteer briefing, door-to-door aid distribution to residents, soup kitchen management, and closing ceremony documentation.",
+          "description": "Active in humanitarian relief for Cisarua landslide disaster in West Bandung: volunteer briefing coordination, door-to-door aid distribution to residents, soup kitchen management, and closing ceremony documentation.",
           "tags": ["Emergency Response", "Aid Distribution", "Logistics Post", "Soup Kitchen"],
           "image": "/assets/volunteerr.jpg"
         },
@@ -829,6 +865,18 @@
           "tags": ["Closing", "Review", "Volunteer", "Cisarua"],
           "videoSrc": "https://lh3.googleusercontent.com/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz",
           "detailUrl": "https://drive.google.com/file/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz/view"
+        },
+        {
+          "id": "vol-sertif-han",
+          "type": "image",
+          "title": "Documentation Volunteer Certificate - National Children's Day 2026",
+          "category": "VOLUNTEER & FORUM ANAK",
+          "badge": "Documentation Volunteer",
+          "domain": "volunteer.dev/sertif-hari-anak-tasik",
+          "description": "Official certificate of appreciation from Dinsos PPKB P3A Tasikmalaya Regency to Muhammad Usamah Abdurrahman as Documentation Volunteer for 2026 National Children's Day with Regional Children's Forum.",
+          "tags": ["Certificate", "National Children's Day", "Children's Forum", "Dinsos PPKB P3A", "Tasikmalaya"],
+          "imageSrc": "/assets/sertif-forum-anak.jpg",
+          "detailUrl": "/assets/sertif-forum-anak.jpg"
         },
         {
           "id": "vol-han-tasik",

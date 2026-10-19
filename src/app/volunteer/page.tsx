@@ -156,7 +156,10 @@ export default function VolunteerGalleryPage() {
               (item as { videoSrc?: string }).videoSrc ||
               "";
 
-            const naturalRatio = item.id === "vol-han-tasik" ? "aspect-video" : "aspect-[3/4]";
+            const naturalRatio =
+              item.id === "vol-han-tasik" || item.id === "vol-sertif-han"
+                ? "aspect-video"
+                : "aspect-[3/4]";
 
             return (
               <motion.div 

@@ -246,7 +246,7 @@ export default function Navbar() {
               <a href={content.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Instagram</a>
               <a href={content.socials.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">TikTok</a>
               <a href={content.socials.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">WhatsApp</a>
-              <a href="/cv-muhammadusamah.pdf" download="CV-Muhammad-Usamah.pdf" target="_blank" rel="noopener noreferrer" className="px-3.5 py-1.5 rounded-full bg-emerald-500 text-black font-mono font-black text-xs uppercase hover:bg-emerald-400 transition cursor-pointer">
+              <a href="/cv-muhammad-usamah.pdf" download="CV-Muhammad-Usamah.pdf" target="_blank" rel="noopener noreferrer" className="px-3.5 py-1.5 rounded-full bg-emerald-500 text-black font-mono font-black text-xs uppercase hover:bg-emerald-400 transition cursor-pointer">
                 Download CV (PDF)
               </a>
             </div>
