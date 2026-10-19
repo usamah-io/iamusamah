@@ -331,13 +331,19 @@ export default function Projects() {
   useEffect(() => {
     if (!sectionRef.current || !titlesRef.current || !cardsContainerRef.current) return;
 
-    const cards = cardsContainerRef.current.querySelectorAll(".featured-img-card");
+    const cards = cardsContainerRef.current.querySelectorAll<HTMLElement>(".featured-img-card");
 
     ticksRef.current = ticksRef.current.slice(0, INDICATOR_SEGMENTS * TICKS_BETWEEN);
     numsRef.current = numsRef.current.slice(0, INDICATOR_SEGMENTS);
 
     const isMobile = window.innerWidth < 640;
     const spread = isMobile ? 0.55 : 1.0;
+
+    // Initially hide cards container and reset all cards deep in 3D space
+    if (cardsContainerRef.current) {
+      cardsContainerRef.current.style.opacity = "0";
+      cardsContainerRef.current.style.visibility = "hidden";
+    }
 
     cards.forEach((card, index) => {
       const coord = cardCoords[index % cardCoords.length];
@@ -360,39 +366,151 @@ export default function Projects() {
         end: "+=500%",
         scrub: 0.85,
         anticipatePin: 1,
+        onRefresh: () => {
+          const currentSpread = window.innerWidth < 640 ? 0.55 : 1.0;
+          cards.forEach((card, index) => {
+            const coord = cardCoords[index % cardCoords.length];
+            gsap.set(card, {
+              x: coord.x * currentSpread,
+              y: coord.y * currentSpread,
+            });
+          });
+        },
+        onLeave: () => {
+          // Transition to next section: ensure container & cards are completely cleared
+          if (cardsContainerRef.current) {
+            cardsContainerRef.current.style.opacity = "0";
+            cardsContainerRef.current.style.visibility = "hidden";
+          }
+          cards.forEach((card) => {
+            gsap.set(card, {
+              z: -1600,
+              scale: 0,
+              opacity: 0,
+              visibility: "hidden",
+            });
+          });
+        },
+        onLeaveBack: () => {
+          // Transition back to previous section: ensure container & cards are completely cleared
+          if (cardsContainerRef.current) {
+            cardsContainerRef.current.style.opacity = "0";
+            cardsContainerRef.current.style.visibility = "hidden";
+          }
+          cards.forEach((card) => {
+            gsap.set(card, {
+              z: -1600,
+              scale: 0,
+              opacity: 0,
+              visibility: "hidden",
+            });
+          });
+        },
         onUpdate: (self) => {
           const progress = self.progress;
+
+          // 1. Horizontal 500vw title strip translation
           if (titlesRef.current) {
             gsap.set(titlesRef.current, { x: -window.innerWidth * 4 * progress });
           }
 
-          // Continuous wrapping 3D flight cycle
-          // Cards smoothly fly towards camera, fade in at distance and fade out as they pass
-          // Ensuring cards are dynamically present across all slides (0.00 to 1.00)
-          cards.forEach((card, index) => {
-            const phase = ((cards.length - 1 - index) / cards.length) * 0.8;
-            const val = ((progress * 1.6 + phase) % 1.0 + 1.0) % 1.0;
+          // 2. Master container visibility envelope:
+          // Completely hidden before section starts (progress <= 0.01)
+          // and completely hidden before next section takes over (progress >= 0.985)
+          let contOp = 0;
+          if (progress > 0.01 && progress < 0.985) {
+            if (progress < 0.06) {
+              contOp = (progress - 0.01) / 0.05;
+            } else if (progress > 0.93) {
+              contOp = Math.max(0, (0.985 - progress) / 0.055);
+            } else {
+              contOp = 1;
+            }
+          }
 
-            if (val < 0.78) {
-              const t = val / 0.78;
+          if (cardsContainerRef.current) {
+            cardsContainerRef.current.style.opacity = String(contOp);
+            cardsContainerRef.current.style.visibility =
+              contOp <= 0.001 ? "hidden" : "visible";
+          }
+
+          // 3. Individual card 3D flight & lifecycle
+          cards.forEach((card, index) => {
+            // Guard: completely hidden outside active range
+            if (progress <= 0.01 || progress >= 0.985 || contOp <= 0.001) {
+              gsap.set(card, {
+                z: -1600,
+                scale: 0,
+                opacity: 0,
+                visibility: "hidden",
+              });
+              return;
+            }
+
+            // Staggered emergence: cards appear one by one between progress 0.015 and 0.165
+            const entryP = 0.015 + (index / cards.length) * 0.15;
+            if (progress < entryP) {
+              gsap.set(card, {
+                z: -1600,
+                scale: 0,
+                opacity: 0,
+                visibility: "hidden",
+              });
+              return;
+            }
+
+            // Staggered exit: cards finish flight and exit between progress 0.92 and 0.98
+            const exitP = 0.92 + (index / cards.length) * 0.06;
+            if (progress > exitP) {
+              gsap.set(card, {
+                z: -1600,
+                scale: 0,
+                opacity: 0,
+                visibility: "hidden",
+              });
+              return;
+            }
+
+            // Flight cycle calculation (energetic, continuous 3D flow across slides)
+            const cardScroll = progress - entryP;
+            const cycleLen = 0.38;
+            const val = (cardScroll / cycleLen) % 1.0;
+            const flightWindow = 0.86;
+
+            if (val < flightWindow) {
+              const t = val / flightWindow;
               const z = -1600 + 2200 * t;
               const scale = Math.min(1, t * 6);
 
-              let opacity = 1;
+              let op = 1;
               if (t < 0.12) {
-                opacity = t / 0.12;
-              } else if (t > 0.82) {
-                opacity = Math.max(0, (1 - t) / 0.18);
+                op = t / 0.12;
+              } else if (t > 0.84) {
+                op = Math.max(0, (1 - t) / 0.16);
               }
 
-              gsap.set(card, {
-                z,
-                scale,
-                opacity,
-                visibility: "visible",
-              });
+              // Smooth fade-in at emergence & fade-out before exit
+              const birthFade = Math.min(1, (progress - entryP) / 0.03);
+              const deathFade = Math.min(1, (exitP - progress) / 0.03);
+              const finalOpacity = op * birthFade * deathFade * contOp;
+
+              if (finalOpacity > 0.01) {
+                gsap.set(card, {
+                  z,
+                  scale,
+                  opacity: finalOpacity,
+                  visibility: "visible",
+                });
+              } else {
+                gsap.set(card, {
+                  z: -1600,
+                  scale: 0,
+                  opacity: 0,
+                  visibility: "hidden",
+                });
+              }
             } else {
-              // Resting phase behind camera before looping back to distance
+              // Reset window behind camera
               gsap.set(card, {
                 z: -1600,
                 scale: 0,
@@ -402,6 +520,7 @@ export default function Projects() {
             }
           });
 
+          // 4. Update vertical ruler indicator ticks
           const ticks = ticksRef.current;
           const step = ticks.length > 0 ? 1 / ticks.length : 1;
           ticks.forEach((tick, i) => {
@@ -409,6 +528,7 @@ export default function Projects() {
             tick.style.opacity = progress > i * step ? "1" : "0.2";
           });
 
+          // 5. Update active slide number (01 to 05)
           const active = Math.min(
             INDICATOR_SEGMENTS - 1,
             Math.floor(progress * INDICATOR_SEGMENTS + 0.001)
@@ -418,6 +538,7 @@ export default function Projects() {
             num.classList.toggle("is-active", i === active);
           });
 
+          // 6. Update tracking dot position
           if (dotRef.current) {
             dotRef.current.style.top = `${1.15 + progress * 12.2}em`;
           }
@@ -490,7 +611,7 @@ export default function Projects() {
         <div
           ref={cardsContainerRef}
           className="featured-images absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-20"
-          style={{ perspective: "500px", transformStyle: "preserve-3d" }}
+          style={{ perspective: "500px", transformStyle: "preserve-3d", opacity: 0, visibility: "hidden" }}
         >
           {flyThroughCards.map((card, idx) => (
             <div
