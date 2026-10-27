@@ -7,24 +7,55 @@ import VolunteerLightbox, { LightboxMedia } from "./volunteer-lightbox";
 const INDICATOR_SEGMENTS = 5;
 const TICKS_BETWEEN = 7;
 
-// Precalculated coordinates for 16 cards in 3D space to frame the central title cleanly
-const cardCoords = [
-  { x: -390, y: -210 },
-  { x: 360, y: -190 },
-  { x: -330, y: 170 },
-  { x: 370, y: 150 },
-  { x: -210, y: -260 },
-  { x: 230, y: -250 },
-  { x: -430, y: 30 },
-  { x: 410, y: -30 },
-  { x: -170, y: 230 },
-  { x: 190, y: 240 },
-  { x: -290, y: -130 },
-  { x: 310, y: -110 },
-  { x: -410, y: -150 },
-  { x: 430, y: 130 },
-  { x: -250, y: 140 },
-  { x: 270, y: 70 },
+// Precalculated collage layout: controlled coordinates, sizes, and subtle rotation
+// Perimeter distribution keeps the central horizontal typography clear and readable
+const cardConfigs = [
+  // 0: SKS-Master UI (Hero Focus - Top Left)
+  { coord: { x: -380, y: -200 }, rot: -3, size: "w-[260px] h-[175px] sm:w-[340px] sm:h-[230px] md:w-[380px] md:h-[260px]" },
+  // 1: Studee UI (Focus - Top Right)
+  { coord: { x: 380, y: -190 }, rot: 4, size: "w-[250px] h-[170px] sm:w-[330px] sm:h-[225px] md:w-[370px] md:h-[250px]" },
+  // 2: Budiman Cendikia (Focus - Bottom Left)
+  { coord: { x: -370, y: 210 }, rot: 3, size: "w-[250px] h-[170px] sm:w-[330px] sm:h-[225px] md:w-[370px] md:h-[250px]" },
+  // 3: Gemini Hackathon Cert (Focus - Bottom Right)
+  { coord: { x: 370, y: 200 }, rot: -4, size: "w-[260px] h-[175px] sm:w-[340px] sm:h-[230px] md:w-[380px] md:h-[260px]" },
+  // 4: ICC 2026 Cert (Focus - Top Outer Center)
+  { coord: { x: -40, y: -270 }, rot: 2, size: "w-[250px] h-[170px] sm:w-[320px] sm:h-[220px] md:w-[360px] md:h-[245px]" },
+  // 5: Hari Anak Cert (Supporting - Mid Left Outer)
+  { coord: { x: -440, y: 20 }, rot: -5, size: "w-[220px] h-[150px] sm:w-[280px] sm:h-[195px] md:w-[310px] md:h-[215px]" },
+  // 6: HAN Operator (Supporting - Mid Right Outer)
+  { coord: { x: 440, y: -20 }, rot: 5, size: "w-[220px] h-[150px] sm:w-[280px] sm:h-[195px] md:w-[310px] md:h-[215px]" },
+  // 7: Cisarua Relief (Supporting - Bottom Outer Center)
+  { coord: { x: 50, y: 270 }, rot: -2, size: "w-[200px] h-[150px] sm:w-[260px] sm:h-[190px] md:w-[290px] md:h-[210px]" },
+  // 8: SKS Architecture (Focus - Top Left Inner)
+  { coord: { x: -260, y: -220 }, rot: -2, size: "w-[240px] h-[165px] sm:w-[310px] sm:h-[215px] md:w-[350px] md:h-[240px]" },
+  // 9: Leaderboard Juri (Supporting - Top Right Inner)
+  { coord: { x: 250, y: -220 }, rot: 3, size: "w-[220px] h-[150px] sm:w-[280px] sm:h-[195px] md:w-[310px] md:h-[215px]" },
+  // 10: Scorecard Juri (Supporting - Bottom Left Inner)
+  { coord: { x: -250, y: 210 }, rot: -3, size: "w-[220px] h-[150px] sm:w-[280px] sm:h-[195px] md:w-[310px] md:h-[215px]" },
+  // 11: WA Finalist (Supporting - Bottom Right Inner)
+  { coord: { x: 260, y: 210 }, rot: 2, size: "w-[210px] h-[145px] sm:w-[270px] sm:h-[185px] md:w-[300px] md:h-[205px]" },
+  // 12: SKS Flowchart (Supporting - Mid Left High)
+  { coord: { x: -410, y: -110 }, rot: 4, size: "w-[220px] h-[150px] sm:w-[280px] sm:h-[195px] md:w-[310px] md:h-[215px]" },
+  // 13: Detail Leaderboard (Supporting - Mid Right High)
+  { coord: { x: 410, y: -100 }, rot: -4, size: "w-[210px] h-[145px] sm:w-[270px] sm:h-[185px] md:w-[300px] md:h-[205px]" },
+  // 14: Breakdown Nilai (Supporting - Mid Left Low)
+  { coord: { x: -390, y: 130 }, rot: -2, size: "w-[210px] h-[145px] sm:w-[270px] sm:h-[185px] md:w-[300px] md:h-[205px]" },
+  // 15: Verifikasi Panitia (Supporting - Mid Right Low)
+  { coord: { x: 400, y: 120 }, rot: 3, size: "w-[220px] h-[150px] sm:w-[280px] sm:h-[195px] md:w-[310px] md:h-[215px]" },
+];
+
+// Asymmetric individual cycle periods & staggered entries to avoid duplicate lockstep looping
+const cycleLengths = [
+  0.46, 0.52, 0.41, 0.49, 0.44, 0.54, 0.42, 0.48,
+  0.45, 0.51, 0.43, 0.50, 0.47, 0.53, 0.40, 0.49,
+];
+const entries = [
+  0.03, 0.05, 0.08, 0.12, 0.15, 0.18, 0.22, 0.25,
+  0.28, 0.32, 0.35, 0.38, 0.42, 0.45, 0.48, 0.52,
+];
+const exits = [
+  0.92, 0.95, 0.93, 0.96, 0.94, 0.97, 0.93, 0.96,
+  0.95, 0.97, 0.94, 0.96, 0.95, 0.97, 0.96, 0.97,
 ];
 
 export default function Projects() {
@@ -40,8 +71,6 @@ export default function Projects() {
   const flyThroughCards = [
     {
       title: "SKS-Master (Platform Ujian AI)",
-      badge: "Gemini Hackathon 2026",
-      tech: "Next.js • Gemini API • TypeScript",
       image: "/assets/projects/sks-master.png",
       link: "https://sks-master.vercel.app",
       mediaItem: {
@@ -58,8 +87,6 @@ export default function Projects() {
     },
     {
       title: "Stry - AI Quiz Generator",
-      badge: "AI Learning Platform",
-      tech: "Next.js • Prisma ORM • Vercel",
       image: "/assets/projects/studee.png",
       link: "https://github.com/usamah-io",
       mediaItem: {
@@ -76,8 +103,6 @@ export default function Projects() {
     },
     {
       title: "Budiman Cendikia",
-      badge: "Situs Web Sekolah",
-      tech: "Next.js • Tailwind CSS • SQL",
       image: "/assets/projects/budiman-cendikia.png",
       link: "https://github.com/usamah-io",
       mediaItem: {
@@ -94,8 +119,6 @@ export default function Projects() {
     },
     {
       title: "Sertifikat Resmi Gemini Hackathon",
-      badge: "Official Certificate",
-      tech: "Gemini Unity Festival 2026",
       image: "/assets/sks-master-certificate.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -112,8 +135,6 @@ export default function Projects() {
     },
     {
       title: "Indonesia Creative Competition 2026",
-      badge: "Creative Code Teens",
-      tech: "TMII Jakarta • 27 September 2026",
       image: "/assets/icc-2026-certificate.jpg",
       link: "/experience",
       mediaItem: {
@@ -130,8 +151,6 @@ export default function Projects() {
     },
     {
       title: "Hari Anak Nasional Tasikmalaya",
-      badge: "Piagam Apresiasi Dokumentasi",
-      tech: "30 Agustus 2026 • Pendopo Baru",
       image: "/assets/sertif-forum-anak.jpg",
       link: "/experience",
       mediaItem: {
@@ -148,8 +167,6 @@ export default function Projects() {
     },
     {
       title: "Operator Sound, Mixing & Live Stream",
-      badge: "Live Event Tech",
-      tech: "Peringatan Hari Anak Nasional 2026",
       image: "/assets/volunteer-hari-anak-nasional.jpg",
       link: "/experience",
       mediaItem: {
@@ -166,8 +183,6 @@ export default function Projects() {
     },
     {
       title: "Relawan Pemulihan Longsor Cisarua",
-      badge: "Aksi Tanggap Bencana",
-      tech: "Bandung Barat • 10 Video Dokumentasi",
       image: "/assets/volunteerr.jpg",
       link: "/experience",
       mediaItem: {
@@ -184,8 +199,6 @@ export default function Projects() {
     },
     {
       title: "Arsitektur Sistem SKS-Master",
-      badge: "System Architecture",
-      tech: "Next.js • Server Actions • Gemini API",
       image: "/assets/arsitektur-sistem.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -202,8 +215,6 @@ export default function Projects() {
     },
     {
       title: "Top 4 Finalis Gemini Hackathon",
-      badge: "Leaderboard Resmi Juri",
-      tech: "Peringkat Nasional • Unity Festival",
       image: "/assets/datakeseluruhan peserta.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -220,8 +231,6 @@ export default function Projects() {
     },
     {
       title: "Rincian Skor Penilaian Juri",
-      badge: "Scorecard Resmi: 86.4",
-      tech: "Inovasi 85 • Pitching 88 • Feasibility 88",
       image: "/assets/data sks.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -238,8 +247,6 @@ export default function Projects() {
     },
     {
       title: "Pengumuman Finalis WhatsApp",
-      badge: "Pengumuman Resmi Seleksi",
-      tech: "Babak Final Pitching Top Peserta",
       image: "/assets/pengumumanfinalis.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -256,8 +263,6 @@ export default function Projects() {
     },
     {
       title: "Diagram Alur Data SKS-Master",
-      badge: "Data Flow Pipeline",
-      tech: "AI Engine • Prompt Engineering",
       image: "/hackathon/Screenshot 2026-07-26 103858.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -274,8 +279,6 @@ export default function Projects() {
     },
     {
       title: "Rekapitulasi Top Finalis",
-      badge: "Komparasi Nilai Juri",
-      tech: "Evaluasi Komprehensif Hackathon",
       image: "/hackathon/leaderboard.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -292,8 +295,6 @@ export default function Projects() {
     },
     {
       title: "Evaluasi Aspek Teknis & Dampak",
-      badge: "Breakdown Nilai Juri",
-      tech: "SDGs Score 85 • UI/UX Usability",
       image: "/hackathon/rincian-nilai.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -310,8 +311,6 @@ export default function Projects() {
     },
     {
       title: "Verifikasi Finalis Panitia",
-      badge: "Konfirmasi Peserta Final",
-      tech: "Gemini Innovation Hackathon 2026",
       image: "/hackathon/pengumuman-wa.png",
       link: "/hackathon-recap",
       mediaItem: {
@@ -339,17 +338,18 @@ export default function Projects() {
     const isMobile = window.innerWidth < 640;
     const spread = isMobile ? 0.55 : 1.0;
 
-    // Initially hide cards container and reset all cards deep in 3D space
+    // Initially hide cards container and reset all cards deep in 3D space with controlled rotation
     if (cardsContainerRef.current) {
       cardsContainerRef.current.style.opacity = "0";
       cardsContainerRef.current.style.visibility = "hidden";
     }
 
     cards.forEach((card, index) => {
-      const coord = cardCoords[index % cardCoords.length];
+      const cfg = cardConfigs[index % cardConfigs.length];
       gsap.set(card, {
-        x: coord.x * spread,
-        y: coord.y * spread,
+        x: cfg.coord.x * spread,
+        y: cfg.coord.y * spread,
+        rotation: cfg.rot,
         z: -1600,
         scale: 0,
         opacity: 0,
@@ -369,10 +369,11 @@ export default function Projects() {
         onRefresh: () => {
           const currentSpread = window.innerWidth < 640 ? 0.55 : 1.0;
           cards.forEach((card, index) => {
-            const coord = cardCoords[index % cardCoords.length];
+            const cfg = cardConfigs[index % cardConfigs.length];
             gsap.set(card, {
-              x: coord.x * currentSpread,
-              y: coord.y * currentSpread,
+              x: cfg.coord.x * currentSpread,
+              y: cfg.coord.y * currentSpread,
+              rotation: cfg.rot,
             });
           });
         },
@@ -434,7 +435,7 @@ export default function Projects() {
               contOp <= 0.001 ? "hidden" : "visible";
           }
 
-          // 3. Individual card 3D flight & lifecycle
+          // 3. Individual card 3D flight & lifecycle (asymmetric flight pacing)
           cards.forEach((card, index) => {
             // Guard: completely hidden outside active range
             if (progress <= 0.01 || progress >= 0.985 || contOp <= 0.001) {
@@ -447,9 +448,10 @@ export default function Projects() {
               return;
             }
 
-            // Staggered emergence: cards appear one by one between progress 0.015 and 0.165
-            const entryP = 0.015 + (index / cards.length) * 0.15;
-            if (progress < entryP) {
+            // Staggered emergence & exit per card
+            const entryP = entries[index];
+            const exitP = exits[index];
+            if (progress < entryP || progress > exitP) {
               gsap.set(card, {
                 z: -1600,
                 scale: 0,
@@ -459,23 +461,11 @@ export default function Projects() {
               return;
             }
 
-            // Staggered exit: cards finish flight and exit between progress 0.92 and 0.98
-            const exitP = 0.92 + (index / cards.length) * 0.06;
-            if (progress > exitP) {
-              gsap.set(card, {
-                z: -1600,
-                scale: 0,
-                opacity: 0,
-                visibility: "hidden",
-              });
-              return;
-            }
-
-            // Flight cycle calculation (energetic, continuous 3D flow across slides)
+            // Asymmetric flight cycle calculation: prevents lockstep duplicate flocking
             const cardScroll = progress - entryP;
-            const cycleLen = 0.38;
+            const cycleLen = cycleLengths[index];
             const val = (cardScroll / cycleLen) % 1.0;
-            const flightWindow = 0.86;
+            const flightWindow = 0.84;
 
             if (val < flightWindow) {
               const t = val / flightWindow;
@@ -607,52 +597,40 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* 3D Fly-Through Cards Container (perspective: 500px) */}
+        {/* 3D Fly-Through Digital Collage Container (perspective: 500px) */}
         <div
           ref={cardsContainerRef}
           className="featured-images absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-20"
           style={{ perspective: "500px", transformStyle: "preserve-3d", opacity: 0, visibility: "hidden" }}
         >
-          {flyThroughCards.map((card, idx) => (
-            <div
-              key={idx}
-              onClick={() => {
-                if (card.mediaItem) {
-                  setSelectedMedia(card.mediaItem);
-                } else if (card.link) {
-                  window.open(card.link, card.link.startsWith("/") ? "_self" : "_blank");
-                }
-              }}
-              role="button"
-              tabIndex={0}
-              aria-label={card.title}
-              className="featured-img-card group absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[170px] sm:w-[320px] sm:h-[225px] md:w-[360px] md:h-[250px] overflow-hidden pointer-events-auto rounded-2xl border-4 border-foreground shadow-[0_16px_40px_rgba(0,0,0,0.45)] bg-zinc-950 cursor-pointer select-none transition-shadow hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
-            >
-              <img
-                src={card.image}
-                alt={card.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
-
-              {/* Top Corner Neubrutalist Badge */}
-              <div className="absolute top-2 left-2 z-10 pointer-events-none">
-                <span className="inline-block bg-background/90 dark:bg-black/85 backdrop-blur-md text-foreground font-mono text-[9px] sm:text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded border border-foreground/20 shadow-sm">
-                  {card.badge}
-                </span>
+          {flyThroughCards.map((card, idx) => {
+            const cfg = cardConfigs[idx % cardConfigs.length];
+            return (
+              <div
+                key={idx}
+                onClick={() => {
+                  if (card.mediaItem) {
+                    setSelectedMedia(card.mediaItem);
+                  } else if (card.link) {
+                    window.open(card.link, card.link.startsWith("/") ? "_self" : "_blank");
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={card.title}
+                title={card.title}
+                className={`featured-img-card group absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden pointer-events-auto rounded-2xl border-4 border-foreground shadow-[0_16px_40px_rgba(0,0,0,0.45)] bg-zinc-950 cursor-pointer select-none transition-shadow hover:shadow-[0_24px_50px_rgba(0,0,0,0.6)] ${cfg.size}`}
+              >
+                {/* Pure image without any overlay text, labels, or dark gradients */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
-
-              {/* Bottom Info Gradient Bar */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-2.5 sm:p-3 pointer-events-none text-left">
-                <p className="text-[11px] sm:text-xs font-black text-white truncate drop-shadow-sm">
-                  {card.title}
-                </p>
-                <p className="text-[9px] sm:text-[10px] font-mono text-emerald-400 font-bold truncate">
-                  {card.tech}
-                </p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Vertical 01–05 progress ruler */}

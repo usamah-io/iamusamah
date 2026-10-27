@@ -1,30 +1,22 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useApp } from "./app-context";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import VolunteerLightbox, { LightboxMedia } from "./volunteer-lightbox";
-import {
-  Camera,
-  Video,
-  ArrowDown,
-  Layers,
-  Award,
-  Trophy,
-  HeartHandshake,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowDown, Eye, ExternalLink } from "lucide-react";
 
 export default function Volunteer() {
   const { language } = useApp();
   const isIndonesian = language === "id";
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [activeFilter, setActiveFilter] = useState<string>("all");
-  const [selectedMedia, setSelectedMedia] = useState<LightboxMedia | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<LightboxMedia | null>(
+    null,
+  );
 
-  // Cards ordered chronologically descending (newest first)
+  // 7 Curated Experiences ordered chronologically descending (newest first)
   const cards = [
     {
       id: "card-icc",
@@ -32,17 +24,19 @@ export default function Volunteer() {
       bgColor: "bg-[#ed6a5a] text-zinc-950 border-zinc-950",
       accentTag: "bg-black/10 text-zinc-950 border-zinc-950/20",
       btnClass: "bg-zinc-950 text-white hover:bg-zinc-800",
-      badge: "COMPETITION #01",
+      badge: "KOMPETISI #01",
       location: "TMII, JAKARTA",
       date: isIndonesian ? "27 September 2026" : "September 27, 2026",
       title: "INDONESIA CREATIVE COMPETITION 2026",
-      role: isIndonesian ? "Peserta — Creative Code Teens" : "Participant — Creative Code Teens",
+      role: isIndonesian
+        ? "Peserta — Creative Code Teens"
+        : "Participant — Creative Code Teens",
       desc: isIndonesian
-        ? "Berpartisipasi dalam Indonesia Creative Competition Batch 2 pada kategori Creative Code Teens, sebuah kompetisi yang mengangkat kreativitas dan inovasi di bidang teknologi."
-        : "Participated in Indonesia Creative Competition Batch 2 under Creative Code Teens category, a competition highlighting creativity and innovation in technology.",
-      btnText: isIndonesian ? "Lihat Sertifikat Peserta" : "View Participation Certificate",
+        ? "Berpartisipasi dalam Indonesia Creative Competition Batch 2 pada kategori Creative Code Teens di Museum Listrik dan Energi Baru, TMII, Jakarta. Sebuah kompetisi yang mengangkat kreativitas dan inovasi di bidang teknologi."
+        : "Participated in Indonesia Creative Competition Batch 2 under Creative Code Teens category at Museum Listrik dan Energi Baru, TMII, Jakarta, showcasing technology innovation and creativity.",
       type: "image" as const,
       imageSrc: "/assets/icc-2026-certificate.jpg",
+      orientation: "landscape" as const,
       mediaItem: {
         id: "icc-2026",
         type: "image" as const,
@@ -74,9 +68,9 @@ export default function Volunteer() {
       desc: isIndonesian
         ? "Bertugas aktif sebagai Volunteer Divisi Dokumentasi sekaligus operator sound system, audio mixing, dan live stream dalam menyukseskan Peringatan Hari Anak Nasional 2026 Tingkat Kab. Tasikmalaya bersama Dinsos PPKB P3A dan Forum Anak Daerah."
         : "Actively served as Documentation Division Volunteer and sound system, audio mixing, and live stream operator for the 2026 National Children's Day in Tasikmalaya Regency with Dinsos PPKB P3A and Regional Children's Forum.",
-      btnText: isIndonesian ? "Lihat Sertifikat & Dokumentasi" : "View Certificate & Photos",
       type: "image" as const,
       imageSrc: "/assets/sertif-forum-anak.jpg",
+      orientation: "landscape" as const,
       mediaItem: {
         id: "sertif-han-tasik",
         type: "image" as const,
@@ -108,11 +102,10 @@ export default function Volunteer() {
       desc: isIndonesian
         ? "Memimpin tim SKS-Master merancang & membangun platform ujian interaktif berbasis AI Google Gemini pada ajang Gemini Innovation Hackathon at Gemini Unity Festival 2026. Meraih Top 4 Finalis dari 186 peserta dengan Nilai Akhir Resmi 86,4."
         : "Led the SKS-Master team designing & building an interactive AI exam platform powered by Google Gemini API at Gemini Innovation Hackathon at Gemini Unity Festival 2026. Placed Top 4 Finalist out of 186 participants with official score 86.4.",
-      btnText: isIndonesian ? "Lihat Sertifikat & Nilai" : "View Certificate & Scores",
       type: "image" as const,
       imageSrc: "/assets/sks-master-certificate.png",
-      recapLink: "/hackathon-recap",
-      recapText: isIndonesian ? "Rekap Nilai Juri ↗" : "Official Scorecard ↗",
+      orientation: "landscape" as const,
+      targetUrl: "/hackathon-recap",
       mediaItem: {
         id: "gemini-hackathon-2026",
         type: "image" as const,
@@ -123,7 +116,39 @@ export default function Volunteer() {
           ? "Sertifikat penghargaan resmi tim SKS Master atas partisipasi & pencapaian Top 4 Finalis Gemini Innovation Hackathon 2026 oleh Google Student Ambassador dan UKM KPM Universitas Siliwangi (Nilai Akhir Resmi 86,4)."
           : "Official certificate for SKS Master team as Top 4 Finalist at Gemini Innovation Hackathon 2026 by Google Student Ambassador and UNSIL (Final Score 86.4).",
         mediaSrc: "/assets/sks-master-certificate.png",
-        detailUrl: "/assets/sks-master-certificate.png",
+        detailUrl: "/hackathon-recap",
+      },
+    },
+    {
+      id: "card-budiman",
+      categories: ["project"],
+      bgColor: "bg-[#e6ebe0] text-zinc-950 border-zinc-950",
+      accentTag: "bg-black/10 text-zinc-950 border-zinc-950/20",
+      btnClass: "bg-zinc-950 text-white hover:bg-zinc-800",
+      badge: "PROJECT #01",
+      location: "TASIKMALAYA, JAWA BARAT",
+      date: "2025 - 2026",
+      title: "Budiman Cendikia School Platform",
+      role: isIndonesian
+        ? "Full-Stack Developer & System Designer"
+        : "Full-Stack Developer & System Designer",
+      desc: isIndonesian
+        ? "Mengembangkan website profil dan sistem informasi sekolah Budiman Cendikia dengan Decoupled Architecture memakai Next.js, TypeScript, PHP Blade, dan integrasi basis data SQL yang cepat, aman, dan responsif."
+        : "Engineered the official school profile website and portal architecture for Budiman Cendikia utilizing Next.js, TypeScript, PHP Blade, and optimized SQL databases.",
+      type: "image" as const,
+      imageSrc: "/assets/projects/budiman-cendikia.png",
+      orientation: "landscape" as const,
+      mediaItem: {
+        id: "budiman-cendikia-exp",
+        type: "image" as const,
+        title: "Budiman Cendikia — School Portal & Information Architecture",
+        category: "WEB DEVELOPMENT",
+        domain: "github.com/usamah-io",
+        description: isIndonesian
+          ? "Pengembangan sistem web sekolah mandiri dengan performa tinggi, layout responsif, dan struktur data terpadu untuk kebutuhan publikasi dan akademik siswa."
+          : "Independent school website platform with modern decoupled architecture, responsive layout, and integrated academic data management.",
+        mediaSrc: "/assets/projects/budiman-cendikia.png",
+        detailUrl: "https://github.com/usamah-io",
       },
     },
     {
@@ -144,63 +169,98 @@ export default function Volunteer() {
       desc: isIndonesian
         ? "Terjun langsung dalam aksi kemanusiaan bencana longsor Cisarua, Bandung Barat: briefing koordinasi tim relawan, pendataan dan penyaluran sembako ke rumah warga, operasional dapur umum posko, dan dokumentasi penutupan aksi relawan."
         : "Participated directly in humanitarian relief for the Cisarua landslide disaster in West Bandung: volunteer coordination briefings, door-to-door food package distribution, soup kitchen operations, and field documentation.",
-      btnText: isIndonesian ? "Putar Video Posko & Bantuan" : "Watch Relief & Post Video",
       type: "video" as const,
       imageSrc: "/assets/volunteerr.jpg",
-      recapLink: "/volunteer",
-      recapText: isIndonesian ? "Galeri Lapangan ↗" : "Field Gallery ↗",
+      orientation: "portrait" as const,
+      targetUrl: "/volunteer",
       mediaItem: {
         id: "vol-1",
         type: "video" as const,
-        title: isIndonesian ? "Aksi Tanggap Darurat Longsor Cisarua" : "Cisarua Landslide Emergency Response",
+        title: isIndonesian
+          ? "Aksi Tanggap Darurat Longsor Cisarua"
+          : "Cisarua Landslide Emergency Response",
         category: "TANGGAP DARURAT",
         domain: "volunteer.dev/cisarua-part-1",
         description: isIndonesian
           ? "Dokumentasi tim relawan saat tiba di lokasi bencana longsor Cisarua, pembagian tugas evakuasi, penyaluran logistik sembako, dan operasional posko dapur umum."
           : "Documentation of volunteer team arrival at Cisarua landslide location, evacuation duties, food aid distribution, and relief post soup kitchen operations.",
-        mediaSrc: "https://lh3.googleusercontent.com/d/1PuoAcNuSvaQ5WBZ7OuhbPxEdoLxMuf3A",
-        detailUrl: "https://drive.google.com/file/d/1PuoAcNuSvaQ5WBZ7OuhbPxEdoLxMuf3A/view",
+        mediaSrc:
+          "https://lh3.googleusercontent.com/d/1PuoAcNuSvaQ5WBZ7OuhbPxEdoLxMuf3A",
+        detailUrl:
+          "https://drive.google.com/file/d/1PuoAcNuSvaQ5WBZ7OuhbPxEdoLxMuf3A/view",
+      },
+    },
+    {
+      id: "card-san",
+      categories: ["community", "volunteer"],
+      bgColor: "bg-[#36c9c6] text-zinc-950 border-zinc-950",
+      accentTag: "bg-black/10 text-zinc-950 border-zinc-950/20",
+      btnClass: "bg-zinc-950 text-white hover:bg-zinc-800",
+      badge: "KOMUNITAS #01",
+      location: "TASIKMALAYA & JAWA BARAT",
+      date: "2024 - 2025",
+      title: isIndonesian
+        ? "Komunitas Senyum Anak Nusantara (SAN)"
+        : "Senyum Anak Nusantara Community (SAN)",
+      role: isIndonesian
+        ? "Relawan Edukasi & Dokumentasi Sosial"
+        : "Youth Education & Field Documentation Volunteer",
+      desc: isIndonesian
+        ? "Berkontribusi dalam inisiatif sosial Senyum Anak Nusantara yang berfokus pada pendampingan edukatif, keceriaan anak, pengenalan literasi digital, serta dokumentasi visual kegiatan kerelawanan kepemudaan."
+        : "Contributed to Senyum Anak Nusantara youth social initiatives focusing on educational mentoring, digital literacy introduction, and visual documentation of community volunteer projects.",
+      type: "image" as const,
+      imageSrc: "/assets/Senyumanaknusantara.jpg",
+      orientation: "portrait" as const,
+      targetUrl: "/experience/senyum-anak-nusantara",
+      mediaItem: {
+        id: "san-community",
+        type: "image" as const,
+        title: isIndonesian
+          ? "Dokumentasi Aksi Komunitas Senyum Anak Nusantara"
+          : "Senyum Anak Nusantara Community Action Documentation",
+        category: "COMMUNITY & YOUTH",
+        domain: "komunitas.org/san",
+        description: isIndonesian
+          ? "Dokumentasi kegiatan kerelawanan sosial pemuda dalam menyelenggarakan kegiatan edukatif, interaktif, dan apresiasi bakat anak-anak nusantara."
+          : "Photo documentation of youth volunteer programs delivering interactive learning, creative sessions, and empowerment for children across the region.",
+        mediaSrc: "/assets/Senyumanaknusantara.jpg",
+        detailUrl: "/experience/senyum-anak-nusantara",
+      },
+    },
+    {
+      id: "card-jaz",
+      categories: ["education"],
+      bgColor: "bg-[#f08080] text-zinc-950 border-zinc-950",
+      accentTag: "bg-black/10 text-zinc-950 border-zinc-950/20",
+      btnClass: "bg-zinc-950 text-white hover:bg-zinc-800",
+      badge: "EDUCATION #01",
+      location: "TASIKMALAYA, JAWA BARAT",
+      date: isIndonesian ? "2024 - Sekarang" : "2024 - Present",
+      title: "JAZ ACADEMY KOMUNITAS BELAJAR",
+      role: isIndonesian
+        ? "Siswa Aktif — Software Engineering & AI Workflows"
+        : "Active Student — Software Engineering & AI Workflows",
+      desc: isIndonesian
+        ? "Mengikuti pendidikan akselerasi teknologi di Jaz Academy: memperdalam Full-Stack Web Development (Next.js, TypeScript), arsitektur perangkat lunak modern, integrasi AI Gemini, serta pembuatan konten edukasi pemrograman."
+        : "Accelerating modern software engineering capabilities at Jaz Academy: mastering Full-Stack Next.js/TypeScript architecture, Gemini AI integration, and digital educational tech content creation.",
+      type: "image" as const,
+      imageSrc: "/assets/jazacademy.png",
+      orientation: "landscape" as const,
+      targetUrl: "https://jazacademy.id/",
+      mediaItem: {
+        id: "jaz-academy-exp",
+        type: "image" as const,
+        title: "JAZ Academy — Youth Software Engineering Education",
+        category: "EDUCATION",
+        domain: "jazacademy.id",
+        description: isIndonesian
+          ? "Akselerasi keahlian pemrograman modern, rekayasa perangkat lunak, dan kepemimpinan proyek digital berbasis teknologi web terkini."
+          : "Intensive youth software engineering track focusing on modern full-stack web technologies, AI workflows, and digital project execution.",
+        mediaSrc: "/assets/jazacademy.png",
+        detailUrl: "https://jazacademy.id/",
       },
     },
   ];
-
-  const filterTabs = [
-    {
-      id: "all",
-      label: isIndonesian ? "Semua" : "All",
-      icon: <Layers className="w-3.5 h-3.5 shrink-0" />,
-      count: cards.length,
-    },
-    {
-      id: "volunteer",
-      label: "Volunteer",
-      icon: <HeartHandshake className="w-3.5 h-3.5 shrink-0" />,
-      count: cards.filter((c) => c.categories.includes("volunteer")).length,
-    },
-    {
-      id: "competition",
-      label: isIndonesian ? "Kompetisi" : "Competition",
-      icon: <Award className="w-3.5 h-3.5 shrink-0" />,
-      count: cards.filter((c) => c.categories.includes("competition")).length,
-    },
-    {
-      id: "hackathon",
-      label: "Hackathon",
-      icon: <Trophy className="w-3.5 h-3.5 shrink-0" />,
-      count: cards.filter((c) => c.categories.includes("hackathon")).length,
-    },
-    {
-      id: "community",
-      label: isIndonesian ? "Komunitas" : "Community",
-      icon: <HeartHandshake className="w-3.5 h-3.5 shrink-0" />,
-      count: cards.filter((c) => c.categories.includes("community")).length,
-    },
-  ];
-
-  const filteredCards = cards.filter((card) => {
-    if (activeFilter === "all") return true;
-    return card.categories.includes(activeFilter);
-  });
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -229,7 +289,7 @@ export default function Volunteer() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [activeFilter, language]);
+  }, [language]);
 
   const handleOpenLightbox = (item: LightboxMedia) => {
     setSelectedMedia(item);
@@ -248,7 +308,9 @@ export default function Volunteer() {
             MU
           </div>
           <p className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-500">
-            {isIndonesian ? "Rekam Jejak & Pengalaman" : "Track Record & Activities"}
+            {isIndonesian
+              ? "Rekam Jejak & Pengalaman"
+              : "Track Record & Activities"}
           </p>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-foreground tracking-tight max-w-3xl mx-auto leading-none">
             {isIndonesian
@@ -257,37 +319,17 @@ export default function Volunteer() {
           </h2>
           <p className="text-sm sm:text-base text-foreground/80 font-medium max-w-2xl mx-auto leading-relaxed">
             {isIndonesian
-              ? "Dokumentasi resmi kompetisi coding, inovasi hackathon, aksi tanggap darurat relawan, dan kontribusi kepemudaan."
-              : "Official documentation of coding competitions, hackathon innovations, volunteer relief actions, and youth initiatives."}
+              ? "Dokumentasi resmi kompetisi coding, inovasi hackathon, arsitektur proyek web, aksi relawan kemanusiaan, dan kontribusi kepemudaan."
+              : "Official documentation of coding competitions, hackathon innovations, web projects, volunteer relief actions, and youth initiatives."}
           </p>
           <div className="services-header-arrow-icon flex justify-center pt-2 text-foreground">
             <ArrowDown className="w-8 h-8 animate-bounce text-emerald-500" />
           </div>
         </div>
 
-        {/* Functional Neubrutalist Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 font-mono">
-          {filterTabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveFilter(tab.id)}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px] transition-all cursor-pointer ${
-                activeFilter === tab.id
-                  ? "bg-[var(--accent1)] text-black"
-                  : "bg-background text-foreground hover:bg-foreground/10"
-              }`}
-            >
-              {tab.icon}
-              <span>
-                {tab.label} ({tab.count})
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {/* Stacking Cards Sticky Sequential Overlay */}
+        {/* Stacking Cards Sticky Sequential Stack (7 Curated Experiences) */}
         <div className="relative space-y-12">
-          {filteredCards.map((card, idx) => (
+          {cards.map((card, idx) => (
             <div
               key={card.id}
               id={`service-card-${card.id}`}
@@ -303,12 +345,14 @@ export default function Volunteer() {
                   </span>
                   <span className="font-bold opacity-80">{card.date}</span>
                 </div>
-                <span className="font-bold tracking-wider">{card.location}</span>
+                <span className="font-bold tracking-wider">
+                  {card.location}
+                </span>
               </div>
 
               {/* Main Content Row */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center flex-1 my-2">
-                <div className="md:col-span-2 space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center flex-1 my-2">
+                <div className="md:col-span-7 lg:col-span-8 space-y-3">
                   <h3 className="text-2xl sm:text-4xl font-black uppercase tracking-tight leading-none">
                     {card.title}
                   </h3>
@@ -320,50 +364,102 @@ export default function Volunteer() {
                   </p>
                 </div>
 
-                <div
-                  onClick={() => handleOpenLightbox(card.mediaItem)}
-                  className="service-card-img hidden md:block aspect-[4/3] rounded-2xl overflow-hidden border-2 border-current/30 shadow-md bg-black/20 cursor-pointer group relative"
-                  title={isIndonesian ? "Klik untuk melihat pratinjau penuh" : "Click to view full preview"}
-                >
-                  <Image
-                    src={card.imageSrc}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 360px"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="font-mono text-[11px] font-black uppercase px-3 py-1.5 rounded-full bg-white text-black border border-black shadow-sm">
-                      {isIndonesian ? "Perbesar" : "Zoom"}
-                    </span>
+                {/* Responsive Image Column: Adapts ratio to original orientation (3:4 portrait for SAN, 16:10 for landscape) */}
+                <div className="md:col-span-5 lg:col-span-4 flex justify-center md:justify-end">
+                  <div
+                    onClick={() => {
+                      if (card.targetUrl) {
+                        if (card.targetUrl.startsWith("http")) {
+                          window.open(
+                            card.targetUrl,
+                            "_blank",
+                            "noopener,noreferrer",
+                          );
+                        } else {
+                          window.location.href = card.targetUrl;
+                        }
+                      } else {
+                        handleOpenLightbox(card.mediaItem);
+                      }
+                    }}
+                    className={`service-card-img w-full rounded-2xl overflow-hidden border-2 border-current/30 shadow-md bg-black/20 cursor-pointer group relative ${
+                      card.orientation === "portrait"
+                        ? "max-w-[260px] aspect-[3/4] max-h-[340px]"
+                        : "max-w-[360px] aspect-[16/10] max-h-[240px]"
+                    }`}
+                    title={
+                      isIndonesian
+                        ? "Klik untuk melihat pratinjau penuh"
+                        : "Click to view full preview"
+                    }
+                  >
+                    <Image
+                      src={card.imageSrc}
+                      alt={card.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 360px"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="font-mono text-[11px] font-black uppercase px-3 py-1.5 rounded-full bg-white text-black border border-black shadow-sm flex items-center gap-1">
+                        <Eye className="w-3.5 h-3.5" />
+                        {card.targetUrl?.startsWith("http")
+                          ? isIndonesian
+                            ? "Kunjungi"
+                            : "Visit"
+                          : card.targetUrl?.startsWith("/")
+                            ? isIndonesian
+                              ? "Detail"
+                              : "Details"
+                            : isIndonesian
+                              ? "Perbesar"
+                              : "Zoom"}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Action Buttons & Indicator */}
+              {/* Action Button & Indicator (Single Unified "Lihat Selengkapnya" Button) */}
               <div className="pt-4 border-t border-current/20 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap items-center gap-3">
-                  <button
-                    onClick={() => handleOpenLightbox(card.mediaItem)}
-                    className={`font-mono text-xs font-black uppercase px-5 sm:px-6 py-3 rounded-full transition cursor-pointer flex items-center gap-2 shadow-md ${card.btnClass}`}
-                  >
-                    {card.type === "video" ? <Video className="w-4 h-4" /> : <Camera className="w-4 h-4" />}
-                    <span>{card.btnText}</span>
-                  </button>
-
-                  {card.recapLink && (
-                    <Link
-                      href={card.recapLink}
-                      className="font-mono text-xs font-black uppercase px-4 py-3 rounded-full border-2 border-current hover:bg-current/10 transition cursor-pointer flex items-center gap-1.5"
+                <div className="flex items-center gap-3">
+                  {card.targetUrl?.startsWith("http") ? (
+                    <a
+                      href={card.targetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`font-mono text-xs font-black uppercase px-6 py-3 rounded-full transition cursor-pointer flex items-center gap-2 shadow-[2px_2px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px] ${card.btnClass}`}
                     >
-                      <span>{card.recapText}</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <ExternalLink className="w-4 h-4" />
+                      <span>
+                        {isIndonesian ? "Lihat Selengkapnya" : "View Details"}
+                      </span>
+                    </a>
+                  ) : card.targetUrl?.startsWith("/") ? (
+                    <Link
+                      href={card.targetUrl}
+                      className={`font-mono text-xs font-black uppercase px-6 py-3 rounded-full transition cursor-pointer flex items-center gap-2 shadow-[2px_2px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px] ${card.btnClass}`}
+                    >
+                      <Eye className="w-4 h-4" />
+                      <span>
+                        {isIndonesian ? "Lihat Selengkapnya" : "View Details"}
+                      </span>
                     </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleOpenLightbox(card.mediaItem)}
+                      className={`font-mono text-xs font-black uppercase px-6 py-3 rounded-full transition cursor-pointer flex items-center gap-2 shadow-[2px_2px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px] ${card.btnClass}`}
+                    >
+                      <Eye className="w-4 h-4" />
+                      <span>
+                        {isIndonesian ? "Lihat Selengkapnya" : "View Details"}
+                      </span>
+                    </button>
                   )}
                 </div>
 
                 <span className="font-mono text-xs font-extrabold opacity-60">
-                  {`0${idx + 1} // 0${filteredCards.length}`}
+                  {`0${idx + 1} // 0${cards.length}`}
                 </span>
               </div>
             </div>
@@ -372,7 +468,10 @@ export default function Volunteer() {
       </section>
 
       {/* Lightbox Modal */}
-      <VolunteerLightbox media={selectedMedia} onClose={() => setSelectedMedia(null)} />
+      <VolunteerLightbox
+        media={selectedMedia}
+        onClose={() => setSelectedMedia(null)}
+      />
     </>
   );
 }
