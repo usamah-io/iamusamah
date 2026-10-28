@@ -236,6 +236,22 @@ export default function Navbar() {
                 ➜ 08. {t.nav.faq || "FAQ"}
               </button>
             </div>
+            <div className="overflow-hidden">
+              <button
+                onClick={() => handleNavClick("/apps")}
+                className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
+              >
+                ➜ 09. {t.nav.apps || "Aplikasi"}
+              </button>
+            </div>
+            <div className="overflow-hidden">
+              <button
+                onClick={() => handleNavClick("/connect")}
+                className="nav-item-el block text-left hover:text-emerald-400 transition transform cursor-pointer"
+              >
+                ➜ 10. {t.nav.connect || "Koneksi"}
+              </button>
+            </div>
           </div>
 
           {/* Footer Staggered Items */}

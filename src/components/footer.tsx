@@ -175,6 +175,7 @@ export default function Footer() {
             <p className="footer-col-title">{isIndonesian ? "Jelajahi" : "Explore"}</p>
             <Link href="/" onClick={go("/")}>{isIndonesian ? "Beranda" : "Home"}</Link>
             <Link href="/#projects" onClick={go("/#projects")}>{isIndonesian ? "Proyek" : "Projects"}</Link>
+            <Link href="/apps" onClick={go("/apps")}>{isIndonesian ? "Aplikasi" : "Apps"}</Link>
             <Link href="/skills" onClick={go("/skills")}>{isIndonesian ? "Skill & Tech Stack" : "Skill & Tech Stack"}</Link>
             <Link href="/volunteer" onClick={go("/volunteer")}>{isIndonesian ? "Volunteer" : "Volunteer"}</Link>
             <Link href="/hackathon-recap" onClick={go("/hackathon-recap")}>{isIndonesian ? "Rekap Hackathon" : "Hackathon Recap"}</Link>
@@ -182,6 +183,7 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <p className="footer-col-title">{isIndonesian ? "Koneksi" : "Connect"}</p>
+            <Link href="/connect" onClick={go("/connect")}>{isIndonesian ? "Halaman Koneksi" : "Connect Page"}</Link>
             <a href={content.socials.github} target="_blank" rel="noopener noreferrer">Github</a>
             <a href={content.socials.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href={content.socials.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>

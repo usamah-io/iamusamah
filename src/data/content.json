@@ -21,7 +21,9 @@
       "insights": "Prestasi",
       "faq": "FAQ",
       "more": "Prestasi",
-      "cta": "Kontak"
+      "cta": "Kontak",
+      "apps": "Aplikasi",
+      "connect": "Koneksi"
     },
     "hero": {
       "status_connecting": "Menghubungkan status...",
@@ -89,7 +91,13 @@
           "period": "27 September 2026",
           "badge": "Kompetisi Coding",
           "description": "Berpartisipasi dalam Indonesia Creative Competition Batch 2 pada kategori Creative Code Teens, sebuah kompetisi yang mengangkat kreativitas dan inovasi di bidang teknologi.",
-          "tags": ["Competition", "Creative Code Teens", "TMII Jakarta", "PLN & MLEB", "Sekelas"],
+          "tags": [
+            "Competition",
+            "Creative Code Teens",
+            "TMII Jakarta",
+            "PLN & MLEB",
+            "Sekelas"
+          ],
           "image": "/assets/icc-2026-certificate.jpg"
         },
         {
@@ -101,7 +109,13 @@
           "period": "30 Agustus 2026",
           "badge": "Volunteer Dokumentasi",
           "description": "Bertugas aktif sebagai Volunteer Divisi Dokumentasi sekaligus operator sound system, audio mixing, dan live stream dalam menyukseskan Peringatan Hari Anak Nasional 2026 Tingkat Kab. Tasikmalaya yang diselenggarakan oleh Dinsos PPKB P3A bersama Forum Anak Daerah.",
-          "tags": ["Volunteer", "Dokumentasi", "Hari Anak Nasional", "Forum Anak Daerah", "Tasikmalaya"],
+          "tags": [
+            "Volunteer",
+            "Dokumentasi",
+            "Hari Anak Nasional",
+            "Forum Anak Daerah",
+            "Tasikmalaya"
+          ],
           "image": "/assets/sertif-forum-anak.jpg"
         },
         {
@@ -113,7 +127,12 @@
           "period": "28 Juli 2026",
           "badge": "Hackathon Lead",
           "description": "Memimpin tim dalam merancang & membangun platform ujian berbasis AI Google Gemini pada Gemini Innovation Hackathon at Gemini Unity Festival 2026. Meraih Top 4 Finalis dari 186 peserta dengan Nilai Akhir Resmi 86,4.",
-          "tags": ["Lead Developer", "Gemini API", "Next.js", "Top 4 Finalist"],
+          "tags": [
+            "Lead Developer",
+            "Gemini API",
+            "Next.js",
+            "Top 4 Finalist"
+          ],
           "image": "/assets/sks-master-certificate.png",
           "recap_link": "/hackathon-recap",
           "recap_label": "Rekap Nilai & Galeri ↗"
@@ -127,7 +146,12 @@
           "period": "2024 - Sekarang",
           "badge": "SMP - Siswa Aktif",
           "description": "Fokus pada Software Engineering, Full-Stack Web Development, integrasi AI Workflows, dan Digital Content Creation.",
-          "tags": ["Full-Stack Dev", "Software Engineering", "AI Workflows", "Tasikmalaya"],
+          "tags": [
+            "Full-Stack Dev",
+            "Software Engineering",
+            "AI Workflows",
+            "Tasikmalaya"
+          ],
           "instagram_link": "https://www.instagram.com/jazacademy.id/",
           "web_link": "https://jazacademy.id",
           "web_label": "Kunjungi Situs"
@@ -141,7 +165,12 @@
           "period": "2024 - 2025",
           "badge": "Relawan Kemanusiaan",
           "description": "Terjun langsung dalam aksi kemanusiaan longsor Cisarua, Bandung Barat: briefing koordinasi tim relawan, pendataan dan penyaluran sembako ke rumah warga, pengelolaan dapur umum posko, dan dokumentasi penutupan aksi relawan.",
-          "tags": ["Tanggap Darurat", "Distribusi Sembako", "Posko Logistik", "Dapur Umum"],
+          "tags": [
+            "Tanggap Darurat",
+            "Distribusi Sembako",
+            "Posko Logistik",
+            "Dapur Umum"
+          ],
           "image": "/assets/volunteerr.jpg"
         },
         {
@@ -153,7 +182,11 @@
           "period": "2018 - 2024",
           "badge": "SDIT - Alumni",
           "description": "Pendidikan Dasar Islam Terpadu dengan dasar akademik dan karakter yang kuat.",
-          "tags": ["SDIT", "Binjai", "Alumni"],
+          "tags": [
+            "SDIT",
+            "Binjai",
+            "Alumni"
+          ],
           "instagram_link": "https://www.instagram.com/sekolah.mardhiyah/",
           "web_link": "https://maps.google.com/?q=SDIT+Swasta+Mardhiyah+Binjai",
           "web_label": "Profil Sekolah"
@@ -204,7 +237,12 @@
           "badge": "Relawan Cisarua",
           "domain": "volunteer.dev/cisarua-part-1",
           "description": "Dokumentasi tim relawan saat tiba di lokasi bencana longsor Cisarua, pembagian tugas evakuasi, dan asesmen kebutuhan darurat.",
-          "tags": ["Tanggap Darurat", "Cisarua", "Volunteer", "Kemanusiaan"],
+          "tags": [
+            "Tanggap Darurat",
+            "Cisarua",
+            "Volunteer",
+            "Kemanusiaan"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1PuoAcNuSvaQ5WBZ7OuhbPxEdoLxMuf3A",
           "detailUrl": "https://drive.google.com/file/d/1PuoAcNuSvaQ5WBZ7OuhbPxEdoLxMuf3A/view"
         },
@@ -216,7 +254,12 @@
           "badge": "Posko Kemanusiaan",
           "domain": "volunteer.dev/cisarua-part-2",
           "description": "Dokumentasi kegiatan di posko relawan Cisarua, penyaluran bantuan logistik, pemulihan sarana, dan pendampingan warga terdampak.",
-          "tags": ["Pemulihan", "Posko Kemanusiaan", "Volunteer", "Cisarua"],
+          "tags": [
+            "Pemulihan",
+            "Posko Kemanusiaan",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/14LOFP-zQkv6fPs23v6IHU5SDU4EYZ_-z",
           "detailUrl": "https://drive.google.com/file/d/14LOFP-zQkv6fPs23v6IHU5SDU4EYZ_-z/view"
         },
@@ -228,7 +271,12 @@
           "badge": "Aksi Kemanusiaan",
           "domain": "volunteer.dev/cisarua-part-3",
           "description": "Dokumentasi situasi lapangan akhir, penutupan aksi relawan Cisarua, dan evaluasi dampak bantuan kemanusiaan.",
-          "tags": ["Dokumentasi", "Relawan", "Cisarua", "Aksi Sosial"],
+          "tags": [
+            "Dokumentasi",
+            "Relawan",
+            "Cisarua",
+            "Aksi Sosial"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1l7F-SJbCKiQXgAHTYiQw0V4Ny1herohn",
           "detailUrl": "https://drive.google.com/file/d/1l7F-SJbCKiQXgAHTYiQw0V4Ny1herohn/view"
         },
@@ -240,7 +288,12 @@
           "badge": "Aksi Relawan",
           "domain": "volunteer.dev/cisarua-part-4",
           "description": "Dokumentasi pergerakan tim relawan dalam membantu pembersihan area terdampak dan mendistribusikan kebutuhan pokok.",
-          "tags": ["Aksi Lapangan", "Logistik", "Relawan", "Cisarua"],
+          "tags": [
+            "Aksi Lapangan",
+            "Logistik",
+            "Relawan",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1UYjVfyx18sx6ZTwQwH5hPn9F4onu0MB4",
           "detailUrl": "https://drive.google.com/file/d/1UYjVfyx18sx6ZTwQwH5hPn9F4onu0MB4/view"
         },
@@ -252,7 +305,12 @@
           "badge": "Manajemen Logistik",
           "domain": "volunteer.dev/cisarua-part-5",
           "description": "Proses penerimaan, pembungkusan paket bantuan, serta penyaluran logistik makanan dan medis di posko utama.",
-          "tags": ["Logistik", "Posko Utama", "Volunteer", "Cisarua"],
+          "tags": [
+            "Logistik",
+            "Posko Utama",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1adtZ8YDCSmP5TUWy9CQssmlIxNpfeBkQ",
           "detailUrl": "https://drive.google.com/file/d/1adtZ8YDCSmP5TUWy9CQssmlIxNpfeBkQ/view"
         },
@@ -264,7 +322,12 @@
           "badge": "Briefing Relawan",
           "domain": "volunteer.dev/cisarua-part-6",
           "description": "Sesi koordinasi harian tim relawan bersama aparat setempat dan penentuan zona distribusi prioritas.",
-          "tags": ["Koordinasi", "Briefing", "Volunteer", "Cisarua"],
+          "tags": [
+            "Koordinasi",
+            "Briefing",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1omxGMQ3WvumEf5zd2giCl82aDWfyb60T",
           "detailUrl": "https://drive.google.com/file/d/1omxGMQ3WvumEf5zd2giCl82aDWfyb60T/view"
         },
@@ -276,7 +339,12 @@
           "badge": "Distribusi Lapangan",
           "domain": "volunteer.dev/cisarua-part-7",
           "description": "Perjalanan tim relawan menembus jalur evakuasi untuk menyerahkan langsung paket sembako ke rumah warga.",
-          "tags": ["Distribusi", "Bantuan Sembako", "Volunteer", "Cisarua"],
+          "tags": [
+            "Distribusi",
+            "Bantuan Sembako",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1pzcHYYbrgW4UOLXjXyhNcXkAt7oBibZQ",
           "detailUrl": "https://drive.google.com/file/d/1pzcHYYbrgW4UOLXjXyhNcXkAt7oBibZQ/view"
         },
@@ -288,7 +356,12 @@
           "badge": "Dukungan Moral",
           "domain": "volunteer.dev/cisarua-part-8",
           "description": "Kegiatan gotong royong pembersihan fasilitas umum serta dukungan sosial psikologis bagi warga terdampak.",
-          "tags": ["Gotong Royong", "Pemulihan", "Volunteer", "Cisarua"],
+          "tags": [
+            "Gotong Royong",
+            "Pemulihan",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1EadPzCtUkqE3uWg38Dlup0TcE9nr8Vp8",
           "detailUrl": "https://drive.google.com/file/d/1EadPzCtUkqE3uWg38Dlup0TcE9nr8Vp8/view"
         },
@@ -300,7 +373,12 @@
           "badge": "Relawan Gabungan",
           "domain": "volunteer.dev/cisarua-part-9",
           "description": "Sinergi tim relawan lintas komunitas dalam mendukung kebutuhan air bersih dan dapur umum posko.",
-          "tags": ["Dapur Umum", "Air Bersih", "Volunteer", "Cisarua"],
+          "tags": [
+            "Dapur Umum",
+            "Air Bersih",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1BPaWHv7SJwgDXG5Y-YbrGaqtD7nh_Yk4",
           "detailUrl": "https://drive.google.com/file/d/1BPaWHv7SJwgDXG5Y-YbrGaqtD7nh_Yk4/view"
         },
@@ -312,7 +390,12 @@
           "badge": "Evaluasi & Penutupan",
           "domain": "volunteer.dev/cisarua-part-10",
           "description": "Dokumentasi acara penutupan giat relawan Cisarua, pelepasan tim, serta penyerahan posko kepada tokoh masyarakat.",
-          "tags": ["Penutupan", "Evaluasi", "Volunteer", "Cisarua"],
+          "tags": [
+            "Penutupan",
+            "Evaluasi",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz",
           "detailUrl": "https://drive.google.com/file/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz/view"
         },
@@ -324,7 +407,13 @@
           "badge": "Volunteer Dokumentasi",
           "domain": "volunteer.dev/sertif-hari-anak-tasik",
           "description": "Sertifikat penghargaan resmi Kepala Dinas Sosial PPKB P3A Kab. Tasikmalaya kepada Muhammad Usamah Abdurrahman atas kontribusi aktif sebagai Volunteer Divisi Dokumentasi Hari Anak Nasional 2026 bersama Forum Anak Daerah.",
-          "tags": ["Sertifikat", "Hari Anak Nasional", "Forum Anak Daerah", "Dinsos PPKB P3A", "Tasikmalaya"],
+          "tags": [
+            "Sertifikat",
+            "Hari Anak Nasional",
+            "Forum Anak Daerah",
+            "Dinsos PPKB P3A",
+            "Tasikmalaya"
+          ],
           "imageSrc": "/assets/sertif-forum-anak.jpg",
           "detailUrl": "/assets/sertif-forum-anak.jpg"
         },
@@ -336,7 +425,13 @@
           "badge": "Operator Utama",
           "domain": "volunteer.dev/operator-hari-anak-tasik",
           "description": "Dokumentasi foto aksi sebagai Operator Sound System, Audio Mixing, & Live Streaming pada acara Hari Anak Nasional se-Kabupaten/Kota Tasikmalaya.",
-          "tags": ["Operator", "Hari Anak Nasional", "Tasikmalaya", "Event Tech", "Volunteer"],
+          "tags": [
+            "Operator",
+            "Hari Anak Nasional",
+            "Tasikmalaya",
+            "Event Tech",
+            "Volunteer"
+          ],
           "imageSrc": "/assets/volunteer-hari-anak-nasional.jpg",
           "detailUrl": "/assets/volunteer-hari-anak-nasional.jpg"
         },
@@ -348,7 +443,12 @@
           "badge": "Foto Lapangan",
           "domain": "volunteer.dev/photo-cisarua-1",
           "description": "Dokumentasi foto momen kebersamaan dan aksi relawan di lokasi bencana Cisarua.",
-          "tags": ["Foto", "Dokumentasi", "Relawan", "Cisarua"],
+          "tags": [
+            "Foto",
+            "Dokumentasi",
+            "Relawan",
+            "Cisarua"
+          ],
           "imageSrc": "/assets/volunteerr.jpg",
           "detailUrl": "/assets/volunteerr.jpg"
         },
@@ -360,7 +460,12 @@
           "badge": "Foto Lapangan",
           "domain": "volunteer.dev/photo-cisarua-2",
           "description": "Dokumentasi foto kegiatan distribusi logistik dan koordinasi tim relawan di posko bencana.",
-          "tags": ["Foto", "Posko", "Relawan", "Cisarua"],
+          "tags": [
+            "Foto",
+            "Posko",
+            "Relawan",
+            "Cisarua"
+          ],
           "imageSrc": "https://lh3.googleusercontent.com/d/1QQs-lWJh69RxZzG3ZPnQ-1DqXJFKzP6p",
           "detailUrl": "https://drive.google.com/file/d/1QQs-lWJh69RxZzG3ZPnQ-1DqXJFKzP6p/view"
         }
@@ -566,7 +671,9 @@
       "insights": "Achievements",
       "faq": "FAQ",
       "more": "Achievements",
-      "cta": "Contact"
+      "cta": "Contact",
+      "apps": "Applications",
+      "connect": "Connect"
     },
     "hero": {
       "status_connecting": "Connecting status...",
@@ -634,7 +741,13 @@
           "period": "September 27, 2026",
           "badge": "Coding Competition",
           "description": "Participated in Indonesia Creative Competition Batch 2 under Creative Code Teens category, a competition highlighting creativity and innovation in technology.",
-          "tags": ["Competition", "Creative Code Teens", "TMII Jakarta", "PLN & MLEB", "Sekelas"],
+          "tags": [
+            "Competition",
+            "Creative Code Teens",
+            "TMII Jakarta",
+            "PLN & MLEB",
+            "Sekelas"
+          ],
           "image": "/assets/icc-2026-certificate.jpg"
         },
         {
@@ -646,7 +759,13 @@
           "period": "August 30, 2026",
           "badge": "Documentation Volunteer",
           "description": "Actively served as Documentation Division Volunteer and sound system, audio mixing, and live stream operator for the 2026 National Children's Day in Tasikmalaya Regency organized by Dinsos PPKB P3A and Regional Children's Forum.",
-          "tags": ["Volunteer", "Documentation", "National Children's Day", "Children's Forum", "Tasikmalaya"],
+          "tags": [
+            "Volunteer",
+            "Documentation",
+            "National Children's Day",
+            "Children's Forum",
+            "Tasikmalaya"
+          ],
           "image": "/assets/sertif-forum-anak.jpg"
         },
         {
@@ -658,7 +777,12 @@
           "period": "July 28, 2026",
           "badge": "Hackathon Lead",
           "description": "Led the team designing & building the AI exam platform using Google Gemini API at Gemini Innovation Hackathon at Gemini Unity Festival 2026. Placed Top 4 Finalist out of 186 entries with an official final score of 86.4.",
-          "tags": ["Lead Developer", "Gemini API", "Next.js", "Top 4 Finalist"],
+          "tags": [
+            "Lead Developer",
+            "Gemini API",
+            "Next.js",
+            "Top 4 Finalist"
+          ],
           "image": "/assets/sks-master-certificate.png",
           "recap_link": "/hackathon-recap",
           "recap_label": "Scorecard & Gallery ↗"
@@ -672,7 +796,12 @@
           "period": "2024 - Present",
           "badge": "SMP - Active Student",
           "description": "Focusing on Software Engineering, Full-Stack Web Development, AI Workflows integration, and Digital Content Creation.",
-          "tags": ["Full-Stack Dev", "Software Engineering", "AI Workflows", "Tasikmalaya"],
+          "tags": [
+            "Full-Stack Dev",
+            "Software Engineering",
+            "AI Workflows",
+            "Tasikmalaya"
+          ],
           "instagram_link": "https://www.instagram.com/jazacademy.id/",
           "web_link": "https://jazacademy.id",
           "web_label": "Visit Site"
@@ -686,7 +815,12 @@
           "period": "2024 - 2025",
           "badge": "Humanitarian Volunteer",
           "description": "Active in humanitarian relief for Cisarua landslide disaster in West Bandung: volunteer briefing coordination, door-to-door aid distribution to residents, soup kitchen management, and closing ceremony documentation.",
-          "tags": ["Emergency Response", "Aid Distribution", "Logistics Post", "Soup Kitchen"],
+          "tags": [
+            "Emergency Response",
+            "Aid Distribution",
+            "Logistics Post",
+            "Soup Kitchen"
+          ],
           "image": "/assets/volunteerr.jpg"
         },
         {
@@ -698,7 +832,11 @@
           "period": "2018 - 2024",
           "badge": "SDIT - Alumni",
           "description": "Integrated Islamic primary education building strong academic and character foundations.",
-          "tags": ["SDIT", "Binjai", "Alumni"],
+          "tags": [
+            "SDIT",
+            "Binjai",
+            "Alumni"
+          ],
           "instagram_link": "https://www.instagram.com/sekolah.mardhiyah/",
           "web_link": "https://maps.google.com/?q=SDIT+Swasta+Mardhiyah+Binjai",
           "web_label": "School Profile"
@@ -766,7 +904,12 @@
           "badge": "Humanitarian Post",
           "domain": "volunteer.dev/cisarua-part-2",
           "description": "Documentation of activities at Cisarua volunteer post, distribution of logistics, facility recovery, and community support.",
-          "tags": ["Recovery", "Humanitarian Post", "Volunteer", "Cisarua"],
+          "tags": [
+            "Recovery",
+            "Humanitarian Post",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/14LOFP-zQkv6fPs23v6IHU5SDU4EYZ_-z",
           "detailUrl": "https://drive.google.com/file/d/14LOFP-zQkv6fPs23v6IHU5SDU4EYZ_-z/view"
         },
@@ -778,7 +921,12 @@
           "badge": "Humanitarian Action",
           "domain": "volunteer.dev/cisarua-part-3",
           "description": "Documentation of final field situation, closing of Cisarua volunteer relief action, and humanitarian aid evaluation.",
-          "tags": ["Documentation", "Volunteer", "Cisarua", "Social Action"],
+          "tags": [
+            "Documentation",
+            "Volunteer",
+            "Cisarua",
+            "Social Action"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1l7F-SJbCKiQXgAHTYiQw0V4Ny1herohn",
           "detailUrl": "https://drive.google.com/file/d/1l7F-SJbCKiQXgAHTYiQw0V4Ny1herohn/view"
         },
@@ -790,7 +938,12 @@
           "badge": "Volunteer Action",
           "domain": "volunteer.dev/cisarua-part-4",
           "description": "Documentation of volunteer team movement in clearing affected areas and distributing basic necessities.",
-          "tags": ["Field Action", "Logistics", "Volunteer", "Cisarua"],
+          "tags": [
+            "Field Action",
+            "Logistics",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1UYjVfyx18sx6ZTwQwH5hPn9F4onu0MB4",
           "detailUrl": "https://drive.google.com/file/d/1UYjVfyx18sx6ZTwQwH5hPn9F4onu0MB4/view"
         },
@@ -802,7 +955,12 @@
           "badge": "Logistics Mgmt",
           "domain": "volunteer.dev/cisarua-part-5",
           "description": "Process of receiving, packaging aid supplies, and distributing food and medical logistics at the main post.",
-          "tags": ["Logistics", "Main Post", "Volunteer", "Cisarua"],
+          "tags": [
+            "Logistics",
+            "Main Post",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1adtZ8YDCSmP5TUWy9CQssmlIxNpfeBkQ",
           "detailUrl": "https://drive.google.com/file/d/1adtZ8YDCSmP5TUWy9CQssmlIxNpfeBkQ/view"
         },
@@ -814,7 +972,12 @@
           "badge": "Volunteer Briefing",
           "domain": "volunteer.dev/cisarua-part-6",
           "description": "Daily coordination session of volunteer teams with local authorities and priority distribution zone assignment.",
-          "tags": ["Coordination", "Briefing", "Volunteer", "Cisarua"],
+          "tags": [
+            "Coordination",
+            "Briefing",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1omxGMQ3WvumEf5zd2giCl82aDWfyb60T",
           "detailUrl": "https://drive.google.com/file/d/1omxGMQ3WvumEf5zd2giCl82aDWfyb60T/view"
         },
@@ -826,7 +989,12 @@
           "badge": "Field Distribution",
           "domain": "volunteer.dev/cisarua-part-7",
           "description": "Volunteer team journey navigating evacuation routes to deliver food supplies directly to residents.",
-          "tags": ["Distribution", "Relief Supplies", "Volunteer", "Cisarua"],
+          "tags": [
+            "Distribution",
+            "Relief Supplies",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1pzcHYYbrgW4UOLXjXyhNcXkAt7oBibZQ",
           "detailUrl": "https://drive.google.com/file/d/1pzcHYYbrgW4UOLXjXyhNcXkAt7oBibZQ/view"
         },
@@ -838,7 +1006,12 @@
           "badge": "Moral Support",
           "domain": "volunteer.dev/cisarua-part-8",
           "description": "Community cleanup of public facilities and psychosocial support for affected residents.",
-          "tags": ["Community Work", "Recovery", "Volunteer", "Cisarua"],
+          "tags": [
+            "Community Work",
+            "Recovery",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1EadPzCtUkqE3uWg38Dlup0TcE9nr8Vp8",
           "detailUrl": "https://drive.google.com/file/d/1EadPzCtUkqE3uWg38Dlup0TcE9nr8Vp8/view"
         },
@@ -850,7 +1023,12 @@
           "badge": "Joint Volunteers",
           "domain": "volunteer.dev/cisarua-part-9",
           "description": "Synergy of inter-community volunteer teams in supporting clean water and soup kitchen needs.",
-          "tags": ["Soup Kitchen", "Clean Water", "Volunteer", "Cisarua"],
+          "tags": [
+            "Soup Kitchen",
+            "Clean Water",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1BPaWHv7SJwgDXG5Y-YbrGaqtD7nh_Yk4",
           "detailUrl": "https://drive.google.com/file/d/1BPaWHv7SJwgDXG5Y-YbrGaqtD7nh_Yk4/view"
         },
@@ -862,7 +1040,12 @@
           "badge": "Closing & Review",
           "domain": "volunteer.dev/cisarua-part-10",
           "description": "Documentation of Cisarua volunteer closing ceremony, team farewell, and post handover to community leaders.",
-          "tags": ["Closing", "Review", "Volunteer", "Cisarua"],
+          "tags": [
+            "Closing",
+            "Review",
+            "Volunteer",
+            "Cisarua"
+          ],
           "videoSrc": "https://lh3.googleusercontent.com/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz",
           "detailUrl": "https://drive.google.com/file/d/1clB2zGHyl--BgGqKOqwrEgOMvveiCqGz/view"
         },
@@ -874,7 +1057,13 @@
           "badge": "Documentation Volunteer",
           "domain": "volunteer.dev/sertif-hari-anak-tasik",
           "description": "Official certificate of appreciation from Dinsos PPKB P3A Tasikmalaya Regency to Muhammad Usamah Abdurrahman as Documentation Volunteer for 2026 National Children's Day with Regional Children's Forum.",
-          "tags": ["Certificate", "National Children's Day", "Children's Forum", "Dinsos PPKB P3A", "Tasikmalaya"],
+          "tags": [
+            "Certificate",
+            "National Children's Day",
+            "Children's Forum",
+            "Dinsos PPKB P3A",
+            "Tasikmalaya"
+          ],
           "imageSrc": "/assets/sertif-forum-anak.jpg",
           "detailUrl": "/assets/sertif-forum-anak.jpg"
         },
@@ -886,7 +1075,13 @@
           "badge": "Lead Operator",
           "domain": "volunteer.dev/operator-hari-anak-tasik",
           "description": "Photo documentation as Sound System, Audio Mixing, & Live Streaming Operator during National Children's Day event across Tasikmalaya.",
-          "tags": ["Operator", "National Children's Day", "Tasikmalaya", "Event Tech", "Volunteer"],
+          "tags": [
+            "Operator",
+            "National Children's Day",
+            "Tasikmalaya",
+            "Event Tech",
+            "Volunteer"
+          ],
           "imageSrc": "/assets/volunteer-hari-anak-nasional.jpg",
           "detailUrl": "/assets/volunteer-hari-anak-nasional.jpg"
         },
@@ -898,7 +1093,12 @@
           "badge": "Field Photo",
           "domain": "volunteer.dev/photo-cisarua-1",
           "description": "Photo documentation of togetherness and volunteer action at Cisarua disaster location.",
-          "tags": ["Photo", "Documentation", "Volunteer", "Cisarua"],
+          "tags": [
+            "Photo",
+            "Documentation",
+            "Volunteer",
+            "Cisarua"
+          ],
           "imageSrc": "/assets/volunteerr.jpg",
           "detailUrl": "/assets/volunteerr.jpg"
         },
@@ -910,7 +1110,12 @@
           "badge": "Field Photo",
           "domain": "volunteer.dev/photo-cisarua-2",
           "description": "Photo documentation of logistics distribution and team coordination at disaster post.",
-          "tags": ["Photo", "Relief Post", "Volunteer", "Cisarua"],
+          "tags": [
+            "Photo",
+            "Relief Post",
+            "Volunteer",
+            "Cisarua"
+          ],
           "imageSrc": "https://lh3.googleusercontent.com/d/1QQs-lWJh69RxZzG3ZPnQ-1DqXJFKzP6p",
           "detailUrl": "https://drive.google.com/file/d/1QQs-lWJh69RxZzG3ZPnQ-1DqXJFKzP6p/view"
         }

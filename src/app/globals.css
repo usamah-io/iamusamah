@@ -374,3 +374,25 @@ html.lenis body {
   pointer-events: none;
   transition: transform 420ms cubic-bezier(0.07, 0.5, 0.5, 1);
 }
+
+
+/* Isolated Horizontal Ticker for Apps Page */
+@keyframes appsMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 1.5rem));
+  }
+}
+
+.animate-apps-marquee {
+  animation: appsMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-apps-marquee {
+    animation: none !important;
+  }
+}
