@@ -24,6 +24,10 @@ export interface AppItem {
     id: string;
     en: string;
   };
+  shortDescription: {
+    id: string;
+    en: string;
+  };
   features: {
     id: string[];
     en: string[];
@@ -58,6 +62,10 @@ export const APPS_DATA: AppItem[] = [
     description: {
       id: "Platform belajar dan latihan soal berbantuan AI yang membantu pengguna membuat kuis adaptif, memahami pembahasan mendalam, dan mengevaluasi progres belajar.",
       en: "AI-assisted learning and exam platform helping users generate adaptive quizzes, master comprehensive explanations, and evaluate study progress.",
+    },
+    shortDescription: {
+      id: "Belajar dan latihan soal adaptif berbantuan Gemini AI.",
+      en: "Adaptive study & exam quiz practice powered by Gemini AI.",
     },
     features: {
       id: [
@@ -101,6 +109,10 @@ export const APPS_DATA: AppItem[] = [
     description: {
       id: "Aplikasi Al-Qur'an modern yang membantu pengguna mencari ayat, membaca terjemahan, mendengarkan murottal, dan menelusuri konteks ayat.",
       en: "Modern Quran application helping users search verses, read translations, listen to murottal recitations, and explore contextual backgrounds.",
+    },
+    shortDescription: {
+      id: "Cari ayat, baca terjemahan, dan dengarkan murottal.",
+      en: "Search verses, read translations, and stream murottal.",
     },
     features: {
       id: [
@@ -148,6 +160,10 @@ export const APPS_DATA: AppItem[] = [
       id: "Platform e-learning yang sedang dikembangkan untuk mengeksplorasi pengalaman belajar digital, quiz otomatis, dan pelacakan konsistensi belajar.",
       en: "E-learning platform under development exploring digital learning experiences, automated quizzes, and study consistency tracking.",
     },
+    shortDescription: {
+      id: "Platform e-learning yang sedang dikembangkan.",
+      en: "E-learning platform currently under development.",
+    },
     features: {
       id: [
         "Eksplorasi antarmuka quiz interaktif modern berbasis web",
@@ -191,6 +207,10 @@ export const APPS_DATA: AppItem[] = [
     description: {
       id: "Game edukasi untuk belajar logika pemrograman Python melalui labirin, misi interaktif, dan tantangan kode bersama robot PyBot.",
       en: "Educational game for learning Python programming logic through code mazes, interactive missions, and coding challenges with PyBot.",
+    },
+    shortDescription: {
+      id: "Belajar logika Python melalui game labirin interaktif.",
+      en: "Learn Python programming logic via interactive code mazes.",
     },
     features: {
       id: [

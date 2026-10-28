@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Sparkles, Layers } from "lucide-react";
+import { ArrowLeft, Layers } from "lucide-react";
 import { useApp } from "@/components/app-context";
 import { APPS_DATA } from "@/data/apps-data";
-import AppCard from "@/components/app-card";
 import AppsTicker from "@/components/apps-ticker";
+import AppsGrid from "@/components/apps-grid";
 
 export default function AppsPage() {
   const { language } = useApp();
@@ -76,11 +76,8 @@ export default function AppsPage() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
-            {APPS_DATA.map((app) => (
-              <AppCard key={app.id} app={app} />
-            ))}
-          </div>
+          {/* Interactive Responsive Grid (2-column expandable on mobile, 2-column spacious on desktop) */}
+          <AppsGrid apps={APPS_DATA} />
         </section>
 
       </div>
