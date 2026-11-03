@@ -229,6 +229,151 @@ export default function HackathonRecapPage() {
           </div>
         </section>
 
+        {/* IKHTISAR PRESTASI & REKOGNISI RESMI (ACHIEVEMENTS DIRECTORY) */}
+        <section className="space-y-6 pt-8 border-t-2 border-foreground/20">
+          <div className="flex items-center gap-3">
+            <div className="p-3 rounded-2xl bg-foreground text-background border-2 border-foreground shadow-[3px_3px_0px_var(--fg)] shrink-0">
+              <Trophy className="w-5 h-5 text-amber-400" />
+            </div>
+            <div>
+              <span className="font-mono text-xs font-black uppercase tracking-wider text-[var(--accent1)] block">
+                Directory // {isIndonesian ? "Rekapitulasi Prestasi" : "Official Recognition"}
+              </span>
+              <h2 className="text-xl sm:text-2xl font-black uppercase text-foreground tracking-tight">
+                {isIndonesian ? "Daftar Prestasi & Sertifikasi" : "Achievements & Certifications"}
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 1. Hackathons */}
+            <div className="rounded-[1.75rem] border-3 border-foreground bg-background p-6 shadow-[5px_5px_0px_var(--fg)] flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <span className="font-mono text-[10px] font-black uppercase text-emerald-500 block">
+                  [ Hackathons ]
+                </span>
+                <div
+                  onClick={() => setSelectedImage("/assets/sks-master-certificate.png")}
+                  className="relative aspect-video w-full rounded-xl overflow-hidden border-2 border-foreground/30 bg-zinc-950 cursor-pointer group"
+                >
+                  <Image
+                    src="/assets/sks-master-certificate.png"
+                    alt="Sertifikat Tim SKS-Master Gemini Innovation Hackathon 2026"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    className="object-cover group-hover:scale-105 transition-transform"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="text-[10px] font-mono font-bold text-white bg-black/80 px-2.5 py-1 rounded-full">
+                      {isIndonesian ? "Perbesar ↗" : "Zoom ↗"}
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-black text-base uppercase text-foreground tracking-tight">
+                  Gemini Innovation Hackathon 2026
+                </h3>
+                <p className="font-mono text-[11px] text-foreground/60">
+                  Google Student Ambassador &amp; UNSIL • 28 Juli 2026
+                </p>
+                <p className="text-xs text-foreground/80 font-medium leading-relaxed">
+                  {isIndonesian
+                    ? "Diumumkan sebagai Top 4 Finalis (Skor 86,4). Sertifikat partisipasi resmi diterbitkan atas nama tim SKS-Master."
+                    : "Announced as Top 4 Finalist (Score 86.4). Participation certificate officially issued to SKS-Master team."}
+                </p>
+              </div>
+              <div className="pt-2 border-t border-foreground/15">
+                <span className="font-mono text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase">
+                  {isIndonesian ? "Top 4 Finalis" : "Top 4 Finalist"}
+                </span>
+              </div>
+            </div>
+
+            {/* 2. Competitions */}
+            <div className="rounded-[1.75rem] border-3 border-foreground bg-background p-6 shadow-[5px_5px_0px_var(--fg)] flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <span className="font-mono text-[10px] font-black uppercase text-blue-500 block">
+                  [ Competitions ]
+                </span>
+                <div
+                  onClick={() => setSelectedImage("/assets/icc-2026-certificate.jpg")}
+                  className="relative aspect-video w-full rounded-xl overflow-hidden border-2 border-foreground/30 bg-zinc-950 cursor-pointer group"
+                >
+                  <Image
+                    src="/assets/icc-2026-certificate.jpg"
+                    alt="Sertifikat Peserta Indonesia Creative Competition 2026"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    className="object-cover group-hover:scale-105 transition-transform"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="text-[10px] font-mono font-bold text-white bg-black/80 px-2.5 py-1 rounded-full">
+                      {isIndonesian ? "Perbesar ↗" : "Zoom ↗"}
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-black text-base uppercase text-foreground tracking-tight">
+                  Indonesia Creative Competition 2026
+                </h3>
+                <p className="font-mono text-[11px] text-foreground/60">
+                  TMII Jakarta (Batch 2) • 27 September 2026
+                </p>
+                <p className="text-xs text-foreground/80 font-medium leading-relaxed">
+                  {isIndonesian
+                    ? "Sertifikat resmi peserta kategori Creative Code Teens yang diselenggarakan di Museum Listrik dan Energi Baru TMII Jakarta."
+                    : "Official participant certificate in Creative Code Teens category held at TMII Jakarta."}
+                </p>
+              </div>
+              <div className="pt-2 border-t border-foreground/15">
+                <span className="font-mono text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase">
+                  {isIndonesian ? "Peserta Resmi" : "Official Participant"}
+                </span>
+              </div>
+            </div>
+
+            {/* 3. Certifications & Recognitions */}
+            <div className="rounded-[1.75rem] border-3 border-foreground bg-background p-6 shadow-[5px_5px_0px_var(--fg)] flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <span className="font-mono text-[10px] font-black uppercase text-[var(--accent1)] block">
+                  [ Certifications &amp; Recognitions ]
+                </span>
+                <div
+                  onClick={() => setSelectedImage("/assets/sertif-forum-anak.jpg")}
+                  className="relative aspect-video w-full rounded-xl overflow-hidden border-2 border-foreground/30 bg-zinc-950 cursor-pointer group"
+                >
+                  <Image
+                    src="/assets/sertif-forum-anak.jpg"
+                    alt="Piagam Penghargaan Hari Anak Nasional 2026"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 300px"
+                    className="object-cover group-hover:scale-105 transition-transform"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="text-[10px] font-mono font-bold text-white bg-black/80 px-2.5 py-1 rounded-full">
+                      {isIndonesian ? "Perbesar ↗" : "Zoom ↗"}
+                    </span>
+                  </div>
+                </div>
+                <h3 className="font-black text-base uppercase text-foreground tracking-tight">
+                  Hari Anak Nasional 2026
+                </h3>
+                <p className="font-mono text-[11px] text-foreground/60">
+                  Dinsos PPKB P3A &amp; Forum Anak • 30 Agustus 2026
+                </p>
+                <p className="text-xs text-foreground/80 font-medium leading-relaxed">
+                  {isIndonesian
+                    ? "Piagam penghargaan atas kontribusi aktif sebagai relawan dokumentasi dan operator multimedia/audio/streaming."
+                    : "Certificate of appreciation for active contribution as documentation volunteer and multimedia sound mixing operator."}
+                </p>
+              </div>
+              <div className="pt-2 border-t border-foreground/15">
+                <span className="font-mono text-[10px] font-bold text-foreground/75 uppercase">
+                  {isIndonesian ? "Piagam Relawan" : "Volunteer Award"}
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* GALERI FOTO DOKUMENTASI */}
         <section className="space-y-8 pt-8 border-t-2 border-foreground/20">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
