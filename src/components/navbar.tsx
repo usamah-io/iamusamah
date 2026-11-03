@@ -252,6 +252,14 @@ export default function Navbar() {
                 ➜ 10. {t.nav.connect || "Koneksi"}
               </button>
             </div>
+            <div className="overflow-hidden">
+              <button
+                onClick={() => handleNavClick("/scholarship")}
+                className="nav-item-el block text-left text-[var(--accent1)] hover:text-emerald-400 transition transform cursor-pointer"
+              >
+                ★ 11. {t.nav.scholarship || (language === "id" ? "Profil Beasiswa" : "Scholarship Profile")}
+              </button>
+            </div>
           </div>
 
           {/* Footer Staggered Items */}

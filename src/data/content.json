@@ -25,7 +25,8 @@
       "more": "Prestasi",
       "cta": "Kontak",
       "apps": "Aplikasi",
-      "connect": "Koneksi"
+      "connect": "Koneksi",
+      "scholarship": "Profil Beasiswa SMA"
     },
     "hero": {
       "status_connecting": "Menghubungkan status...",
@@ -676,7 +677,8 @@
       "more": "Achievements",
       "cta": "Contact",
       "apps": "Applications",
-      "connect": "Connect"
+      "connect": "Connect",
+      "scholarship": "Scholarship Profile"
     },
     "hero": {
       "status_connecting": "Connecting status...",
