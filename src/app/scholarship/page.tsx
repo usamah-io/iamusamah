@@ -551,6 +551,131 @@ export default function ScholarshipProfilePage() {
           </div>
         </section>
 
+        {/* LEARNING JOURNEY TIMELINE (FAKTA TERVERIFIKASI) */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="p-3 rounded-2xl bg-foreground text-background border-2 border-foreground shadow-[3px_3px_0px_var(--fg)] shrink-0">
+              <BookOpen className="w-5 h-5 text-emerald-400" />
+            </div>
+            <div>
+              <span className="font-mono text-xs font-black uppercase tracking-wider text-[var(--accent1)] block">
+                04 // {isIndonesian ? "Kronologi Pembelajaran" : "Milestones"}
+              </span>
+              <h2 className="text-xl sm:text-2xl font-black uppercase text-foreground tracking-tight">
+                {isIndonesian ? "Garis Waktu Perjalanan Belajar (Learning Journey)" : "Learning Journey Timeline"}
+              </h2>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border-3 sm:border-4 border-foreground bg-background p-6 sm:p-8 shadow-[6px_6px_0px_var(--fg)] space-y-6">
+            <div className="relative border-l-3 border-foreground/30 pl-6 sm:pl-8 ml-2 sm:ml-4 space-y-8">
+              
+              {/* Item 1: 2018 - 2024 */}
+              <div className="relative">
+                <span className="absolute -left-[31px] sm:-left-[39px] top-1 w-3.5 h-3.5 rounded-full bg-foreground border-2 border-background" />
+                <span className="font-mono text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md bg-foreground/10 text-foreground border border-foreground/20">
+                  2018 – 2024
+                </span>
+                <h3 className="font-black text-base sm:text-lg uppercase text-foreground mt-2">
+                  {isIndonesian ? "Pendidikan Dasar di SDIT Swasta Mardhiyah" : "Primary Education at SDIT Swasta Mardhiyah"}
+                </h3>
+                <p className="font-mono text-xs text-foreground/60">Binjai, Sumatera Utara</p>
+                <p className="text-xs sm:text-sm text-foreground/80 font-medium leading-relaxed mt-1.5">
+                  {isIndonesian
+                    ? "Menyelesaikan pendidikan dasar dengan penguatan karakter, matematika, dan dasar sains sebelum melanjutkan studi mandiri."
+                    : "Completed primary education with strong moral foundations, basic mathematics, and science before pursuing self-directed study."}
+                </p>
+              </div>
+
+              {/* Item 2: 2024 */}
+              <div className="relative">
+                <span className="absolute -left-[31px] sm:-left-[39px] top-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-background" />
+                <span className="font-mono text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                  2024 – 2027
+                </span>
+                <h3 className="font-black text-base sm:text-lg uppercase text-foreground mt-2">
+                  {isIndonesian ? "Homeschooling di Jazacademy & Ujian di SMPT Bugelan" : "Homeschooling at Jazacademy & Exams at SMPT Bugelan"}
+                </h3>
+                <p className="font-mono text-xs text-foreground/60">Tasikmalaya, Jawa Barat</p>
+                <p className="text-xs sm:text-sm text-foreground/80 font-medium leading-relaxed mt-1.5">
+                  {isIndonesian
+                    ? "Merantau dari Medan ke Tasikmalaya untuk belajar di Jazacademy (komunitas belajar sistem asrama) dan terdaftar ujian resmi di SMPT Bugelan. Mulai mendalami Next.js, TypeScript, dan membuat konten edukasi pemrograman di @uus.code."
+                    : "Moved from Medan to Tasikmalaya to pursue self-directed learning at Jazacademy (boarding-style community) with official examinations at SMPT Bugelan. Began self-taught coding in Next.js, TypeScript, and sharing tutorials on @uus.code."}
+                </p>
+              </div>
+
+              {/* Item 3: 2024 - 2025 */}
+              <div className="relative">
+                <span className="absolute -left-[31px] sm:-left-[39px] top-1 w-3.5 h-3.5 rounded-full bg-rose-500 border-2 border-background" />
+                <span className="font-mono text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md bg-rose-500/20 text-rose-600 dark:text-rose-400 border border-rose-500/30">
+                  2024 – 2025
+                </span>
+                <h3 className="font-black text-base sm:text-lg uppercase text-foreground mt-2">
+                  {isIndonesian ? "Relawan Sosial SAN & Tanggap Bencana Cisarua" : "Social Volunteer at SAN & Cisarua Disaster Relief"}
+                </h3>
+                <p className="font-mono text-xs text-foreground/60">Tasikmalaya &amp; Bandung Barat</p>
+                <p className="text-xs sm:text-sm text-foreground/80 font-medium leading-relaxed mt-1.5">
+                  {isIndonesian
+                    ? "Mengabdi sebagai pengurus Kominfo/PDD di Senyum Anak Nusantara (SAN) Tasikmalaya dan terjun langsung sebagai relawan posko sembako serta dapur umum pemulihan longsor Cisarua, Bandung Barat."
+                    : "Contributed as media/documentation staff at Senyum Anak Nusantara (SAN) Tasikmalaya and served directly in relief logistics and soup kitchens for the Cisarua landslide in West Bandung."}
+                </p>
+              </div>
+
+              {/* Item 4: 28 Juli 2026 */}
+              <div className="relative">
+                <span className="absolute -left-[31px] sm:-left-[39px] top-1 w-3.5 h-3.5 rounded-full bg-[var(--accent1)] border-2 border-background" />
+                <span className="font-mono text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md bg-[var(--accent1)] text-black border border-black shadow-[1px_1px_0px_#000000]">
+                  28 Juli 2026
+                </span>
+                <h3 className="font-black text-base sm:text-lg uppercase text-foreground mt-2">
+                  {isIndonesian ? "Finalis Top 4 Gemini Innovation Hackathon 2026" : "Top 4 Finalist at Gemini Innovation Hackathon 2026"}
+                </h3>
+                <p className="font-mono text-xs text-foreground/60">Tasikmalaya (Hybrid)</p>
+                <p className="text-xs sm:text-sm text-foreground/80 font-medium leading-relaxed mt-1.5">
+                  {isIndonesian
+                    ? "Mengembangkan platform SKS-Master berbantuan Gemini AI; terpilih sebagai salah satu dari lima tim finalis dengan nilai resmi 86,4 (peringkat 4)."
+                    : "Engineered the SKS-Master AI study platform; announced among five finalist teams with an official score of 86.4 (4th place)."}
+                </p>
+              </div>
+
+              {/* Item 5: 30 Agustus 2026 */}
+              <div className="relative">
+                <span className="absolute -left-[31px] sm:-left-[39px] top-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-background" />
+                <span className="font-mono text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+                  30 Agustus 2026
+                </span>
+                <h3 className="font-black text-base sm:text-lg uppercase text-foreground mt-2">
+                  {isIndonesian ? "Operator Teknis Hari Anak Nasional 2026" : "Technical Operator at National Children's Day 2026"}
+                </h3>
+                <p className="font-mono text-xs text-foreground/60">Tasikmalaya</p>
+                <p className="text-xs sm:text-sm text-foreground/80 font-medium leading-relaxed mt-1.5">
+                  {isIndonesian
+                    ? "Bertugas mengoperasikan multimedia, audio sound system, dan live streaming serta mendokumentasikan rangkaian acara Hari Anak Nasional."
+                    : "Operated multimedia, live audio mixing, and broadcast streaming for National Children's Day in Tasikmalaya."}
+                </p>
+              </div>
+
+              {/* Item 6: 27 September 2026 */}
+              <div className="relative">
+                <span className="absolute -left-[31px] sm:-left-[39px] top-1 w-3.5 h-3.5 rounded-full bg-blue-500 border-2 border-background" />
+                <span className="font-mono text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-md bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30">
+                  27 September 2026
+                </span>
+                <h3 className="font-black text-base sm:text-lg uppercase text-foreground mt-2">
+                  {isIndonesian ? "Peserta Indonesia Creative Competition 2026 (Batch 2)" : "Participant at Indonesia Creative Competition 2026"}
+                </h3>
+                <p className="font-mono text-xs text-foreground/60">TMII, Jakarta</p>
+                <p className="text-xs sm:text-sm text-foreground/80 font-medium leading-relaxed mt-1.5">
+                  {isIndonesian
+                    ? "Berkompetisi pada kategori Creative Code Teens di Museum Listrik dan Energi Baru TMII Jakarta untuk menguji kemampuan pemecahan masalah komputasi."
+                    : "Competed in the Creative Code Teens category at TMII Jakarta, testing computational problem-solving and software creativity."}
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         {/* 5. ACHIEVEMENTS & TRANSPARENCY */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
