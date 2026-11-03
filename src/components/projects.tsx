@@ -86,13 +86,13 @@ export default function Projects() {
       },
     },
     {
-      title: "Stry - AI Quiz Generator",
+      title: "Studee - E-Learning Platform",
       image: "/assets/projects/studee.png",
       link: "https://github.com/usamah-io",
       mediaItem: {
         id: "studee-preview",
         type: "image" as const,
-        title: "Stry / Studee — AI Quiz & Study Generation System",
+        title: "Studee — E-Learning & Quiz Generation System",
         category: "PROJECT PREVIEW",
         domain: "github.com/usamah-io",
         description:
@@ -574,7 +574,7 @@ export default function Projects() {
               AI LEARNING SYSTEM
             </span>
             <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black uppercase tracking-tighter">
-              Stry Quiz Generator
+              Studee E-Learning Platform
             </h1>
           </div>
 

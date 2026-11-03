@@ -20,7 +20,7 @@ export interface ConnectItem {
     id: string;
     en: string;
   };
-  iconType: "instagram" | "github" | "tiktok" | "whatsapp" | "gmail";
+  iconType: "instagram" | "github" | "tiktok" | "linkedin" | "gmail";
   highlightColor?: string;
 }
 
@@ -126,29 +126,29 @@ export const CONNECT_DATA: ConnectItem[] = [
     highlightColor: "#9bc1bc",
   },
   {
-    id: "whatsapp",
-    name: "WhatsApp Direct",
-    handle: "+62 815-3289-6727",
-    url: "https://wa.me/6281532896727",
-    group: "contact",
+    id: "linkedin",
+    name: "LinkedIn",
+    handle: "muhammad-usamah-abdurrahman",
+    url: "https://www.linkedin.com/in/muhammad-usamah-abdurrahman-94064142b/",
+    group: "social",
     groupLabel: {
-      id: "Kontak Langsung",
-      en: "Direct Contact",
+      id: "Jejaring Profesional",
+      en: "Professional Network",
     },
     label: {
-      id: "Direct Chat & Discussion",
-      en: "Direct Chat & Discussion",
+      id: "Professional Network & Career",
+      en: "Professional Network & Career",
     },
     description: {
-      id: "Hubungi saya secara langsung untuk pertanyaan, tanya jawab seputar proyek, atau diskusi kolaborasi.",
-      en: "Contact me directly for questions, project inquiries, or casual collaboration chats.",
+      id: "Profil profesional, jejaring beasiswa, serta pembaruan seputar proyek dan kompetisi.",
+      en: "Professional profile, scholarship network, and updates on projects and competitions.",
     },
     actionLabel: {
-      id: "Hubungi via WhatsApp",
-      en: "Chat via WhatsApp",
+      id: "Kunjungi LinkedIn",
+      en: "View LinkedIn",
     },
-    iconType: "whatsapp",
-    highlightColor: "#25D366",
+    iconType: "linkedin",
+    highlightColor: "#0A66C2",
   },
   {
     id: "gmail",

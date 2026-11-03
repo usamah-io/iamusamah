@@ -171,15 +171,15 @@ export default function Stats() {
     },
     {
       id: "contact-api",
-      name: "Gmail & WhatsApp APIs",
+      name: "Gmail & Nodemailer SMTP",
       badge: "Communication",
-      endpoint: "POST /api/contact (Gmail SMTP & Meta Cloud API)",
+      endpoint: "POST /api/contact (Nodemailer SMTP)",
       method: "POST",
       description: isIndonesian
-        ? "Protokol pengiriman pesan formulir kontak otomatis via SMTP Nodemailer dan Meta WhatsApp Click-to-Chat."
-        : "Automated contact message dispatch via Nodemailer SMTP and Meta WhatsApp Click-to-Chat protocol.",
+        ? "Protokol pengiriman pesan formulir kontak aman via SMTP Nodemailer dan serverless Next.js API Route."
+        : "Secure contact dispatch protocol via Nodemailer SMTP and serverless Next.js API Route.",
       docUrl: "https://developers.google.com/gmail/api",
-      tags: ["Nodemailer", "SMTP", "Meta Cloud", "WhatsApp"],
+      tags: ["Nodemailer", "SMTP", "API Route", "Serverless"],
       icon: Mail,
     },
   ];

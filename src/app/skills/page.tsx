@@ -24,8 +24,8 @@ export default function SkillsPage() {
 
           <div className="flex items-center gap-3">
             <a
-              href="/cv-muhammad-usamah.pdf"
-              download="CV-Muhammad-Usamah.pdf"
+              href="/cv-muhammad-usamah-abdurrahman.pdf"
+              download="CV-Muhammad-Usamah-Abdurrahman.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-mono font-black uppercase tracking-wider text-black bg-emerald-500 hover:bg-emerald-400 py-2.5 px-4 rounded-full border-2 border-black shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"

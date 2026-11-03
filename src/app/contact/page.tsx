@@ -186,13 +186,7 @@ export default function ContactPage() {
                 {isIndonesian ? "CHAT CEPAT" : "QUICK CHAT"}
               </p>
               <a
-                href={socials.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-sm uppercase tracking-wide font-bold text-[var(--fg)] hover:underline"
-              >
-                WhatsApp @uus.code
-              </a>
+                href="https://www.linkedin.com/in/muhammad-usamah-abdurrahman-94064142b/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-foreground/30 bg-foreground/5 hover:bg-emerald-500 hover:text-black hover:border-black font-mono text-xs font-bold transition-all shadow-[2px_2px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px]">LinkedIn Profil</a>
             </div>
 
             <div className="pt-2">

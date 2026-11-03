@@ -236,7 +236,7 @@ export default function Volunteer() {
       badge: "EDUCATION #01",
       location: "TASIKMALAYA, JAWA BARAT",
       date: isIndonesian ? "2024 - Sekarang" : "2024 - Present",
-      title: "JAZ ACADEMY KOMUNITAS BELAJAR",
+      title: "JAZACADEMY KOMUNITAS BELAJAR",
       role: isIndonesian
         ? "Siswa Aktif — Software Engineering & AI Workflows"
         : "Active Student — Software Engineering & AI Workflows",

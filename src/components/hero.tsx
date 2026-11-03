@@ -40,8 +40,8 @@ export default function Hero() {
         </div>
         <div className="hero-footer-scroll-down w-full sm:w-auto text-center font-bold">
           <a
-            href="/cv-muhammad-usamah.pdf"
-            download="CV-Muhammad-Usamah.pdf"
+            href="/cv-muhammad-usamah-abdurrahman.pdf"
+            download="CV-Muhammad-Usamah-Abdurrahman.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-link w-full sm:w-auto text-black font-mono text-xs sm:text-xs font-black uppercase tracking-wider bg-emerald-500 hover:bg-emerald-400 py-3 sm:py-2.5 px-6 sm:px-6 rounded-full border-2 border-black shadow-[3px_3px_0px_#000000] transition active:translate-x-[1px] active:translate-y-[1px] inline-flex items-center justify-center gap-2 cursor-pointer"

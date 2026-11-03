@@ -102,7 +102,7 @@ export default function ConnectPage() {
           </div>
         </section>
 
-        {/* 3. Group: Direct Contact (WhatsApp & Gmail) */}
+        {/* 3. Group: Direct Contact (LinkedIn & Gmail) */}
         <section aria-labelledby="heading-contact" className="space-y-6">
           <div className="flex items-center justify-between border-b-2 border-foreground/20 pb-3">
             <h2
@@ -116,7 +116,7 @@ export default function ConnectPage() {
               </span>
             </h2>
             <span className="font-mono text-xs font-bold text-foreground/50 hidden sm:inline">
-              [ WhatsApp • Gmail ]
+              [ LinkedIn • Gmail ]
             </span>
           </div>
 

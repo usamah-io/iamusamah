@@ -187,7 +187,7 @@ export default function Footer() {
             <a href={content.socials.github} target="_blank" rel="noopener noreferrer">Github</a>
             <a href={content.socials.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href={content.socials.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
-            <a href={content.socials.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href={content.socials.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href={`mailto:${content.socials.gmail}`}>Gmail</a>
           </div>
           <div className="footer-col">

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Koneksi & Kontak — Muhammad Usamah",
     description:
-      "Terhubung dengan Muhammad Usamah: Instagram (uus.code & usamaahhhh), GitHub (usamah-io), TikTok, WhatsApp, dan Gmail.",
+      "Terhubung dengan Muhammad Usamah: Instagram (uus.code & usamaahhhh), GitHub (usamah-io), TikTok, LinkedIn, dan Gmail.",
     type: "website",
   },
 };

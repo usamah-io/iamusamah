@@ -22,19 +22,15 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? process.env.NEXT_PUBLIC_SITE_URL
-  : process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "https://portofolio-usamah.vercel.app";
+const siteUrl = "https://iamusamah.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Muhammad Usamah - Full-Stack & AI Developer",
-  description: "Portofolio resmi Muhammad Usamah Abdurrahman - Creative Full-Stack & AI Developer. Menampilkan proyek web modern, integrasi AI, dan pengalaman kompetisi.",
+  title: "Muhammad Usamah — Siswa, Web & AI Developer",
+  description: "Portofolio Muhammad Usamah Abdurrahman — Siswa dan pengembang web & AI (belajar mandiri). Menampilkan proyek aplikasi edukatif, pengalaman kompetisi, dan kegiatan sosial.",
   openGraph: {
-    title: "Muhammad Usamah - Full-Stack & AI Developer",
-    description: "Portofolio resmi Muhammad Usamah Abdurrahman - Creative Full-Stack & AI Developer. Menampilkan proyek web modern, integrasi AI, dan pengalaman kompetisi.",
+    title: "Muhammad Usamah — Siswa, Web & AI Developer",
+    description: "Portofolio Muhammad Usamah Abdurrahman — Siswa dan pengembang web & AI (belajar mandiri). Menampilkan proyek aplikasi edukatif, pengalaman kompetisi, dan kegiatan sosial.",
     url: siteUrl,
     siteName: "Muhammad Usamah Portfolio",
     locale: "id_ID",
@@ -44,14 +40,14 @@ export const metadata: Metadata = {
         url: "/profile-v2.jpg",
         width: 1200,
         height: 630,
-        alt: "Muhammad Usamah - Full-Stack & AI Developer",
+        alt: "Muhammad Usamah — Siswa, Web & AI Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Usamah - Full-Stack & AI Developer",
-    description: "Portofolio resmi Muhammad Usamah Abdurrahman - Creative Full-Stack & AI Developer.",
+    title: "Muhammad Usamah — Siswa, Web & AI Developer",
+    description: "Portofolio Muhammad Usamah Abdurrahman — Siswa dan pengembang web & AI (belajar mandiri).",
     images: ["/profile-v2.jpg"],
   },
 };

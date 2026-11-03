@@ -3,8 +3,10 @@
     "instagram": "https://www.instagram.com/uus.code/",
     "tiktok": "https://www.tiktok.com/@ig_usamaahhhh",
     "github": "https://github.com/usamah-io",
-    "whatsapp": "https://wa.me/6281532896727",
-    "gmail": "muhammadusamahabdurrahman@gmail.com"
+    "gmail": "muhammadusamahabdurrahman@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/muhammad-usamah-abdurrahman-94064142b/",
+    "instagram_personal": "https://www.instagram.com/usamaahhhh/",
+    "email": "mailto:muhammadusamahabdurrahman@gmail.com"
   },
   "id": {
     "nav": {
@@ -32,13 +34,13 @@
       "status_idle": "Idle di Discord",
       "status_dnd": "Jangan Ganggu",
       "status_offline": "Offline",
-      "title_1": "Full-Stack Developer",
-      "title_2": "Content Creator",
-      "subtitle": "Menciptakan aplikasi web premium berkinerja tinggi dengan tata letak responsif, estetika modern, dan perhatian penuh pada detail pixel.",
+      "title_1": "Siswa · Web & AI Developer",
+      "title_2": "Content Creator (Belajar Mandiri)",
+      "subtitle": "Saya belajar membangun aplikasi web dan memanfaatkan AI untuk membantu orang belajar.",
       "cta_explore": "Lihat Proyek",
       "cta_github": "Profil GitHub",
       "cta_download_cv": "Download CV",
-      "badge_achievement": "Top 4 Finalis Gemini Hackathon 2026"
+      "badge_achievement": "Finalis Top 4 Gemini Hackathon 2026"
     },
     "stats": {
       "title": "Aktivitas & Statistik",
@@ -61,21 +63,21 @@
     "about": {
       "title_about": "Tentang Saya",
       "subtitle_about": "Mengenal lebih dekat latar belakang, filosofi kerja, dan fokus teknologi saya.",
-      "description": "Saya adalah seorang Full-Stack Developer & Digital Content Creator muda asal Medan yang saat ini bersekolah di Tasikmalaya, Jawa Barat. Masih mengenyam pendidikan di jenjang SMP dan juga bersekolah di Jaz Academy, saya berfokus pada pengembangan aplikasi web modern berbasis Next.js dan TypeScript, terbiasa membangun platform dengan arsitektur Full-Stack maupun Decoupled Architecture, mengintegrasikan database dengan Prisma ORM, serta membagikan wawasan teknologi melalui konten edukasi video.",
+      "description": "Saya Muhammad Usamah Abdurrahman, siswa SMP dari Medan yang saat ini tinggal dan belajar di Tasikmalaya, Jawa Barat. Saya menempuh pendidikan melalui jalur homeschooling di Jazacademy, sebuah komunitas belajar dengan sistem berasrama, dan mengikuti ujian di SMPT Bugelan Tasikmalaya. Saya belajar membangun aplikasi web dengan Next.js dan TypeScript, dan tertarik memakai AI untuk membantu orang belajar.",
       "stats": [
         {
-          "value": "3+ Proyek Utama",
-          "label": "Budiman Cendikia, Stry, SKS-Master",
+          "value": "3+ Proyek Belajar",
+          "label": "Budiman Cendikia, Studee, SKS-Master",
           "color": "from-emerald-500 to-teal-400"
         },
         {
-          "value": "Full-Stack",
-          "label": "Next.js, TypeScript, PHP, SQL",
+          "value": "Web & AI Stack",
+          "label": "Next.js, TypeScript, AI APIs",
           "color": "from-teal-400 to-cyan-400"
         },
         {
-          "value": "AI-Powered",
-          "label": "Gemini & AntiGravity AI Workflows",
+          "value": "Belajar Mandiri",
+          "label": "Gemini API & Web Modern",
           "color": "from-cyan-400 to-blue-500"
         }
       ],
@@ -122,11 +124,11 @@
           "id": "exp-gemini",
           "category": "hackathon",
           "title": "Gemini Innovation Hackathon 2026",
-          "role": "Lead Developer - SKS-Master (Platform Ujian AI)",
+          "role": "Pengembang — SKS-Master (Platform Ujian AI)",
           "location": "Tasikmalaya (Remote / Hybrid)",
           "period": "28 Juli 2026",
-          "badge": "Hackathon Lead",
-          "description": "Memimpin tim dalam merancang & membangun platform ujian berbasis AI Google Gemini pada Gemini Innovation Hackathon at Gemini Unity Festival 2026. Meraih Top 4 Finalis dari 186 peserta dengan Nilai Akhir Resmi 86,4.",
+          "badge": "Finalis Hackathon",
+          "description": "Mengembangkan platform latihan soal adaptif SKS-Master berbasis Google Gemini API pada ajang Gemini Innovation Hackathon 2026. Diumumkan sebagai salah satu dari lima tim finalis (peringkat keempat dengan nilai 86,4). Catatan transparansi: Tim didaftarkan menggunakan identitas mentor karena ketentuan kompetisi mensyaratkan status mahasiswa; sertifikat partisipasi diterbitkan atas nama tim SKS-Master.",
           "tags": [
             "Lead Developer",
             "Gemini API",
@@ -140,12 +142,12 @@
         {
           "id": "exp-jaz",
           "category": "education",
-          "title": "Jaz Academy - Muslim Academy For Youth",
-          "role": "Sekolah Menengah Pertama (SMP)",
+          "title": "Jazacademy",
+          "role": "Homeschooling — Komunitas Belajar Berasrama",
           "location": "Tasikmalaya, Jawa Barat",
           "period": "2024 - Sekarang",
-          "badge": "SMP - Siswa Aktif",
-          "description": "Fokus pada Software Engineering, Full-Stack Web Development, integrasi AI Workflows, dan Digital Content Creation.",
+          "badge": "Homeschooling",
+          "description": "Komunitas belajar dengan sistem berasrama di Tasikmalaya (periode 2024–2027), tempat mendalami dasar-dasar pemrograman web (Next.js, TypeScript), pemanfaatan AI, serta pembuatan konten edukasi teknologi.",
           "tags": [
             "Full-Stack Dev",
             "Software Engineering",
@@ -565,12 +567,12 @@
     },
     "faq": {
       "title": "Pertanyaan Umum",
-      "subtitle": "Jawaban cepat untuk pertanyaan umum tentang kerjasama dan framework teknis.",
+      "subtitle": "Punya pertanyaan atau ingin berdiskusi seputar proyek dan kolaborasi? Kirimkan pesan melalui formulir kontak atau email.",
       "items": [
         {
           "id": "faq-1",
           "question": "Teknologi apa saja yang Anda kuasai?",
-          "answer": "Saya berspesialisasi dalam rekayasa frontend modern: Next.js (App Router), React, TypeScript, Tailwind CSS, dan membuat animasi premium menggunakan GSAP dan Lenis."
+          "answer": "Anda dapat menghubungi saya melalui formulir kontak di situs ini (/contact) atau via email ke muhammadusamahabdurrahman@gmail.com. Saya berusaha membalas secepat mungkin."
         },
         {
           "id": "faq-2",
@@ -587,7 +589,8 @@
           "question": "Bagaimana cara memulai proyek bersama Anda?",
           "answer": "Anda dapat menghubungi melalui formulir kontak di bawah ini, mengirim email langsung, atau mengirim pesan singkat via WhatsApp. Saya akan membalas dalam waktu 24 jam."
         }
-      ]
+      ],
+      "wa_label": "Form Kontak"
     },
     "footer": {
       "title": "Mari buat sesuatu",
@@ -682,9 +685,9 @@
       "status_idle": "Idle on Discord",
       "status_dnd": "Do Not Disturb",
       "status_offline": "Offline",
-      "title_1": "Full-Stack Developer",
-      "title_2": "Content Creator",
-      "subtitle": "Creating premium, highly performant web applications with responsive layouts, responsive aesthetics, and pixel-perfect attention to detail.",
+      "title_1": "Student · Web & AI Developer",
+      "title_2": "Content Creator (Self-Taught)",
+      "subtitle": "Learning to build web applications and leverage AI to help people learn.",
       "cta_explore": "Explore Projects",
       "cta_github": "GitHub Profile",
       "cta_download_cv": "Download CV",
@@ -711,21 +714,21 @@
     "about": {
       "title_about": "About Me",
       "subtitle_about": "Get a closer look at my background, work philosophy, and tech focus.",
-      "description": "I am a young Full-Stack Developer & Digital Content Creator from Medan, currently studying in Tasikmalaya, West Java. Still studying in Junior High School (SMP) and attending Jaz Academy, I focus on modern web application development based on Next.js and TypeScript, accustomed to building platforms with Full-Stack or Decoupled Architecture, integrating databases with Prisma ORM, and sharing tech insights through educational video content.",
+      "description": "I am Muhammad Usamah Abdurrahman, a junior high school student from Medan currently living and studying in Tasikmalaya, West Java. I pursue my education through the homeschooling pathway at Jazacademy, a boarding-style learning community, and take exams at SMPT Bugelan Tasikmalaya. I focus on learning modern web application development with Next.js and TypeScript, and I am interested in leveraging AI to help people learn.",
       "stats": [
         {
-          "value": "3+ Key Projects",
-          "label": "Budiman Cendikia, Stry, SKS-Master",
+          "value": "3+ Learning Projects",
+          "label": "Budiman Cendikia, Studee, SKS-Master",
           "color": "from-emerald-500 to-teal-400"
         },
         {
-          "value": "Full-Stack",
-          "label": "Next.js, TypeScript, PHP, SQL",
+          "value": "Web & AI Stack",
+          "label": "Next.js, TypeScript, AI APIs",
           "color": "from-teal-400 to-cyan-400"
         },
         {
-          "value": "AI-Powered",
-          "label": "Gemini & AntiGravity AI Workflows",
+          "value": "Self-Taught",
+          "label": "Gemini API & Modern Web",
           "color": "from-cyan-400 to-blue-500"
         }
       ],
@@ -772,11 +775,11 @@
           "id": "exp-gemini",
           "category": "hackathon",
           "title": "Gemini Innovation Hackathon 2026",
-          "role": "Lead Developer - SKS-Master (AI Exam Platform)",
+          "role": "Developer — SKS-Master (AI Exam Platform)",
           "location": "Tasikmalaya (Remote / Hybrid)",
           "period": "July 28, 2026",
-          "badge": "Hackathon Lead",
-          "description": "Led the team designing & building the AI exam platform using Google Gemini API at Gemini Innovation Hackathon at Gemini Unity Festival 2026. Placed Top 4 Finalist out of 186 entries with an official final score of 86.4.",
+          "badge": "Hackathon Finalist",
+          "description": "Developed the SKS-Master adaptive exam & quiz platform powered by Google Gemini API at Gemini Innovation Hackathon 2026. Announced as one of five finalist teams (fourth place with a score of 86.4). Transparency note: The team was registered using the mentor's identity due to the competition's university student requirement; the participation certificate was issued in the name of the SKS-Master team.",
           "tags": [
             "Lead Developer",
             "Gemini API",
@@ -790,12 +793,12 @@
         {
           "id": "exp-jaz",
           "category": "education",
-          "title": "Jaz Academy - Muslim Academy For Youth",
-          "role": "Junior High School (SMP)",
+          "title": "Jazacademy",
+          "role": "Homeschooling — Boarding-Style Learning Community",
           "location": "Tasikmalaya, West Java",
           "period": "2024 - Present",
-          "badge": "SMP - Active Student",
-          "description": "Focusing on Software Engineering, Full-Stack Web Development, AI Workflows integration, and Digital Content Creation.",
+          "badge": "Homeschooling",
+          "description": "A boarding-style learning community in Tasikmalaya (2024–2027), focusing on self-taught web development foundations (Next.js, TypeScript), AI workflows, and tech education content creation.",
           "tags": [
             "Full-Stack Dev",
             "Software Engineering",
@@ -1207,12 +1210,12 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "subtitle": "Quick answers to common queries about cooperation and technical frameworks.",
+      "subtitle": "Have questions or want to discuss projects and collaboration? Feel free to send a message via the contact form or email.",
       "items": [
         {
           "id": "faq-1",
           "question": "What technologies do you specialize in?",
-          "answer": "I specialize in modern frontend engineering: Next.js (App Router), React, TypeScript, Tailwind CSS, and creating premium animations using GSAP and Lenis."
+          "answer": "You can reach out through the contact form on this website (/contact) or via email at muhammadusamahabdurrahman@gmail.com. I will try to reply as soon as possible."
         },
         {
           "id": "faq-2",
@@ -1229,7 +1232,8 @@
           "question": "How can we get started on a project?",
           "answer": "You can reach out through the contact form below, email me directly, or send a quick message via WhatsApp. I will reply within 24 hours."
         }
-      ]
+      ],
+      "wa_label": "Contact Form"
     },
     "footer": {
       "title": "Let's craft something",

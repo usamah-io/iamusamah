@@ -9,6 +9,7 @@ import content from "@/data/content.json";
 
 export default function HackathonRecapPage() {
   const { language } = useApp();
+  const isIndonesian = language === "id";
   const tData = (content[language] || content["id"]) as typeof content["id"];
   const t = tData.hackathon;
 
@@ -60,6 +61,19 @@ export default function HackathonRecapPage() {
 
         {/* CERTIFICATE FIRST HERO MEDIA PREVIEW */}
         <section className="rounded-[2rem] border-4 border-foreground bg-background p-6 sm:p-10 shadow-[8px_8px_0px_var(--fg)] space-y-8">
+          {/* Catatan Transparansi Resmi */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-foreground/5 border-2 border-foreground/30 text-xs sm:text-sm font-medium leading-relaxed">
+            <p className="font-mono font-black uppercase text-[var(--accent1)] tracking-wider mb-1 flex items-center gap-1.5">
+              <Award className="w-3.5 h-3.5" />
+              <span>{isIndonesian ? "Catatan Transparansi & Integritas" : "Transparency & Integrity Note"}</span>
+            </p>
+            <p className="text-foreground/85">
+              {isIndonesian
+                ? "Tim SKS-Master didaftarkan dengan identitas mentor karena ketentuan kompetisi mensyaratkan peserta berstatus mahasiswa. Saya adalah pengembang SKS-Master yang merancang dan membangun platform ini. Sertifikat resmi yang tersedia adalah sertifikat partisipasi atas nama tim SKS-Master."
+                : "The SKS-Master team was registered using the mentor's identity due to the competition's university student requirement. I am the developer who designed and built the SKS-Master platform. The official certificate available is a participation certificate issued to the SKS-Master team."}
+            </p>
+          </div>
+
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pb-6 border-b-2 border-foreground/20">
             <div className="space-y-2 text-center lg:text-left">
               <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--accent1)] text-black text-xs font-mono font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)]">
