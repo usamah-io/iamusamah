@@ -304,6 +304,31 @@ export default function ProjectsPage() {
             </div>
           </div>
 
+          {/* Connected Experience Banner: Gemini Hackathon */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-emerald-500/10 border-2 border-emerald-500/40 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+            <div className="flex items-center gap-2.5">
+              <Award className="w-5 h-5 text-emerald-500 shrink-0" />
+              <div>
+                <span className="font-black uppercase text-foreground block">
+                  {isIndonesian
+                    ? "Terhubung dengan Pengalaman: Gemini Innovation Hackathon 2026"
+                    : "Connected Experience: Gemini Innovation Hackathon 2026"}
+                </span>
+                <span className="text-[11px] text-foreground/70 font-sans">
+                  {isIndonesian
+                    ? "Top 4 Finalis Nasional · Nilai Resmi 86,4"
+                    : "Top 4 National Finalist · Official Score 86.4"}
+                </span>
+              </div>
+            </div>
+            <Link
+              href="/hackathon-recap"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-black uppercase text-xs border border-black shadow-[2px_2px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
+            >
+              <span>{isIndonesian ? "Lihat Rekap Nilai & Galeri ↗" : "Scorecard & Gallery ↗"}</span>
+            </Link>
+          </div>
+
           {/* Catatan Transparansi */}
           <div className="p-4 sm:p-5 rounded-2xl bg-foreground/5 border-2 border-foreground/30 text-xs font-medium leading-relaxed space-y-1">
             <span className="font-mono font-black uppercase text-[var(--accent1)] flex items-center gap-1.5">
@@ -315,6 +340,100 @@ export default function ProjectsPage() {
                 ? "Tim SKS-Master didaftarkan dengan identitas mentor karena ketentuan kompetisi mensyaratkan peserta berstatus mahasiswa. Saya adalah pengembang SKS-Master yang merancang dan membangun platform ini. Sertifikat resmi yang tersedia adalah sertifikat partisipasi atas nama tim SKS-Master."
                 : "The SKS-Master team was registered using the mentor's identity due to the competition requirement for university students. I am the developer who designed and built the SKS-Master platform. The official certificate available is a participation certificate issued in the name of the SKS-Master team."}
             </p>
+          </div>
+        </section>
+
+        {/* ========================================================
+            KARYA SOFTWARE & KOMPETISI: PYQUEST
+           ======================================================== */}
+        <section aria-labelledby="pyquest-software-case" className="rounded-[2.5rem] border-3 sm:border-4 border-foreground bg-background p-6 sm:p-10 shadow-[8px_8px_0px_var(--fg)] space-y-6">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b-2 border-foreground/20">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-black uppercase bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30">
+                  <Award className="w-3.5 h-3.5 shrink-0" />
+                  {isIndonesian ? "Karya Kompetisi Telkom" : "Telkom Competition Entry"}
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-black uppercase bg-foreground/10 text-foreground border border-foreground/20">
+                  EdTech & Game
+                </span>
+              </div>
+              <h2 id="pyquest-software-case" className="text-2xl sm:text-3xl font-black uppercase text-foreground tracking-tight">
+                PyQuest — Game Labirin Logika Python
+              </h2>
+              <p className="font-mono text-xs sm:text-sm text-foreground/70">
+                {isIndonesian
+                  ? "Eksplorasi Gamifikasi Algoritma & Misi Interaktif Robot PyBot"
+                  : "Gamified Algorithmic Learning & Interactive PyBot Robot Missions"}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
+              <a
+                href="https://pyquest-sigma.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black border-2 border-black font-black uppercase shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
+              >
+                <span>{isIndonesian ? "Buka Game" : "Live Game"}</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+
+              <Link
+                href="/apps"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border-2 border-foreground bg-background hover:bg-foreground/10 text-foreground font-black uppercase shadow-[2px_2px_0px_var(--fg)] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
+              >
+                <span>{isIndonesian ? "Lihat di Katalog Apps ↗" : "Apps Catalog ↗"}</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div className="md:col-span-8 space-y-4">
+              <p className="text-xs sm:text-sm text-foreground/85 font-medium leading-relaxed">
+                {isIndonesian
+                  ? "PyQuest dirancang untuk memecahkan kebosanan belajar sintaks pemrograman pemula dengan menggabungkan game labirin 2D dan blok logika kontrol kode. Pengguna memandu karakter robot PyBot melewati 30+ level tantangan sembari memahami konsep loop, percabangan, dan fungsi."
+                  : "PyQuest was engineered to break the monotony of introductory syntax study by combining a 2D maze game with visual Python command logic blocks. Learners guide the PyBot robot across 30+ levels while mastering loops, conditions, and functions."}
+              </p>
+
+              {/* Connected Experience Callout */}
+              <div className="p-4 rounded-xl bg-blue-500/10 border-2 border-blue-500/30 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
+                <div className="flex items-center gap-2 text-blue-700 dark:text-blue-300 font-bold">
+                  <Award className="w-4 h-4 shrink-0" />
+                  <span>
+                    {isIndonesian
+                      ? "Terhubung dengan Pengalaman: Kompetisi Coding Telkom (Oktober 2026)"
+                      : "Connected Experience: Telkom Coding Competition (October 2026)"}
+                  </span>
+                </div>
+                <Link
+                  href="/experience"
+                  className="text-xs font-black uppercase underline hover:opacity-80"
+                >
+                  {isIndonesian ? "Lihat di Experience ↗" : "View in Experience ↗"}
+                </Link>
+              </div>
+
+              <div className="flex flex-wrap gap-2 font-mono text-xs">
+                {["SvelteKit", "Python Logic Engine", "Tailwind CSS", "Gamified Learning", "PWA"].map((t) => (
+                  <span key={t} className="px-2.5 py-0.5 rounded-full bg-foreground/5 border border-foreground/20 font-bold">
+                    #{t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="md:col-span-4 flex justify-center">
+              <div className="relative w-40 h-40 rounded-3xl border-3 border-foreground bg-foreground/5 p-4 flex items-center justify-center shadow-[5px_5px_0px_var(--fg)]">
+                <Image
+                  src="/assets/apps/pyquest.svg"
+                  alt="PyQuest Logo"
+                  width={120}
+                  height={120}
+                  className="object-contain"
+                />
+              </div>
+            </div>
           </div>
         </section>
 

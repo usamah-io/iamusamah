@@ -86,6 +86,27 @@
       "subtitle_timeline": "Jejak langkah akademis dan pengalaman kepemimpinan proyek digital.",
       "timeline": [
         {
+          "id": "exp-speaking-2026",
+          "category": "speaking",
+          "title": "Seminar Nasional Programming",
+          "role": "Speaker — Python for Data Science Fundamentals",
+          "location": "Online via Zoom",
+          "period": "7 November 2026",
+          "badge": "Speaker / Pembicara",
+          "description": "Menjadi pembicara dalam Seminar Nasional Programming yang diselenggarakan oleh Engineering Education, membawakan topik 'Langkah Awal Membangun Karier Sebagai Data Scientist: Panduan Esensial Mengolah Big Data Berstandar Industri' dengan 9 modul fundamental Python & Data Science.",
+          "tags": [
+            "Speaker",
+            "Python",
+            "Data Science",
+            "Pandas",
+            "Engineering Education",
+            "Live Stream"
+          ],
+          "image": "/assets/seminar-nasional-programming.webp",
+          "detail_link": "/experience/seminar-nasional-programming",
+          "detail_label": "Lihat Detail Seminar ↗"
+        },
+        {
           "id": "exp-icc-2026",
           "category": "competition",
           "title": "Indonesia Creative Competition 2026",
@@ -737,6 +758,27 @@
       "title_timeline": "Education & Track Record",
       "subtitle_timeline": "Academic journey and digital project leadership experience.",
       "timeline": [
+        {
+          "id": "exp-speaking-2026",
+          "category": "speaking",
+          "title": "National Programming Seminar",
+          "role": "Speaker — Python for Data Science Fundamentals",
+          "location": "Online via Zoom",
+          "period": "November 7, 2026",
+          "badge": "Keynote Speaker",
+          "description": "Served as a speaker at the National Programming Seminar organized by Engineering Education, delivering 'First Steps in Building a Career as a Data Scientist: Essential Guide to Processing Big Data to Industry Standards' covering 9 fundamental Python & Data Science modules.",
+          "tags": [
+            "Speaker",
+            "Python",
+            "Data Science",
+            "Pandas",
+            "Engineering Education",
+            "Live Stream"
+          ],
+          "image": "/assets/seminar-nasional-programming.webp",
+          "detail_link": "/experience/seminar-nasional-programming",
+          "detail_label": "Seminar Details ↗"
+        },
         {
           "id": "exp-icc-2026",
           "category": "competition",

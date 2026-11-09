@@ -3,16 +3,26 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, GraduationCap, MapPin, ExternalLink, Eye, X, Layers, Award, HeartHandshake } from "lucide-react";
+import {
+  ArrowLeft,
+  GraduationCap,
+  MapPin,
+  ExternalLink,
+  Eye,
+  X,
+  Layers,
+  Award,
+  HeartHandshake,
+  Mic,
+  Briefcase,
+} from "lucide-react";
 import { useApp } from "@/components/app-context";
-import content from "@/data/content.json";
+import { EXPERIENCES_DATA, ExperienceCategory } from "@/data/experiences-data";
 import { gsap } from "@/lib/gsap";
 
 export default function ExperiencePage() {
   const { language } = useApp();
   const isIndonesian = language === "id";
-  const tAbout = content[language]?.about || content["id"].about;
-  const rawTimeline = tAbout.timeline || [];
 
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -20,7 +30,8 @@ export default function ExperiencePage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
-  const filteredTimeline = rawTimeline.filter((item: any) => {
+  // Filter based on the 4 canonical categories: speaking, hackathon, volunteer, other
+  const filteredTimeline = EXPERIENCES_DATA.filter((item) => {
     if (activeFilter === "all") return true;
     return item.category === activeFilter;
   });
@@ -36,7 +47,7 @@ export default function ExperiencePage() {
           y: 0,
           scale: 1,
           duration: 0.55,
-          stagger: 0.1,
+          stagger: 0.08,
           ease: "power2.out",
         }
       );
@@ -49,6 +60,11 @@ export default function ExperiencePage() {
     if (el && !cardsRef.current.includes(el)) {
       cardsRef.current.push(el);
     }
+  };
+
+  const getCategoryCount = (cat: string) => {
+    if (cat === "all") return EXPERIENCES_DATA.length;
+    return EXPERIENCES_DATA.filter((item) => item.category === cat).length;
   };
 
   return (
@@ -66,7 +82,9 @@ export default function ExperiencePage() {
 
           <div className="flex items-center gap-2 font-mono text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full border-2 border-foreground bg-[var(--accent1)] text-black shadow-[2px_2px_0px_var(--fg)]">
             <span className="w-2 h-2 rounded-full bg-black animate-pulse" />
-            <span>{isIndonesian ? "Pendidikan & Karir" : "Education & Track Record"}</span>
+            <span>
+              {isIndonesian ? "Pusat Rekam Jejak" : "Experience Hub"}
+            </span>
           </div>
         </div>
 
@@ -74,17 +92,26 @@ export default function ExperiencePage() {
         <div className="text-center md:text-left space-y-3">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-foreground bg-foreground/10 text-foreground text-xs font-mono font-black uppercase tracking-widest shadow-[2px_2px_0px_var(--fg)]">
             <GraduationCap className="w-4 h-4 text-[var(--accent1)] shrink-0" />
-            <span>{isIndonesian ? "Rekam Jejak & Pengalaman" : "Education & Volunteer Experience"}</span>
+            <span>
+              {isIndonesian
+                ? "Pusat Rekam Jejak & Pengalaman"
+                : "Experience & Track Record Hub"}
+            </span>
           </span>
           <h1 className="text-4xl sm:text-6xl font-black uppercase text-foreground tracking-tight leading-none">
-            Pendidikan &amp; Rekam Jejak Karir
+            {isIndonesian
+              ? "Pengalaman & Pencapaian"
+              : "Experiences & Achievements"}
           </h1>
           <p className="text-sm sm:text-base text-foreground/80 font-medium leading-relaxed max-w-2xl">
-            Jejak langkah akademis, kepemimpinan proyek digital, pengalamanan operasional acara, serta aksi relawan kemanusiaan.
+            {isIndonesian
+              ? "Pusat informasi seluruh pengalaman saya: seminar sebagai pembicara, inovasi hackathon, aksi sosial relawan, hingga kompetisi dan pendidikan."
+              : "A centralized hub of all my experiences: national seminar speaking, hackathon innovations, volunteer actions, competitions, and learning milestones."}
           </p>
 
-          {/* Neubrutalist Filter Tabs */}
+          {/* 4 Categorical Filter Tabs */}
           <div className="flex flex-wrap items-center gap-2 pt-4 font-mono">
+            {/* All */}
             <button
               onClick={() => setActiveFilter("all")}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
@@ -94,21 +121,31 @@ export default function ExperiencePage() {
               }`}
             >
               <Layers className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? `Semua (${rawTimeline.length})` : `All (${rawTimeline.length})`}</span>
+              <span>
+                {isIndonesian
+                  ? `Semua (${getCategoryCount("all")})`
+                  : `All (${getCategoryCount("all")})`}
+              </span>
             </button>
 
+            {/* Speaking */}
             <button
-              onClick={() => setActiveFilter("competition")}
+              onClick={() => setActiveFilter("speaking")}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
-                activeFilter === "competition"
+                activeFilter === "speaking"
                   ? "bg-[var(--accent1)] text-black"
                   : "bg-background text-foreground hover:bg-foreground/10"
               }`}
             >
-              <Award className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? "Kompetisi Coding" : "Competition"}</span>
+              <Mic className="w-3.5 h-3.5" />
+              <span>
+                {isIndonesian
+                  ? `Speaking (${getCategoryCount("speaking")})`
+                  : `Speaking (${getCategoryCount("speaking")})`}
+              </span>
             </button>
 
+            {/* Hackathon */}
             <button
               onClick={() => setActiveFilter("hackathon")}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
@@ -118,9 +155,14 @@ export default function ExperiencePage() {
               }`}
             >
               <Award className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? "Hackathon" : "Hackathon"}</span>
+              <span>
+                {isIndonesian
+                  ? `Hackathon (${getCategoryCount("hackathon")})`
+                  : `Hackathon (${getCategoryCount("hackathon")})`}
+              </span>
             </button>
 
+            {/* Volunteer */}
             <button
               onClick={() => setActiveFilter("volunteer")}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
@@ -130,9 +172,14 @@ export default function ExperiencePage() {
               }`}
             >
               <HeartHandshake className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? "Relawan & Sosial" : "Volunteer & Social"}</span>
+              <span>
+                {isIndonesian
+                  ? `Volunteer (${getCategoryCount("volunteer")})`
+                  : `Volunteer (${getCategoryCount("volunteer")})`}
+              </span>
             </button>
 
+            {/* Education */}
             <button
               onClick={() => setActiveFilter("education")}
               className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
@@ -142,121 +189,160 @@ export default function ExperiencePage() {
               }`}
             >
               <GraduationCap className="w-3.5 h-3.5" />
-              <span>{isIndonesian ? "Pendidikan" : "Education"}</span>
+              <span>
+                {isIndonesian
+                  ? `Pendidikan (${getCategoryCount("education")})`
+                  : `Education (${getCategoryCount("education")})`}
+              </span>
+            </button>
+
+            {/* Other */}
+            <button
+              onClick={() => setActiveFilter("other")}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase border-2 border-foreground shadow-[2px_2px_0px_var(--fg)] transition-all cursor-pointer ${
+                activeFilter === "other"
+                  ? "bg-[var(--accent1)] text-black"
+                  : "bg-background text-foreground hover:bg-foreground/10"
+              }`}
+            >
+              <Briefcase className="w-3.5 h-3.5" />
+              <span>
+                {isIndonesian
+                  ? `Other Experiences (${getCategoryCount("other")})`
+                  : `Other Experiences (${getCategoryCount("other")})`}
+              </span>
             </button>
           </div>
         </div>
 
         {/* Interactive Timeline & Cards Grid Container */}
-        <div ref={containerRef} className="relative border-l-4 border-foreground ml-4 sm:ml-8 space-y-10 pt-4">
-          {filteredTimeline.map((item: any, idx: number) => (
-            <div key={item.id || idx} className="relative pl-6 sm:pl-10 group">
-              {/* Timeline Dot Indicator */}
-              <div className="absolute -left-[13px] top-6 w-6 h-6 rounded-full bg-[var(--accent1)] border-4 border-foreground shadow-[2px_2px_0px_var(--fg)] group-hover:scale-125 transition-transform" />
+        <div
+          ref={containerRef}
+          className="relative border-l-4 border-foreground ml-4 sm:ml-8 space-y-10 pt-4"
+        >
+          {filteredTimeline.map((item, idx) => {
+            const badgeLabel = item.badge[isIndonesian ? "id" : "en"];
+            const periodLabel = item.date[isIndonesian ? "id" : "en"];
+            const titleLabel = item.title[isIndonesian ? "id" : "en"];
+            const roleLabel = item.role[isIndonesian ? "id" : "en"];
+            const locationLabel = item.location[isIndonesian ? "id" : "en"];
+            const descLabel = item.fullDescription[isIndonesian ? "id" : "en"];
 
-              {/* Timeline Neubrutalist Card */}
-              <div
-                ref={addToRefs}
-                className="bg-background border-4 border-foreground rounded-[1.5rem] p-6 sm:p-8 shadow-[6px_6px_0px_var(--fg)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] space-y-5"
-              >
-                {/* Header Row: Badge & Period */}
-                <div className="flex flex-wrap items-center justify-between gap-3 font-mono">
-                  <span className="text-xs font-black uppercase text-black bg-[var(--accent1)] border-2 border-foreground px-3.5 py-1 rounded-full shadow-[2px_2px_0px_var(--fg)]">
-                    {item.badge}
-                  </span>
-                  <span className="text-xs font-black uppercase text-foreground bg-foreground/10 border border-foreground/20 px-3 py-1 rounded-full">
-                    {item.period}
-                  </span>
-                </div>
+            return (
+              <div key={item.id || idx} className="relative pl-6 sm:pl-10 group">
+                {/* Timeline Dot Indicator */}
+                <div className="absolute -left-[13px] top-6 w-6 h-6 rounded-full bg-[var(--accent1)] border-4 border-foreground shadow-[2px_2px_0px_var(--fg)] group-hover:scale-125 transition-transform" />
 
-                {/* Title & Role */}
-                <div>
-                  <h3 className="text-xl sm:text-3xl font-black uppercase text-foreground group-hover:text-[var(--accent1)] transition-colors">
-                    {item.title}
-                  </h3>
-                  <div className="text-sm font-mono font-bold uppercase text-[var(--accent1)] mt-1">
-                    {item.role}
+                {/* Timeline Neubrutalist Card */}
+                <div
+                  ref={addToRefs}
+                  className="bg-background border-4 border-foreground rounded-[1.5rem] p-6 sm:p-8 shadow-[6px_6px_0px_var(--fg)] transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] space-y-5"
+                >
+                  {/* Header Row: Badge & Period */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 font-mono">
+                    <span className="text-xs font-black uppercase text-black bg-[var(--accent1)] border-2 border-foreground px-3.5 py-1 rounded-full shadow-[2px_2px_0px_var(--fg)]">
+                      {badgeLabel}
+                    </span>
+                    <span className="text-xs font-black uppercase text-foreground bg-foreground/10 border border-foreground/20 px-3 py-1 rounded-full">
+                      {periodLabel}
+                    </span>
                   </div>
-                </div>
 
-                {/* Optional Media Preview Thumbnail */}
-                {item.image && (
-                  <div
-                    onClick={() => setSelectedImage(item.image)}
-                    className="relative aspect-video w-full rounded-2xl overflow-hidden border-4 border-foreground shadow-[4px_4px_0px_var(--fg)] group/img cursor-pointer bg-zinc-950 max-w-lg"
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 600px"
-                      className="object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-4 py-2 rounded-full bg-emerald-500 text-black text-xs font-mono font-black uppercase border-2 border-black shadow-[2px_2px_0px_#000000] flex items-center gap-2">
-                        <Eye className="w-3.5 h-3.5" />
-                        <span>Pratinjau Foto</span>
-                      </span>
+                  {/* Title & Role */}
+                  <div>
+                    <h3 className="text-xl sm:text-3xl font-black uppercase text-foreground group-hover:text-[var(--accent1)] transition-colors">
+                      {titleLabel}
+                    </h3>
+                    <div className="text-sm font-mono font-bold uppercase text-[var(--accent1)] mt-1">
+                      {roleLabel}
                     </div>
                   </div>
-                )}
 
-                {/* Description */}
-                <p className="text-sm sm:text-base text-foreground/80 font-medium leading-relaxed">
-                  {item.description}
-                </p>
+                  {/* Optional Media Preview Thumbnail */}
+                  {item.image && (
+                    <div
+                      onClick={() => setSelectedImage(item.image)}
+                      className={`relative w-full rounded-2xl overflow-hidden border-4 border-foreground shadow-[4px_4px_0px_var(--fg)] group/img cursor-pointer bg-zinc-950 ${
+                        item.orientation === "portrait"
+                          ? "max-w-[260px] aspect-[3/4]"
+                          : "max-w-lg aspect-video"
+                      }`}
+                    >
+                      <Image
+                        src={item.image}
+                        alt={titleLabel}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 500px"
+                        className="object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="px-4 py-2 rounded-full bg-emerald-500 text-black text-xs font-mono font-black uppercase border-2 border-black shadow-[2px_2px_0px_#000000] flex items-center gap-2">
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>Pratinjau Foto</span>
+                        </span>
+                      </div>
+                    </div>
+                  )}
 
-                {/* Skill / Highlights Tags */}
-                {item.tags && (
-                  <div className="flex flex-wrap gap-2 pt-1 font-mono">
-                    {item.tags.map((tag: string, tIdx: number) => (
-                      <span
-                        key={tIdx}
-                        className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-foreground bg-foreground/10 border border-foreground/20 px-3 py-0.5 rounded-full"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                  {/* Description */}
+                  <p className="text-sm sm:text-base text-foreground/80 font-medium leading-relaxed">
+                    {descLabel}
+                  </p>
 
-                {/* Footer Meta & External Links */}
-                <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t-2 border-foreground/20 font-mono text-xs">
-                  <div className="flex items-center gap-2 font-bold text-foreground/80">
-                    <MapPin className="w-4 h-4 shrink-0 text-foreground" />
-                    <span>{item.location}</span>
-                  </div>
+                  {/* Skill / Highlights Tags */}
+                  {item.tags && (
+                    <div className="flex flex-wrap gap-2 pt-1 font-mono">
+                      {item.tags.map((tag: string, tIdx: number) => (
+                        <span
+                          key={tIdx}
+                          className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-foreground bg-foreground/10 border border-foreground/20 px-3 py-0.5 rounded-full"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
-                  <div className="flex flex-wrap items-center gap-3">
-                    {item.recap_link && (
-                      <Link
-                        href={item.recap_link}
-                        className="inline-flex items-center gap-1.5 font-black uppercase text-black bg-emerald-500 hover:bg-emerald-400 border-2 border-black px-4 py-2 rounded-full shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
-                      >
-                        <span>{item.recap_label || "Lihat Rekap"}</span>
-                      </Link>
-                    )}
+                  {/* Footer Meta & External/Detail Links */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t-2 border-foreground/20 font-mono text-xs">
+                    <div className="flex items-center gap-2 font-bold text-foreground/80">
+                      <MapPin className="w-4 h-4 shrink-0 text-foreground" />
+                      <span>{locationLabel}</span>
+                    </div>
 
-                    {item.web_link && (
-                      <a
-                        href={item.web_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-bold uppercase text-foreground hover:bg-foreground hover:text-background border-2 border-foreground px-4 py-2 rounded-full shadow-[3px_3px_0px_var(--fg)] transition cursor-pointer"
-                      >
-                        <span>{item.web_label || "Kunjungi"}</span>
-                        <ExternalLink className="w-3.5 h-3.5 shrink-0 opacity-60" />
-                      </a>
-                    )}
+                    <div className="flex flex-wrap items-center gap-3">
+                      {item.targetUrl && (
+                        <Link
+                          href={item.targetUrl}
+                          className="inline-flex items-center gap-1.5 font-black uppercase text-black bg-emerald-500 hover:bg-emerald-400 border-2 border-black px-4 py-2 rounded-full shadow-[3px_3px_0px_#000000] active:translate-x-[1px] active:translate-y-[1px] transition cursor-pointer"
+                        >
+                          <span>
+                            {isIndonesian ? "Lihat Detail Halaman ↗" : "View Details ↗"}
+                          </span>
+                        </Link>
+                      )}
+
+                      {item.externalUrl && (
+                        <a
+                          href={item.externalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 font-bold uppercase text-foreground hover:bg-foreground hover:text-background border-2 border-foreground px-4 py-2 rounded-full shadow-[3px_3px_0px_var(--fg)] transition cursor-pointer"
+                        >
+                          <span>{isIndonesian ? "Kunjungi Situs" : "Visit"}</span>
+                          <ExternalLink className="w-3.5 h-3.5 shrink-0 opacity-60" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
-      {/* CLEAN IMAGE LIGHTBOX MODAL */}
+      {/* Clean Image Lightbox Modal */}
       {selectedImage && (
         <div
           onClick={() => setSelectedImage(null)}
